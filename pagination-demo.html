@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>시놀 · 푸터와 페이지네이션 확인용</title>
+    <!-- Font Awesome Free 6.7.2: official CSS + local webfont; works offline. -->
+    <link rel="stylesheet" href="./assets/vendor/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="./style.css?v=1035" />
+    <link rel="stylesheet" href="./design.css?v=20261023-footer-privacy-2" />
+  <link rel="stylesheet" href="./components/pagination.css?v=20261023-3"></head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <main class="web-layout" id="webLayout">
+      <aside class="side side-left" aria-label="시놀 좌측 사이드" tabindex="0">
+        <div class="side-stage"><div class="side-content">
+        <a target="_blank" rel="noopener noreferrer" data-figma-node="37:7460" class="trip-banner" href="https://web.sinor.co.kr/membership">
+          <img src="./assets/icon-trip.png" alt="" />
+          <span>
+            <small>우리 같이 떠나요</small>
+            <strong>시놀트립 가입</strong>
+          </span>
+          <i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i>
+        </a>
+
+        <section data-figma-node="37:7466" class="column-section" aria-label="시놀칼럼">
+          <div class="section-head">
+            <h2>시놀칼럼</h2>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/information">전체보기 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
+
+          <a target="_blank" rel="noopener noreferrer"
+            class="column-card"
+            href="https://sinor.co.kr/information/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174921046&t=board"
+            data-column-card
+          >
+            <span class="column-thumb thumb-trip" data-thumb></span>
+            <span class="column-body">
+              <em data-category>여행</em>
+              <strong data-title>언젠가 가보고 싶었던 울릉도, 혼자여도 떠나요</strong>
+              <i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <a target="_blank" rel="noopener noreferrer"
+            class="column-card"
+            href="https://sinor.co.kr/information/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174703606&t=board"
+            data-column-card
+          >
+            <span class="column-thumb thumb-life" data-thumb></span>
+            <span class="column-body">
+              <em data-category>생활법률</em>
+              <strong data-title>집 한 채가 전부일 때, 무엇부터 준비해야 할까요</strong>
+              <i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i>
+            </span>
+          </a>
+        </section>
+
+        <section class="brand-download side-bottom" aria-label="시놀 앱 다운로드">
+          <span class="qr-frame"><img class="qr" src="./assets/sinor-qr.png" alt="시놀 앱 다운로드 QR" /></span>
+          <p>당신의 일상을 특별하게 만드는 모임</p>
+          <img class="brand-logo sinor" src="./assets/sinor-logo-official.png" alt="시놀" />
+        </section>
+        </div></div>
+      </aside>
+
+      <section class="center-shell" id="centerShell" aria-label="시놀 Web App 시연 영역">
+        <header class="app-header">
+          <img src="./assets/sinor-logo-official.png" alt="시놀" />
+          <nav aria-label="상단 메뉴">
+            <a target="_blank" rel="noopener noreferrer" href="#">대화방</a>
+            <a target="_blank" rel="noopener noreferrer" href="#">알림</a>
+            <a target="_blank" rel="noopener noreferrer" href="#">문의</a>
+          </nav>
+        </header>
+
+        <!--
+          IMPORTANT:
+          This center area is a prototype-only placeholder.
+          실제 개발 시 이 영역은 기존 Flutter Web App 렌더링 영역으로 유지합니다.
+          좌우 사이드, 배경, 푸터, 플로팅 버튼만 공통 Web Shell 기준으로 참고하세요.
+        -->
+        <div class="flutter-placeholder" id="flutterPlaceholder">
+          <section class="hero-dummy">
+            <h1>모임 찾기 🔎</h1>
+            <div class="meeting-grid">
+              <article class="meeting-hero-card">
+                <p>친목 모임</p>
+                <h2>인생을 재밌게</h2>
+                <div class="person-group person-group-1" aria-hidden="true"></div>
+              </article>
+              <article class="meeting-hero-card">
+                <p>취미 배움 모임</p>
+                <h2>인생을 알차게</h2>
+                <div class="person-group person-group-2" aria-hidden="true"></div>
+              </article>
+            </div>
+          </section>
+
+          <!-- UNCHANGED: existing Flutter schedule area; keep 3 cards, load-more and horizontal slide animation. Reference only. -->
+<section class="event-list">
+            <h2>일정에 참여해 보세요!</h2>
+            <article class="event-card">
+              <time datetime="2026-06-12"><span>6월</span><strong>12</strong></time>
+              <div>
+                <h3>2:2 번개⚡ 경기 하실 분</h3>
+                <p>(중급 이상) · 2자리 남음</p>
+                <small>송파구 · 32명 가입</small>
+              </div>
+            </article>
+            <article class="event-card">
+              <time datetime="2026-06-18"><span>6월</span><strong>18</strong></time>
+              <div>
+                <h3>우쿨렐레 함께 합주하는 모임</h3>
+                <p>함께 합주해요 · 악기</p>
+                <small>마포구 · 18명 가입</small>
+              </div>
+            </article>
+            <article class="event-card">
+              <time datetime="2026-06-24"><span>6월</span><strong>24</strong></time>
+              <div>
+                <h3>도심 산책 후 커피 한 잔</h3>
+                <p>처음 오셔도 편하게 참여 가능</p>
+                <small>성동구 · 45명 가입</small>
+              </div>
+            </article>
+            
+          <button id="scheduleMore" data-preserve-existing="true" title="운영의 기존 일정 더보기와 슬라이드 애니메이션을 그대로 유지합니다. 이 시안에서는 재구현하지 않습니다." class="schedule-more" type="button" aria-label="일정 더보기"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i><span>일정 더보기 <strong id="schedulePage">1</strong><span class="schedule-total">/13</span></span></button>
+          </section>
+
+          <section id="newGatherings" class="pagination-demo" tabindex="-1"><h2>새로 개설된 모임</h2><p class="pagination-demo-note">페이지 이동 확인용 예시입니다. 실제 모임 데이터·앱 기능과 연결되지 않습니다.</p><div id="newGatheringList" class="gathering-demo-list"></div><nav id="newGatheringPagination" class="gathering-pagination"></nav><p id="newGatheringStatus" class="pagination-demo-status" role="status" aria-live="polite"></p></section>
+        </div>
+
+        <footer data-figma-node="37:8201,37:8243" class="app-footer" id="appFooter">
+          <img class="footer-logo" src="./assets/sinor-logo-official.png" alt="시놀" />
+
+          <nav class="footer-primary" aria-label="서비스 소개">
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/company">회사소개</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/moim">시놀 모임앱 소개</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/silove">시럽 데이팅 앱 소개</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/download">앱 다운로드</a>
+          </nav>
+
+          <nav class="footer-secondary" aria-label="정책 및 문의">
+            <a target="_blank" rel="noopener noreferrer" href="recruit/">채용</a>
+            <a target="_blank" rel="noopener noreferrer" href="adv/">광고제휴문의</a>
+            <a href="https://sinor.co.kr/terms1" target="_blank" rel="noopener noreferrer">서비스 이용약관</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/privacy1" class="footer-privacy">개인정보 처리방침</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/travel-terms">여행약관</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/domestic-special-terms">국내여행 특별약관</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/child">아동 안전 표준 정책</a>
+          </nav>
+
+          <details class="company-info">
+            <summary>시놀(주) 사업자정보<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+            <dl>
+              <div><dt>상호명</dt><dd>(주)시놀</dd></div>
+              <div><dt>대표자</dt><dd>김민지</dd></div>
+              <div><dt>주소</dt><dd>서울 영등포구 의사당대로 83, 오투타워 8층<br>서울 중구 다동 155, 20층 SKT Startup Lab</dd></div>
+              <div><dt>사업자등록번호</dt><dd>584-88-03032</dd></div>
+              <div><dt>통신판매업신고</dt><dd>제2026-서울영등포-1277호</dd></div>
+              <div><dt>관광사업자등록</dt><dd>2026-000025호</dd></div>
+              <div><dt>국내결혼중개업</dt><dd>서울-마포-국내-24-0001호</dd></div>
+              <div><dt>이메일</dt><dd>help@sinor.co.kr</dd></div>
+              <div><dt>문의</dt><dd>02-506-5670</dd></div>
+            </dl><p class="copyright">Copyright © 2026 시놀 All rights reserved.</p>
+          </details>
+        </footer>
+
+        <nav class="bottom-nav" aria-label="하단 내비게이션">
+          <a target="_blank" rel="noopener noreferrer" class="is-active" href="#">홈</a>
+          <a target="_blank" rel="noopener noreferrer" href="#">내 모임</a>
+          <a target="_blank" rel="noopener noreferrer" href="#">스토리</a>
+          <a target="_blank" rel="noopener noreferrer" href="#">대화방</a>
+          <a target="_blank" rel="noopener noreferrer" href="#">내 정보</a>
+        </nav>
+      </section>
+
+      <aside class="side side-right" aria-label="시럽 우측 사이드" tabindex="0">
+        <div class="side-stage"><div class="side-content">
+        <div class="right-actions">
+          <a target="_blank" rel="noopener noreferrer" data-figma-node="37:7849" class="service-banner meeting" href="https://web.sinor.co.kr/GatheringContentsPage?gathering_id=11">
+            <img src="./assets/icon-meeting.png" alt="" />
+            <span>
+              <small>50+ 새로운 만남</small>
+              <strong>단체미팅 신청</strong>
+            </span>
+            <i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" data-figma-node="37:7855" class="service-banner match" href="https://sinor.co.kr/silovematch-consult">
+            <img src="./assets/icon-match.png" alt="" />
+            <span>
+              <small>1:1 프리미엄 소개</small>
+              <strong>시럽인연 상담</strong>
+            </span>
+            <i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <section class="brand-download right-brand side-bottom" aria-label="시럽 앱 다운로드">
+          <span class="qr-frame"><img class="qr" src="./assets/silove-qr.png" alt="시럽 앱 다운로드 QR" /></span>
+          <p>당신을 설레게 해 줄 만남</p>
+          <img class="brand-logo" src="./assets/silovematch-logo.png" alt="시럽" />
+        </section>
+        </div></div>
+      </aside>
+    </main>
+
+    <!-- Body-level decoration: never part of either sidebar. Hide before it overlaps the layout. -->
+    <img class="body-people" id="bodyPeople" src="./assets/silove-people.png" alt="" aria-hidden="true" />
+
+    <div class="floating-group" id="floatingGroup" aria-label="플로팅 버튼">
+      <button class="float-btn top-btn" id="topButton" type="button" aria-label="맨 위로 이동">
+        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+        <strong>TOP</strong>
+      </button>
+      <button class="float-btn search-btn" id="searchButton" type="button" aria-label="모임 검색">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <strong>모임 검색</strong>
+      </button>
+    </div>
+
+    <script src="./script.js?v=sidebar-width-only-6"></script>
+  <script type="module" src="./demo/pagination-demo.js"></script></body>
+</html>

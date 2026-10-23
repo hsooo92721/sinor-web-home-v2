@@ -1,0 +1,218 @@
+/* Exact visual values: figma-spec.json and 디자인스펙.md.
+   Figma 37:7135 is the active desktop reference. Responsive rules are marked below. */
+@font-face {
+  font-family: Pretendard;
+  src: url('./assets/vendor/pretendard/PretendardVariable.woff2') format('woff2');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+:root { --center-width:560px; --layout-width:1200px; --side-width:320px; }
+body { min-width:0; }
+.web-layout {
+  width:min(100%,1200px);
+  grid-template-columns:minmax(0,1fr) 560px minmax(0,1fr);
+}
+/* Responsive containers; contents retain the Figma 320px coordinate system.
+   fitSidebars() scales ONLY these sides, never the Flutter placeholder. */
+.side {
+  display:block;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  padding:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  scrollbar-width:thin;
+  overscroll-behavior:contain;
+}
+.side:focus-visible { outline:2px solid #4b90e3; outline-offset:-2px; }
+.side-stage { position:relative; width:100%; overflow:hidden; }
+.side-content {
+  position:absolute;
+  top:0;
+  left:0;
+  display:flex;
+  width:320px;
+  min-height:100vh;
+  padding:100px 30px;
+  flex-direction:column;
+  align-items:center;
+  gap:60px;
+  transform-origin:top left;
+}
+.side-content > * { flex-shrink:0; }
+.trip-banner,.service-banner {
+  width:260px;
+  min-height:0;
+  height:93px;
+  gap:8px;
+  padding:22px;
+  border:1px solid #bdd7f4;
+  border-radius:18px;
+  box-shadow:none;
+  opacity:1;
+  letter-spacing:-.0145em;
+}
+/* High-fidelity get_design_context values, not colors sampled from a screenshot. */
+.trip-banner { background:linear-gradient(108.2133189589142deg,#e7f2ff 1.2039%,#f7fbff 95.565%); }
+.trip-banner img { width:37px; height:56px; flex-shrink:0; }
+.trip-banner span { gap:5px; }
+.trip-banner small { font-size:14px; font-weight:400; line-height:1; color:#55779b; }
+.trip-banner strong { font-size:20px; font-weight:800; line-height:1; color:#4b90e3; }
+.arrow { flex-shrink:0; font-size:17.421px; font-weight:900; }
+.trip-banner .arrow { color:#4b90e3; }
+.right-actions { width:260px; gap:20px; }
+.service-banner.meeting {
+  border-color:#e4dff7;
+  background:linear-gradient(-83.35866727200795deg,#f1edff 0%,#e8edff 98.381%);
+}
+.service-banner.match {
+  height:92px;
+  border-color:#f6dbe7;
+  background:linear-gradient(-83.28713418319398deg,#ffe5ef 0%,#fff0f5 98.381%);
+}
+.service-banner img { width:60px; height:47px; flex-shrink:0; }
+.service-banner.match img { height:43px; }
+.service-banner small { font-size:14px; font-weight:500; line-height:1.35; }
+.service-banner strong { font-size:20px; font-weight:800; line-height:1.35; }
+.service-banner.meeting small,.service-banner.meeting strong,.service-banner.meeting .arrow { color:#555591; }
+.service-banner.match small,.service-banner.match strong,.service-banner.match .arrow { color:#a84a73; }
+.column-section { width:260px; margin:0; }
+.section-head { margin:0 0 14px; gap:24px; min-height:20px; }
+.section-head h2 { font-size:20px; font-weight:700; line-height:1; letter-spacing:-.0145em; color:#273e56; }
+.section-head a { display:flex; gap:8px; align-items:center; font-size:12px; font-weight:700; line-height:1; color:#273e56; white-space:nowrap; }
+.section-head a i { font-size:11.586px; }
+.column-card {
+  width:260px;
+  display:block;
+  grid-template-columns:minmax(0,1fr);
+  min-height:0;
+  margin:0 0 15px;
+  border:1px solid #e1eaf2;
+  border-radius:17px;
+  background:#fff;
+  box-shadow:0 5px 16px 0 rgba(36,75,118,.027450980618596077);
+}
+.column-card:last-child { margin-bottom:0; }
+.column-thumb { height:auto; aspect-ratio:700 / 323; }
+.column-body { display:flex; align-items:center; gap:12px; padding:15px; }
+.column-body strong { flex:1; min-width:0; }
+.column-body em {
+  position:absolute;
+  top:9px;
+  left:9px;
+  margin:0;
+  padding:5px 8px;
+  border-radius:7px;
+  color:#3c5671;
+  background:rgba(255,255,255,.9215686321258545);
+  box-shadow:none;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:-.0145em;
+}
+.column-body strong { font-size:15px; font-weight:700; line-height:1.35; letter-spacing:-.0145em; color:#334961; }
+.column-card .arrow { color:#334961; font-size:11.586px; align-self:center; justify-self:start; }
+.brand-download { display:flex; width:260px; flex-direction:column; gap:24px; align-items:center; margin-top:auto; }
+.qr-frame {
+  display:flex;
+  width:138px;
+  height:138px;
+  padding:10.37593936920166px;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:20.75187873840332px;
+  box-shadow:0 0 8.300751686096191px rgba(0,0,0,.1);
+}
+.qr { width:120.361px; height:120.361px; max-width:none; border-radius:0; box-shadow:none; object-fit:contain; }
+.right-brand .qr-frame { padding:10.147px; border-radius:20.294px; box-shadow:0 0 4.059px rgba(0,0,0,.1); }
+.right-brand .qr { width:114.662px; height:114.662px; }
+.brand-download p { width:100%; margin:0; font-size:18px; font-weight:700; line-height:1.35; letter-spacing:-.5px; color:#545454; }
+.brand-logo.sinor { width:174.78627px; height:41px; max-width:none; object-fit:contain; }
+.brand-logo { width:132.48271px; height:41px; max-width:none; object-fit:contain; }
+.right-brand { padding:0; }
+/* User override: both application bars 64px, including on mobile. */
+.app-header { height:64px; min-height:64px; }
+.bottom-nav { height:64px; min-height:64px; }
+.app-footer {
+  margin-top:12px;
+  padding: 44px 28px;
+  background:#f5f6f7;
+  color:#69737f;
+  letter-spacing:-.0145em;
+}
+.footer-logo { width:114.42189px; height:30px; object-fit:contain; }
+.footer-primary { margin-top:41px; padding-bottom:22px; gap:14px; }
+.footer-primary a { color:#424c59; font-size:16px; font-weight:700; line-height:1.5; white-space:nowrap; }
+.footer-secondary { margin-top:8px; padding-top:22px; border-top:1px solid #e2e5e8; gap:14px; }
+.footer-secondary a { color:#69737f; font-size:14px; font-weight:400; line-height:1.5; white-space:nowrap; }
+.company-info { margin-top:8px; }
+.company-info summary { min-height:48px; color:#69737f; font-size:14px; font-weight:600; line-height:1.5; }
+.company-info summary::after { content:none; }
+.company-info summary i { display:flex; width:48px; height:48px; align-items:center; justify-content:center; font-size:18px; transition:transform .2s ease; }
+.company-info[open] summary i { transform:rotate(180deg); }
+.company-info dl { margin:0; gap:6px; font-size:14px; line-height:1.5; color:#7987a1; }
+.company-info div { grid-template-columns:114px minmax(0,1fr); gap:10px; align-items:center; }
+.company-info dt { font-weight:700; }
+.company-info dd { font-weight:400; overflow-wrap:anywhere; }
+.copyright { margin:6px 0 0; font-size:14px; line-height:1.5; color:#7987a1; }
+.float-btn i { font-size:20px; }
+.floating-group { bottom:84px; transition:none; }
+@media (max-width:1035px) {
+  .side { display:none; }
+  .web-layout { display:block; width:min(100%,560px); }
+}
+@media (max-width:560px) {
+  :root { --center-width:100vw; }
+  .center-shell { width:100%; }
+  .app-header,.bottom-nav { height:64px; min-height:64px; }
+  .app-footer { padding: 44px 28px; }
+  .company-info div { grid-template-columns:100px minmax(0,1fr); }
+  .floating-group { bottom:84px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { transition:none!important; }
+}
+
+/* Body decoration stays outside the sidebars and below their stacking layer. */
+.web-layout { position:relative; z-index:1; }
+.body-people {
+  position:fixed;
+  right:0;
+  bottom:0;
+  z-index:-999;
+  width:clamp(180px, 75%, 320px));
+  height:auto;
+  pointer-events:none;
+  /* 기존 position, width, bottom, right 등은 그대로 유지 */
+  visibility: visible;
+}
+@media (max-width:1500px) { .body-people { display:none; } }
+
+/* Hide whole sidebar groups from the bottom when viewport height is insufficient. */
+.hide-side-c .brand-download { display:none; }
+.hide-side-b .column-section { display:none; }
+
+/* Text stays at least 14 rendered pixels while sidebar graphics shrink. */
+.side .trip-banner small,.side .service-banner small { font-size:max(14px,calc(14px / var(--side-scale,1))); }
+.side .trip-banner strong,.side .service-banner strong,.side .section-head h2 { font-size:max(20px,calc(14px / var(--side-scale,1))); }
+.side .section-head a,.side .column-body em { font-size:max(14px,calc(14px / var(--side-scale,1))); }
+.side .column-body strong { font-size:max(15px,calc(14px / var(--side-scale,1))); }
+.side .brand-download p { font-size:max(18px,calc(14px / var(--side-scale,1))); }
+
+.schedule-more{width:100%;min-height:42px;display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;margin:20px 0 0;border:1px solid #dedede;border-radius:99px;background:white;color:#333;font:500 15px/1.4 Pretendard,sans-serif;cursor:pointer}.schedule-more>i{font-size:16px;line-height:1}.schedule-more strong{font-weight:600;color:#007aff;margin-left:4px}.schedule-total{color:#777}.schedule-more:hover{background:#f7f7f7}.schedule-more:focus-visible{outline:2px solid #007aff;outline-offset:3px}
+/* Footer legal text stays independent of each page's body typography. */
+body .app-footer p.copyright{margin:16px 0 0;font-size:12px;line-height:1.6;font-weight:400;letter-spacing:0;color:#7987a1}
+
+/* Emphasize only the privacy policy among footer policy links. */
+body .app-footer .footer-secondary a{font-weight:400}
+body .app-footer .footer-secondary a.footer-privacy{font-weight:700}
+
+/* Privacy policy emphasis in every common footer, including older markup. */
+body .app-footer .footer-secondary a.footer-privacy,body .app-footer .footer-secondary a[href*="policy/privacy"],body .app-footer .footer-secondary a[href*="privacy1"]{font-weight:700!important}
