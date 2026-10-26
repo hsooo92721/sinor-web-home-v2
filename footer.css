@@ -30,3 +30,8 @@ body .app-footer a:focus-visible,body .app-footer summary:focus-visible{outline:
 @media(max-width:380px){body .app-footer .company-info summary{flex-wrap:wrap;gap:8px}body .app-footer .footer-business-toggle{margin-left:auto}body .app-footer .company-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){body .app-footer summary i{transition:none}}
 body.company-page .company-common-footer .app-footer{display:flex}
+
+/* The home link and native business-details control are separate targets. */
+body .app-footer .footer-info-row{position:relative;width:100%}
+body .app-footer .footer-home-link{position:absolute;top:0;left:0;display:flex;align-items:center;min-height:48px;width:92.681496px}
+body .app-footer .company-info summary{width:max-content;max-width:calc(100% - 100px);margin-left:auto;justify-content:flex-end;gap:0}
