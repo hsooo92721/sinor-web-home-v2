@@ -35,3 +35,27 @@
 운영 전 관리자·업로드 API에 회사 인증/권한 및 요청 검증을 적용하고, 본문 HTML을 서버에서도 정화해야 합니다. 공개 API에서는 비공개·휴지통 내용을 반환하면 안 됩니다. 교차 출처 API라면 CORS와 쿠키 정책도 회사 서버에 맞춥니다. 비밀 키는 config.js에 넣지 않습니다.
 
 정적 클라이언트 렌더링이므로 검색엔진용 글별 메타데이터·소셜 공유 이미지는 회사 서버 연동 시 SSR 또는 사전 생성으로 보완해야 합니다.
+
+
+## 회사소개 콘텐츠 관리
+
+- `/admin/news/`: 중복을 포함한 수집 기사 전체 카드와 개별 ON/OFF. 기존 `editorialHidden` 자동 선별보다 관리자 토글을 우선하며 미설정·신규 기사는 ON입니다. OFF 상태는 기사 URL을 키로 저장하므로 자동 수집 시에도 유지됩니다. 수집 파일 자체는 수정하지 않습니다.
+- `/admin/history/`: 기존 연혁 74건을 초기값으로 추가·수정·삭제합니다. 연도·월 내림차순이며 사진과 설명도 관리합니다.
+- `/admin/partners/`: 사회공헌 로고, 제휴·협력사 로고, 기존 업무협약 기관명 목록을 관리합니다. 기존 로고의 실제 회사명이 소스에 없는 경우 번호 이름을 유지했습니다. 로고와 회사명 목록을 임의로 연결하지 않았으며 관리자가 확인 후 이름을 수정할 수 있습니다. 새 제휴·협력사에는 회사명과 로고가 필요하고, 기관명만 관리하는 구분에는 로고가 선택입니다.
+- 초기 데이터는 `company/cms-seed.json`, 브라우저 변경값은 별도 IndexedDB `sinor-company`에 저장합니다. 이 모드 역시 같은 브라우저에서만 독자 페이지와 연동됩니다.
+
+회사 API 모드에서는 `company-client.js`가 다음 계약을 사용합니다. 목록은 배열, 저장은 저장된 객체를 반환합니다.
+
+| 메서드 | 경로 | 데이터 |
+| --- | --- | --- |
+| GET | /admin/company/news | 전체 기사 배열, 중복 포함 |
+| GET | /company/news | enabled=true 기사만 |
+| PUT | /admin/company/news/visibility | {id, enabled} |
+| GET | /admin/company/history 또는 /company/history | 연혁 배열 |
+| GET | /admin/company/partners 또는 /company/partners | 협력사 배열 |
+| POST | /admin/company/history 또는 /admin/company/partners | 새 항목 |
+| PUT | /admin/company/history/:id 또는 /admin/company/partners/:id | 수정 항목 |
+| DELETE | /admin/company/history/:id 또는 /admin/company/partners/:id | 204 |
+
+기사 필드: id, title, meta, url, date([연,월,일]), image(company/ 기준 상대경로), enabled, storyGroup(선택). 토글 id는 API에서 고유하고 안정적인 식별자여야 합니다. 데모에서는 url을 사용합니다. 자동 수집 서버는 ON/OFF를 별도 저장하고 재수집 시 덮어쓰지 않도록 해야 합니다.
+연혁 필드: id, year, month, text, image, caption, order. 협력사 필드: id, group(social/partner/directory), name, image, order. 이미지 업로드는 기존 `/admin/media`를 공유합니다. 관리자 인증·권한, 파일 검증 및 동시 수정 처리는 회사 서버에서 적용해야 합니다.

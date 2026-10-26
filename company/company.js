@@ -17,15 +17,11 @@
  year.addEventListener('change',filter);search.addEventListener('input',filter);filter();
  function dateKey(item){return item.date.map(n=>String(n).padStart(2,'0')).join('-')+'T'+(item.publishedAt||'');}
  async function loadNews(){
-  // Scheduled GITHUB_TOKEN commits do not rebuild legacy GitHub Pages. Read the
-  // public repository feed there; a company deployment uses its own relative feed.
   const githubPreview=location.hostname==='hsooo92721.github.io'&&location.pathname.startsWith('/sinor-web-home-v2/');
-  const feed=githubPreview?'https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/news-data.json':new URL('news-data.json',document.baseURI).href;
   try{
-   const response=await fetch(feed,{cache:'no-store',signal:AbortSignal.timeout(12000)});
-   if(!response.ok)throw new Error('News data unavailable');
-   const data=await response.json();if(!Array.isArray(data)||!data.length)throw new Error('Invalid news data');
-   const records=data.filter(item=>item.editorialHidden!==true).map(item=>{
+   const {companyCms}=await import('../cms/company-client.js');
+   const data=await companyCms.news();
+   const records=data.map(item=>{
     if(typeof item.title!=='string'||!item.title.trim()||typeof item.meta!=='string'||!Array.isArray(item.date)||item.date.length!==3||!item.date.every(Number.isInteger))throw new Error('Invalid article');
     const [y,m,d]=item.date;const checked=new Date(Date.UTC(y,m-1,d));
     if(checked.getUTCFullYear()!==y||checked.getUTCMonth()!==m-1||checked.getUTCDate()!==d)throw new Error('Invalid article date');
@@ -52,6 +48,8 @@
   }catch(error){console.warn('최신 기사 데이터를 불러오지 못해 저장된 목록을 표시합니다.');}
  }
  loadNews();
+ import('../cms/company-client.js').then(({watchCompany})=>watchCompany(loadNews));
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadNews()});
 
  }
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
@@ -76,11 +74,11 @@
  }
  // Progress is tied to the reading position, not a timed animation.
  const timeline=document.querySelector('.history-timeline');
- const timelineYears=timeline?[...timeline.querySelectorAll('.timeline-year')]:[];
+ const timelineYears=()=>timeline?[...timeline.querySelectorAll('.timeline-year')]:[];
  function updateTimeline(){
   if(!timeline)return;
   const guide=Math.min(innerHeight*.44,340);
-  for(const year of timelineYears){
+  for(const year of timelineYears()){
    if(!year.open){year.style.setProperty('--timeline-fill','0px');year.classList.remove('is-reading','is-passed');continue;}
    const events=year.querySelector('.timeline-events'),rect=events.getBoundingClientRect();
    const filled=Math.max(0,Math.min(rect.height,guide-rect.top));
@@ -90,7 +88,8 @@
   }
  }
  if(timeline){
-  timelineYears.forEach(year=>year.addEventListener('toggle',()=>requestAnimationFrame(updateTimeline)));
+  timeline.addEventListener('toggle',()=>requestAnimationFrame(updateTimeline),true);
+  timeline.addEventListener('company-timeline-updated',()=>requestAnimationFrame(updateTimeline));
   if('ResizeObserver'in window){const sizes=new ResizeObserver(()=>requestAnimationFrame(updateTimeline));sizes.observe(timeline);}
  }
  const top=document.querySelector('#companyTop'),group=top.parentElement,footer=document.querySelector('.company-common-footer');let scheduled=false;
