@@ -85,3 +85,5 @@ body .app-footer .footer-secondary a.footer-privacy,body .app-footer .footer-sec
  body.company-page:has(> .company-mobile-nav)>.site-header{position:relative;top:auto}
  body.company-page .company-mobile-nav{position:sticky;top:0;z-index:59;background:#fff}
 }
+
+@media(max-width:900px){body.company-page .company-page-heading{display:none}}
