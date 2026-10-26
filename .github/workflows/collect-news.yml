@@ -1,8 +1,8 @@
 name: Collect Sinor news
 on:
   schedule:
-    # 09:17 and 18:17 Korea time; GitHub schedules may be delayed.
-    - cron: '17 0,9 * * *'
+    # Daily lightweight check at 10:17 KST; collect only every third Korea calendar day.
+    - cron: '17 1 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -15,16 +15,48 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Check three-day collection interval
+        id: interval
+        env:
+          MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          python3 - <<'PYTHON'
+          from datetime import datetime, timezone, timedelta
+          import json, os
+          from pathlib import Path
+          state = json.loads(Path('.github/news-collection-state.json').read_text())
+          last = datetime.fromisoformat(state['last_success_at'].replace('Z', '+00:00'))
+          korea = timezone(timedelta(hours=9))
+          due = os.environ['MANUAL_RUN'] == 'true' or (datetime.now(korea).date() - last.astimezone(korea).date()).days >= 3
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'due={str(due).lower()}\n')
+          print('Collection due' if due else 'Skipped: less than three days since last successful collection')
+          PYTHON
       - uses: actions/setup-python@v5
+        if: steps.interval.outputs.due == 'true'
         with:
           python-version: '3.12'
+      - name: Install preview resolver
+        if: steps.interval.outputs.due == 'true'
+        run: python -m pip install -r scripts/news-requirements.txt
       - name: Validate collector
-        run: python -m unittest discover -s tests -p 'test_news.py'
+        if: steps.interval.outputs.due == 'true'
+        run: python -m unittest discover -s tests -p 'test_news*.py'
       - name: Collect latest Google News results (no API key)
+        if: steps.interval.outputs.due == 'true'
         run: python scripts/collect-news.py --source google
       - name: Publish news data
+        if: steps.interval.outputs.due == 'true'
         run: |
-          git add company/news-data.json
+          python - <<'PYTHON'
+          from datetime import datetime, timezone
+          import json
+          from pathlib import Path
+          Path('.github/news-collection-state.json').write_text(json.dumps({
+              'last_success_at': datetime.now(timezone.utc).isoformat()
+          }, indent=2) + '\n')
+          PYTHON
+          git add company/news-data.json company/assets .github/news-collection-state.json
           if git diff --cached --quiet; then
             echo 'No new articles.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -33,4 +65,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Update collected Sinor news'
           git push
-          echo 'Published new articles to company/news-data.json.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Completed collection and saved the last successful run time.' >> "$GITHUB_STEP_SUMMARY"

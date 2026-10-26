@@ -40,21 +40,29 @@
 
 - 기본 수집원은 구글 뉴스 공개 RSS입니다. API 키·별도 회원가입 없이 실행됩니다.
 - 검색어: `"시놀" when:30d`, 한국어·대한민국 뉴스. 최근 30일의 검색 결과를 주기적으로 확인하고 이미 모은 과거 기사는 보존합니다. 구글에 색인된 검색 결과 범위의 수집이며 모든 언론사의 모든 기사를 보장하지 않습니다.
-- 하루 두 번 한국시간 09:17 / 18:17 실행 예정입니다. GitHub Actions 일정은 지연될 수 있습니다.
+- 실제 기사 수집은 한국 날짜 기준 마지막 성공일로부터 3일이 지난 경우에만 실행합니다. 매일 한국시간 10:17에 가볍게 경과 시간만 확인하며, 3일 전에는 RSS 요청과 수집 테스트를 실행하지 않습니다. GitHub 실행 지연에 따라 간격은 조금 늘어날 수 있습니다. 수동 Run workflow는 즉시 수집합니다. AI 호출이나 토큰 사용은 없습니다.
 - `시놀로지` 등 다른 단어만 포함된 기사는 제외합니다. 제목/요약의 회사 이름을 검사하지만 동명이인·문맥 판단을 완벽히 보장하지는 않습니다.
 - 중복 URL(추적 파라미터 제외) 또는 동일 제목은 추가하지 않습니다. 기존 기사와 수동 썸네일을 보존합니다.
-- 신규 기사에는 RSS의 제목·언론사·날짜·기사 연결 URL을 사용합니다. URL은 구글 뉴스 경유 링크일 수 있습니다. 썸네일이 제공되지 않으면 기본 이미지를 사용합니다. 기사 본문이나 이미지는 별도 크롤링하지 않습니다.
+- 신규 기사는 RSS에서 제목·언론사·날짜를 가져오고, 구글 뉴스 링크를 원문 주소로 해석한 뒤 원문 메타데이터의 og:image 또는 twitter:image를 찾아 로컬 썸네일로 저장합니다. 한 번에 최대 20건을 보완하며, 원문 접근 차단·대표 이미지 미제공·주소 해석 실패 시 기본 이미지를 유지하고 다음 수집 때 재시도합니다. 기존 수동 썸네일은 보존합니다.
 - 화면은 `company/news-data.json`을 읽고 날짜순 정렬·연도 필터·8건 단위 페이지 나누기를 적용합니다. 데이터 조회 실패 시 기존 HTML 목록을 유지합니다.
-- GitHub Pages에서는 Actions 봇 커밋이 Pages 빌드를 유발하지 않는 점을 고려해 공개 저장소의 raw JSON을 읽습니다. 회사 서버로 이관하면 같은 서버의 `company/news-data.json`을 읽습니다. 회사 서버에는 변경된 JSON을 전달하는 배포 과정 또는 회사 API/배치 연결이 필요합니다.
+- GitHub Pages에서는 Actions 봇 커밋이 Pages 빌드를 유발하지 않는 점을 고려해 공개 저장소의 raw JSON과 기사 썸네일을 읽습니다. 회사 서버로 이관하면 같은 서버의 `company/news-data.json`을 읽습니다. 회사 서버에는 변경된 JSON 및 썸네일 파일을 전달하는 배포 과정 또는 회사 API/배치 연결이 필요합니다.
 - 구글 RSS 응답 형식 변경·차단 시 수집 작업이 실패할 수 있습니다. 이때 기존 데이터는 유지하고 Actions에 실패 기록을 남깁니다.
 
 ### 실행·설정
 
 - GitHub Actions → Collect Sinor news → Run workflow에서 즉시 수집할 수 있습니다. API 비밀키 등록은 필요 없습니다.
-- 로컬 수동 수집: `python3 scripts/collect-news.py` (기본값 구글).
+- 로컬 수동 수집: Python 3.11 이상에서 `python -m pip install -r scripts/news-requirements.txt` 후 `python scripts/collect-news.py` (기본값 구글). 대표 이미지만 보완하려면 `python scripts/collect-news.py --images-only`.
 - 데이터 변경 없는 검증: `python3 scripts/collect-news.py --dry-run`.
-- 테스트: `python3 -m unittest discover -s tests -p test_news.py`.
+- 테스트: `python3 -m unittest discover -s tests -p "test_news*.py"`.
 - 자동 수집 파일: `.github/workflows/collect-news.yml` / `scripts/collect-news.py`.
 - 네이버 공식 API도 선택적으로 지원합니다. `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET` 환경변수 설정 후 `python3 scripts/collect-news.py --source naver`. 구글 기본 수집에는 이 키를 사용하지 않습니다.
 - API 문서: https://developers.naver.com/docs/serviceapi/search/news/news.md
 - 수집한 기사 제목·메타·이미지는 JSON에서 수동 보완할 수 있습니다. 같은 URL/제목의 기존 정보는 후속 수집에서 덮어쓰지 않습니다.
+
+### 같은 소식의 여러 보도 정리
+
+- 동일한 소식의 보도는 최대 3건만 화면에 표시합니다. 실제 수집 기록은 삭제하지 않고 `editorialHidden`으로 표시 여부만 구분합니다.
+- 매일일보 등 특정 매체를 항상 우선하지 않습니다. 주요 통신사·방송사·종합지·경제지 순으로 편집 우선순위를 적용합니다. 이 목록은 실제 기업 매출이나 규모를 실시간 측정한 순위가 아니라 명시적 편집 기준입니다.
+- `company/news-editorial.json`에서 우선 매체·건수·같은 소식의 키워드를 조정합니다. 코웨이라이프솔루션/코라솔의 시놀 제휴 관련 보도는 같은 묶음으로 처리합니다.
+- 그 밖에는 14일 이내이고 제목 유사도가 높은 기사끼리 묶습니다. 모든 의미상 중복을 완벽히 판별하지 않으므로 다른 표기의 같은 소식은 설정에 키워드 규칙을 보완할 수 있습니다.
+- 새로운 주요 매체 보도가 추가되면 같은 묶음을 다시 평가해 대표 기사를 바꿀 수 있습니다. 서로 다른 소식은 개별 표시합니다.

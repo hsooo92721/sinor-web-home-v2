@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from difflib import SequenceMatcher
 import html
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -178,8 +179,11 @@ def main():
     parser.add_argument('--fixture', type=Path, help='Offline Naver response JSON for validation')
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--source', choices=['google', 'naver'], default='google')
+    parser.add_argument('--images-only', action='store_true', help='Backfill preview images without collecting RSS')
     args = parser.parse_args()
-    if args.fixture:
+    if args.images_only:
+        incoming = []
+    elif args.fixture:
         incoming = [record for item in json.loads(args.fixture.read_text())['items']
                     if (record := normalize(item))]
     elif args.source == 'google':
@@ -191,9 +195,21 @@ def main():
         # Fetch every page successfully before touching the published data.
         incoming = fetch_news(client_id, secret)
     existing = json.loads(DATA.read_text())
+    before = json.dumps(existing, ensure_ascii=False)
     merged, added = merge(existing, incoming)
-    print(f'Collected {len(incoming)} matching results; {added} new; {len(merged)} total')
-    if not args.dry_run and merged != existing:
+    editorial_spec = importlib.util.spec_from_file_location('news_editorial', ROOT / 'scripts/news-editorial.py')
+    editorial = importlib.util.module_from_spec(editorial_spec)
+    editorial_spec.loader.exec_module(editorial)
+    merged = editorial.curate(merged)
+    print(f'Collected {len(incoming)} matching results; {added} new; {len(merged)} archived')
+    if not args.dry_run:
+        spec = importlib.util.spec_from_file_location('news_images', ROOT / 'scripts/news-images.py')
+        images = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(images)
+        visible = [item for item in merged if not item.get('editorialHidden')]
+        downloaded = images.enrich_images(visible)
+        print(f'Cached {downloaded} article preview images')
+    if not args.dry_run and json.dumps(merged, ensure_ascii=False) != before:
         temp = DATA.with_suffix('.json.tmp')
         temp.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n')
         temp.replace(DATA)

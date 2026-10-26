@@ -25,7 +25,7 @@
    const response=await fetch(feed,{cache:'no-store',signal:AbortSignal.timeout(12000)});
    if(!response.ok)throw new Error('News data unavailable');
    const data=await response.json();if(!Array.isArray(data)||!data.length)throw new Error('Invalid news data');
-   const records=data.map(item=>{
+   const records=data.filter(item=>item.editorialHidden!==true).map(item=>{
     if(typeof item.title!=='string'||!item.title.trim()||typeof item.meta!=='string'||!Array.isArray(item.date)||item.date.length!==3||!item.date.every(Number.isInteger))throw new Error('Invalid article');
     const [y,m,d]=item.date;const checked=new Date(Date.UTC(y,m-1,d));
     if(checked.getUTCFullYear()!==y||checked.getUTCMonth()!==m-1||checked.getUTCDate()!==d)throw new Error('Invalid article date');
@@ -38,6 +38,7 @@
     const img=document.createElement('img');img.className='news-thumb';img.alt='';img.loading='lazy';img.decoding='async';img.width=640;img.height=346;
     // Only local article thumbnails; API results without an image use the shared placeholder.
     img.src=typeof item.image==='string'&&/^assets\/[a-zA-Z0-9_./-]+$/.test(item.image)&&!item.image.includes('..')?item.image:'assets/news-placeholder.svg';
+    if(githubPreview)img.src=new URL(item.image||'assets/news-placeholder.svg','https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/').href;
     img.addEventListener('error',()=>{img.src='assets/news-placeholder.svg'},{once:true});
     const meta=document.createElement('span');meta.className='news-meta';meta.textContent=item.meta;
     const title=document.createElement('h3');title.textContent=item.title;
