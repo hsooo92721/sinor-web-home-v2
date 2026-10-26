@@ -1,0 +1,31 @@
+/* Figma footer 37:8200: shared by home, company, careers and policy pages. */
+body .app-footer{box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;gap:13px;margin-top:12px;padding:44px 28px 90px;background:#f5f6f7;color:#69737f;font-family:Pretendard,'Apple SD Gothic Neo',sans-serif;letter-spacing:-.0145em}
+body .app-footer .company-info{display:block;width:100%;margin:0}
+body .app-footer .company-info summary{display:flex;align-items:center;justify-content:space-between;gap:13px;min-height:48px;margin:0;padding:0;cursor:pointer;list-style:none;font-size:14px;font-weight:600;line-height:1.5;color:#69737f}
+body .app-footer summary::-webkit-details-marker{display:none}
+body .app-footer .company-info summary::after{content:none}
+body .app-footer .footer-brand{display:flex;align-items:center;gap:7.737px;flex-shrink:0;width:114.4216px;height:30px}
+body .app-footer .footer-symbol{position:relative;display:block;flex-shrink:0;width:64.737px;height:30px}
+body .app-footer .footer-symbol-a{position:absolute;left:0;top:1.326px}
+body .app-footer .footer-symbol-b{position:absolute;right:0;top:0}
+body .app-footer .footer-brand img{display:block;max-width:none;flex-shrink:0;object-fit:contain}
+body .app-footer .footer-business-toggle{display:flex;align-items:center;justify-content:flex-end;white-space:nowrap}
+body .app-footer .company-info summary i{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:48px;height:48px;font-size:18px;transition:transform .2s ease}
+body .app-footer .company-info[open] summary i{transform:rotate(180deg)}
+body .app-footer .company-info .footer-business-content{display:block;margin:0;padding:13px 0 16px}
+body .app-footer .company-info dl{display:grid;gap:6px;margin:0;color:#757f92;font-size:14px;line-height:1.5}
+body .app-footer .company-info dl>div{display:grid;grid-template-columns:114px minmax(0,1fr);align-items:center;gap:10px;margin:0;padding:0}
+body .app-footer .company-info dt{font-weight:700}
+body .app-footer .company-info dd{margin:0;font-weight:400;overflow-wrap:anywhere}
+body .app-footer p.copyright{margin:6px 0 0;color:#757f92;font-size:14px;line-height:1.5;font-weight:400;letter-spacing:-.0145em}
+body .app-footer .footer-primary{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0;padding:0 0 16px}
+body .app-footer .footer-primary a{font-size:16px;font-weight:700;line-height:1.5;color:#424c59;white-space:nowrap;text-decoration:none}
+body .app-footer .footer-secondary{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin:8px 0 0;padding:16px 0 0;border-top:1px solid #e2e5e8}
+body .app-footer .footer-policy-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin:0;padding:0}
+body .app-footer .footer-secondary a{font-size:14px;font-weight:400;line-height:1.5;color:#69737f;white-space:nowrap;text-decoration:none}
+body .app-footer .footer-secondary a.footer-privacy{font-weight:700}
+body .app-footer a:hover{text-decoration:underline;text-underline-offset:3px}
+body .app-footer a:focus-visible,body .app-footer summary:focus-visible{outline:2px solid #4b90e3;outline-offset:4px}
+@media(max-width:380px){body .app-footer .company-info summary{flex-wrap:wrap;gap:8px}body .app-footer .footer-business-toggle{margin-left:auto}body .app-footer .company-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){body .app-footer summary i{transition:none}}
+body.company-page .company-common-footer .app-footer{display:flex}

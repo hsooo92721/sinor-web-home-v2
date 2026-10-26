@@ -97,16 +97,6 @@ searchButton?.addEventListener("click", () => {
 
 window.addEventListener("scroll", updateFloatingState, { passive: true });
 window.addEventListener("resize", () => { fitSidebars(); updateFloatingState(); });
-document.querySelector(".company-info")?.addEventListener("toggle", (event) => {
-  updateFloatingState();
-  if (!event.currentTarget.open) return;
-  requestAnimationFrame(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-    });
-  });
-});
 window.addEventListener("load", updateFloatingState);
 
 // RESPONSIVE SHELL ONLY. Never resize/transform the actual Flutter application.

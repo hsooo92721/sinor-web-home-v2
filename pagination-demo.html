@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/vendor/fontawesome/css/solid.min.css" />
     <link rel="stylesheet" href="./style.css?v=1035" />
     <link rel="stylesheet" href="./design.css?v=20261023-footer-privacy-2" />
-  <link rel="stylesheet" href="./components/pagination.css?v=20261023-3"></head>
+  <link rel="stylesheet" href="./components/pagination.css?v=20261023-3"><link rel="stylesheet" href="./footer.css?v=20261026"></head>
   <body>
     <div class="page-bg" aria-hidden="true"></div>
 
@@ -134,28 +134,12 @@
         </div>
 
         <footer data-figma-node="37:8201,37:8243" class="app-footer" id="appFooter">
-          <img class="footer-logo" src="./assets/sinor-logo-official.png" alt="시놀" />
-
-          <nav class="footer-primary" aria-label="서비스 소개">
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/company">회사소개</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/moim">시놀 모임앱 소개</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/silove">시럽 데이팅 앱 소개</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/download">앱 다운로드</a>
-          </nav>
-
-          <nav class="footer-secondary" aria-label="정책 및 문의">
-            <a target="_blank" rel="noopener noreferrer" href="recruit/">채용</a>
-            <a target="_blank" rel="noopener noreferrer" href="adv/">광고제휴문의</a>
-            <a href="https://sinor.co.kr/terms1" target="_blank" rel="noopener noreferrer">서비스 이용약관</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/privacy1" class="footer-privacy">개인정보 처리방침</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/travel-terms">여행약관</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/domestic-special-terms">국내여행 특별약관</a>
-            <a target="_blank" rel="noopener noreferrer" href="https://sinor.co.kr/child">아동 안전 표준 정책</a>
-          </nav>
-
-          <details class="company-info">
-            <summary>시놀(주) 사업자정보<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
-            <dl>
+  <details class="company-info">
+    <summary><span class="footer-brand" role="img" aria-label="시놀">
+            <span class="footer-symbol"><img class="footer-symbol-a" src="./assets/footer/logo-symbol-a.svg" alt="" width="33.6122" height="27.3554"><img class="footer-symbol-b" src="./assets/footer/logo-symbol-b.svg" alt="" width="28.6901" height="29.9994"></span>
+            <img class="footer-wordmark" src="./assets/footer/logo-wordmark.svg" alt="" width="41.9476" height="23.3047">
+          </span><span class="footer-business-toggle">시놀(주) 사업자정보<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></summary>
+    <div class="footer-business-content"><dl>
               <div><dt>상호명</dt><dd>(주)시놀</dd></div>
               <div><dt>대표자</dt><dd>김민지</dd></div>
               <div><dt>주소</dt><dd>서울 영등포구 의사당대로 83, 오투타워 8층<br>서울 중구 다동 155, 20층 SKT Startup Lab</dd></div>
@@ -165,9 +149,14 @@
               <div><dt>국내결혼중개업</dt><dd>서울-마포-국내-24-0001호</dd></div>
               <div><dt>이메일</dt><dd>help@sinor.co.kr</dd></div>
               <div><dt>문의</dt><dd>02-506-5670</dd></div>
-            </dl><p class="copyright">Copyright © 2026 시놀 All rights reserved.</p>
-          </details>
-        </footer>
+            </dl><p class="copyright">Copyright © 2026 시놀 All rights reserved.</p></div>
+  </details>
+  <nav class="footer-primary" aria-label="서비스 소개"><a href="./company/" target="_blank" rel="noopener noreferrer">회사소개</a><a href="./company/#sinor-service" target="_blank" rel="noopener noreferrer">시놀 모임앱 소개</a><a href="./company/#silove-service" target="_blank" rel="noopener noreferrer">시럽 데이팅 앱 소개</a><a href="https://sinor.co.kr/download" target="_blank" rel="noopener noreferrer">앱 다운로드</a></nav>
+  <nav class="footer-secondary" aria-label="정책 및 문의">
+    <div class="footer-policy-row"><a href="./recruit/" target="_blank" rel="noopener noreferrer">채용</a><a href="./adv/" target="_blank" rel="noopener noreferrer">광고・제휴 문의</a><a href="./policy/terms/" target="_blank" rel="noopener noreferrer">서비스 이용약관</a><a href="./policy/privacy/" target="_blank" rel="noopener noreferrer" class="footer-privacy">개인정보 처리방침</a></div>
+    <div class="footer-policy-row"><a href="./policy/travel/" target="_blank" rel="noopener noreferrer">여행약관</a><a href="./policy/travel-special/" target="_blank" rel="noopener noreferrer">여행특별약관</a><a href="./policy/child-safety/" target="_blank" rel="noopener noreferrer">아동 안전 표준 정책</a></div>
+  </nav>
+</footer>
 
         <nav class="bottom-nav" aria-label="하단 내비게이션">
           <a target="_blank" rel="noopener noreferrer" class="is-active" href="#">홈</a>
@@ -223,5 +212,5 @@
     </div>
 
     <script src="./script.js?v=sidebar-width-only-6"></script>
-  <script type="module" src="./demo/pagination-demo.js"></script></body>
+  <script type="module" src="./demo/pagination-demo.js"></script><script src="./footer.js?v=20261026" defer></script></body>
 </html>
