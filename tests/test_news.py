@@ -73,5 +73,43 @@ class NewsTests(unittest.TestCase):
         self.assertIn('start=101', opener.call_args_list[1].args[0].full_url)
         self.assertEqual(opener.call_args_list[0].args[0].get_header('X-naver-client-id'), 'test-id')
 
+class GoogleNewsTests(unittest.TestCase):
+    def feed(self, title='시놀, 새로운 소식 - 테스트신문', date='Sun, 18 Oct 2026 09:10:00 +0900'):
+        from xml.sax.saxutils import escape
+        return f'''<rss version="2.0"><channel><item><title>{escape(title)}</title>
+        <link>https://news.google.com/rss/articles/test-article</link>
+        <source url="https://example.com">테스트신문</source>
+        <description>{escape(title)}</description><pubDate>{date}</pubDate>
+        </item></channel></rss>'''.encode()
+
+    def test_google_title_publisher_and_dedup_with_existing(self):
+        result = collector.parse_google_feed(self.feed())
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]['title'], '시놀, 새로운 소식')
+        self.assertEqual(result[0]['meta'], '테스트신문 2026.10.18')
+        self.assertEqual(result[0]['source'], 'google-news-rss')
+        existing = collector.normalize(article())
+        self.assertEqual(collector.merge([existing], result)[1], 0)
+
+    def test_wrapped_link_and_revised_title_do_not_duplicate_same_publisher(self):
+        old = collector.normalize(article('코웨이라이프솔루션, 시놀과 맞손…중장년 재혼·결혼정보 서비스 할인'))
+        old['meta'] = '서울경제TV 2026.10.18'
+        new = collector.normalize({**article('코라솔, 시놀과 맞손…중장년 재혼·결혼정보 서비스 할인', 'https://news.google.com/rss/articles/example'), 'publisher': '서울경제TV', 'provider': 'google-news-rss'})
+        self.assertEqual(collector.merge([old], [new])[1], 0)
+
+    def test_invalid_feed_and_irrelevant_results(self):
+        with self.assertRaises(ValueError):collector.parse_google_feed(b'<html>service unavailable</html>')
+        self.assertEqual(collector.parse_google_feed(self.feed('시놀로지 NAS 출시 - 테스트신문')), [])
+        self.assertEqual(collector.parse_google_feed(self.feed(date='not-a-date')), [])
+
+    @patch.object(collector, 'urlopen')
+    def test_google_has_no_api_headers(self, opener):
+        from io import BytesIO
+        opener.return_value = BytesIO(self.feed())
+        self.assertEqual(len(collector.fetch_google_news()), 1)
+        request = opener.call_args.args[0]
+        self.assertTrue(request.full_url.startswith('https://news.google.com/rss/search?'))
+        self.assertNotIn('X-naver-client-secret', request.headers)
+
 
 if __name__ == '__main__':unittest.main()

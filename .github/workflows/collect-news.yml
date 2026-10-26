@@ -20,27 +20,9 @@ jobs:
           python-version: '3.12'
       - name: Validate collector
         run: python -m unittest discover -s tests -p 'test_news.py'
-      - name: Check API configuration
-        id: config
-        env:
-          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
-          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: |
-          if [ -n "$NAVER_CLIENT_ID" ] && [ -n "$NAVER_CLIENT_SECRET" ]; then
-            echo 'ready=true' >> "$GITHUB_OUTPUT"
-          else
-            echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo '::notice::Register NAVER_CLIENT_ID and NAVER_CLIENT_SECRET to enable live news collection.'
-            echo 'Live collection is waiting for Naver API repository secrets.' >> "$GITHUB_STEP_SUMMARY"
-          fi
-      - name: Collect latest news
-        if: steps.config.outputs.ready == 'true'
-        env:
-          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
-          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: python scripts/collect-news.py
+      - name: Collect latest Google News results (no API key)
+        run: python scripts/collect-news.py --source google
       - name: Publish news data
-        if: steps.config.outputs.ready == 'true'
         run: |
           git add company/news-data.json
           if git diff --cached --quiet; then

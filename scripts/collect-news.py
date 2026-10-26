@@ -1,7 +1,8 @@
-"""Collect Sinor news through the official Naver Search API (standard library only)."""
+"""Collect Sinor news from public Google News RSS; Naver API remains optional."""
 import argparse
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
+from difflib import SequenceMatcher
 import html
 import json
 import os
@@ -9,6 +10,7 @@ from pathlib import Path
 import re
 import sys
 import time
+import xml.etree.ElementTree as ET
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
@@ -51,7 +53,7 @@ def normalize(item):
     published = published.astimezone(KST)
     if published > datetime.now(KST) + timedelta(days=1):
         raise ValueError('Future article date')
-    source = urlsplit(original).hostname.removeprefix('www.')
+    source = plain(item.get('publisher')) or urlsplit(original).hostname.removeprefix('www.')
     return {
         'title': title,
         'meta': f'{source} {published:%Y.%m.%d}',
@@ -60,7 +62,7 @@ def normalize(item):
         'year': str(published.year),
         'publishedAt': published.isoformat(),
         'image': 'assets/news-placeholder.svg',
-        'source': 'naver-search',
+        'source': item.get('provider', 'naver-search'),
     }
 
 
@@ -72,6 +74,15 @@ def merge(existing, incoming):
     for item in incoming:
         u, t = url_key(item['url']), title_key(item['title'])
         if u in urls or t in titles:
+            continue
+        # RSS may wrap an existing publisher URL and use a slightly revised headline.
+        publisher = re.sub(r'\s+\d{4}\.\d{2}\.\d{2}$', '', item['meta'])
+        if item.get('source') == 'google-news-rss' and any(
+            old['date'] == item['date']
+            and re.sub(r'\s+\d{4}\.\d{2}\.\d{2}$', '', old['meta']) == publisher
+            and SequenceMatcher(None, title_key(old['title']), t).ratio() >= 0.86
+            for old in result
+        ):
             continue
         result.append(item)
         urls.add(u)
@@ -116,14 +127,63 @@ def fetch_news(client_id, client_secret):
     return collected
 
 
+def parse_google_feed(payload):
+    root = ET.fromstring(payload)
+    if root.tag != 'rss' or root.find('channel') is None:
+        raise ValueError('Unexpected Google News RSS response')
+    records = []
+    for element in root.findall('./channel/item'):
+        publisher = plain(element.findtext('source'))
+        title = plain(element.findtext('title'))
+        suffix = ' - ' + publisher
+        if publisher and title.endswith(suffix):
+            title = title[:-len(suffix)]
+        try:
+            record = normalize({
+                'title': title,
+                'description': element.findtext('description', ''),
+                'link': element.findtext('link', ''),
+                'pubDate': element.findtext('pubDate', ''),
+                'publisher': publisher,
+                'provider': 'google-news-rss',
+            })
+        except (ValueError, TypeError, KeyError, OverflowError):
+            print('Skipping an RSS result with invalid URL/date metadata', file=sys.stderr)
+            continue
+        if record:
+            records.append(record)
+    return records
+
+
+def fetch_google_news():
+    # A recent window prioritizes new coverage; collected history is retained forever.
+    query = urlencode({'q': '"시놀" when:30d', 'hl': 'ko', 'gl': 'KR', 'ceid': 'KR:ko'})
+    request = Request('https://news.google.com/rss/search?' + query,
+                      headers={'User-Agent': 'SinorNewsCollector/1.0'})
+    for attempt in range(3):
+        try:
+            with urlopen(request, timeout=25) as response:
+                payload = response.read(4_000_001)
+            if len(payload) > 4_000_000:
+                raise ValueError('RSS response too large')
+            return parse_google_feed(payload)
+        except Exception:
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fixture', type=Path, help='Offline Naver response JSON for validation')
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--source', choices=['google', 'naver'], default='google')
     args = parser.parse_args()
     if args.fixture:
         incoming = [record for item in json.loads(args.fixture.read_text())['items']
                     if (record := normalize(item))]
+    elif args.source == 'google':
+        incoming = fetch_google_news()
     else:
         client_id, secret = os.environ.get('NAVER_CLIENT_ID'), os.environ.get('NAVER_CLIENT_SECRET')
         if not client_id or not secret:
