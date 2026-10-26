@@ -49,7 +49,7 @@ function validate(input){
  const customCss=String(input.customCss||'');if(customCss.length>200000)throw new Error('스타일 코드는 200,000자 이하로 입력해 주세요.');
  const bodyHtml=sanitizeHtml(input.bodyHtml);
  if(input.status==='published'&&!bodyHtml.replace(/<[^>]*>/g,'').trim()&&!/<img\b/.test(bodyHtml))throw new Error('공개할 칼럼의 본문을 입력해 주세요.');
- return {...input,title,bodyHtml,customCss,keywords,readMinutes,displayDate,subtitle:String(input.subtitle||'').trim().slice(0,300),expertName:String(input.expertName||'').trim().slice(0,100),excerpt:String(input.excerpt||'').trim().slice(0,240),author:String(input.author||'시놀').trim().slice(0,60),thumbnail:safeUrl(input.thumbnail||'',true),featured:!!input.featured};
+ return {...input,title,bodyHtml,customCss,styleId:String(input.styleId||'law'),keywords,readMinutes,displayDate,subtitle:String(input.subtitle||'').trim().slice(0,300),expertName:String(input.expertName||'').trim().slice(0,100),excerpt:String(input.excerpt||'').trim().slice(0,240),author:String(input.author||'시놀').trim().slice(0,60),thumbnail:safeUrl(input.thumbnail||'',true),featured:!!input.featured};
 }
 export const cms={
  async categories(){return mode==='api'?request('/columns/categories'):(await store('categories','getAll')).sort((a,b)=>a.order-b.order)},
