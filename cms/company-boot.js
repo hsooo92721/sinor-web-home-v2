@@ -1,3 +1,3 @@
-let version='8';try{const url=new URL('company-release.json',import.meta.url);url.searchParams.set('_',Date.now());const r=await fetch(url,{cache:'no-store'});if(r.ok){const release=await r.json();if(typeof release.version==='string'&&/^[a-zA-Z0-9_-]{1,40}$/.test(release.version))version=release.version}}catch{}
+let version='9';try{const url=new URL('company-release.json',import.meta.url);url.searchParams.set('_',Date.now());const r=await fetch(url,{cache:'no-store'});if(r.ok){const release=await r.json();if(typeof release.version==='string'&&/^[a-zA-Z0-9_-]{1,40}$/.test(release.version))version=release.version}}catch{}
 const css=[...document.querySelectorAll('link[rel=stylesheet]')].find(l=>new URL(l.href).pathname.endsWith('/company/company.css'));if(css){const url=new URL('../company/company.css',import.meta.url);url.searchParams.set('v','cms-'+version);css.href=url.href}
 await import(new URL('company-public.js?v='+version,import.meta.url).href);
