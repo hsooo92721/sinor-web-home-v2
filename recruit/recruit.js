@@ -1,8 +1,39 @@
 (()=>{
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  const tabs=[...document.querySelectorAll('[data-benefit]')],panels=[...document.querySelectorAll('[role="tabpanel"]')];
- function selectBenefit(index){tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1;panels[i].hidden=i!==index;panels[i].classList.remove('panel-enter');if(i===index&&!reduce.matches)requestAnimationFrame(()=>panels[i].classList.add('panel-enter'));});}
- tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectBenefit(i));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowDown'||e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();selectBenefit(next);tabs[next].focus();});});
+ const benefitList=document.querySelector('.benefit-tabs'),benefitPanels=document.querySelector('.benefit-panels'),mobileBenefits=matchMedia('(max-width:760px)');
+ let selectedBenefit=0;
+ function selectBenefit(index){
+  selectedBenefit=index;
+  tabs.forEach((tab,i)=>{
+   const open=i===index;
+   if(mobileBenefits.matches){tab.removeAttribute('aria-selected');tab.setAttribute('aria-expanded',String(open));tab.tabIndex=0;}
+   else{tab.removeAttribute('aria-expanded');tab.setAttribute('aria-selected',String(open));tab.tabIndex=open?0:-1;}
+   panels[i].hidden=!open;panels[i].classList.remove('panel-enter');
+   if(open&&!mobileBenefits.matches&&!reduce.matches)requestAnimationFrame(()=>panels[i].classList.add('panel-enter'));
+  });
+ }
+ function layoutBenefits(){
+  const mobile=mobileBenefits.matches;
+  if(mobile)benefitList.removeAttribute('role');else benefitList.setAttribute('role','tablist');
+  tabs.forEach((tab,i)=>{
+   tab.setAttribute('role',mobile?'button':'tab');
+   panels[i].setAttribute('role',mobile?'region':'tabpanel');
+   if(mobile){tab.after(panels[i]);panels[i].removeAttribute('tabindex');}
+   else{benefitPanels.append(panels[i]);panels[i].tabIndex=0;}
+  });
+  if(!mobile&&selectedBenefit<0)selectedBenefit=0;
+  selectBenefit(selectedBenefit);
+ }
+ tabs.forEach((tab,i)=>{
+  tab.addEventListener('click',()=>selectBenefit(mobileBenefits.matches&&selectedBenefit===i?-1:i));
+  tab.addEventListener('keydown',e=>{
+   if(mobileBenefits.matches)return;
+   let next;if(e.key==='ArrowDown'||e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;
+   e.preventDefault();selectBenefit(next);tabs[next].focus();
+  });
+ });
+ mobileBenefits.addEventListener('change',layoutBenefits);layoutBenefits();
  const filters=[...document.querySelectorAll('[data-filter]')],roles=[...document.querySelectorAll('[data-job]')];filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));roles.forEach(row=>row.hidden=button.dataset.filter!=='전체'&&row.dataset.category!==button.dataset.filter);}));
  const dialog=document.querySelector('#jobDialog');let jobsPromise,opener;
  const getJobs=()=>jobsPromise||(jobsPromise=fetch('jobs-data.json').then(r=>{if(!r.ok)throw Error('직무 정보를 불러오지 못했습니다.');return r.json()}).catch(error=>{jobsPromise=null;throw error}));
