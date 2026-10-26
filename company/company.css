@@ -226,3 +226,4 @@
 .company-page .news-year-control{position:relative;display:block}
 .company-page #newsYear{display:block;appearance:none;-webkit-appearance:none;width:100%;min-width:140px;padding:10px 44px 10px 15px;cursor:pointer}
 .company-page .news-year-control>i{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;color:#697a92;pointer-events:none}
+.partner-logo:has(.partner-logo-credit){display:flex;flex-direction:column;gap:8px}.partner-logo-credit{font-size:10px;line-height:1.4;color:#687386;text-align:center;max-height:40px;overflow:auto}.partner-logo-credit a{color:inherit}

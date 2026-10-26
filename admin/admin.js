@@ -1,5 +1,5 @@
 import {installColumnComposer} from './column-composer.js';
-import {companyAdmin} from './company-admin.js';
+import {companyAdmin} from './company-admin.js?v=2';
 import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
