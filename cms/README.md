@@ -84,3 +84,11 @@
 추가 칼럼 필드: subtitle(최대 300자), expertName(최대 100자, 선택), readMinutes(1~120 정수), displayDate(YYYY-MM-DD). 회사 API는 이 필드도 저장·반환해야 합니다. displayDate는 독자에게 보이는 날짜이며 실제 공개 일시 publishedAt과 분리됩니다.
 
 ‘아임웹 HTML 붙여넣기’는 시놀칼럼 작업실의 HTML 전체를 받습니다. .sinor-column 내부의 표준 제목·부제목·메타 정보를 읽어 상단 필드로 옮기고 본문과 분리하여 중복 제목을 방지합니다. 공통 디자인을 사용하며 외부 HTML의 script/style은 실행·저장하지 않습니다. 가져온 본문도 비주얼 에디터에서 수정할 수 있습니다. 임의 HTML의 모든 스타일을 그대로 재현하는 범용 웹페이지 임포터는 아닙니다.
+
+## 칼럼 키워드와 메타 정보
+
+게시 설정의 ‘키워드 (쉼표로 구분)’는 keywords 배열로 저장합니다. 쉼표·전각 쉼표 기준으로 나누며 공백·빈 항목·대소문자 중복을 정리합니다. 최대 30개, 항목당 60자입니다. 기존 keywords 문자열도 읽을 수 있습니다. 아임웹 HTML에 meta[name=keywords]가 있으면 가져오기에서 채웁니다.
+
+독자 상세는 글마다 title, description(소개글→부제목→본문 순), meta keywords, author, Open Graph, canonical 및 Article JSON-LD를 생성합니다. 미리보기와 브라우저 저장 데모는 noindex이며, 조회 실패 시 이전 글의 메타 정보를 제거합니다. 키워드는 접근성 기능이 아니며 Google은 meta keywords를 검색 순위에 사용하지 않습니다.
+
+현재는 클라이언트 렌더링입니다. 회사 API는 keywords 배열을 저장·반환하고, 실제 운영에서는 같은 글별 메타 정보·canonical·구조화 데이터를 서버 HTML 또는 사전 생성 HTML의 head에도 렌더링해야 합니다. 브라우저 데모의 로컬 글은 검색 로봇과 공유되지 않습니다. 소셜 공유 크롤러와 검색 노출을 이 데모만으로 검증한 것은 아닙니다.

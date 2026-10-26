@@ -1,0 +1,1 @@
+export function normalizeKeywords(value){const items=Array.isArray(value)?value:String(value||'').split(/[,，]/);const seen=new Set();return items.map(v=>String(v).trim()).filter(v=>{const key=v.toLocaleLowerCase();if(!v||seen.has(key))return false;seen.add(key);return true})}
