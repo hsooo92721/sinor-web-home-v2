@@ -59,7 +59,7 @@
 }
 @media(max-width:600px){
  .company-page .news-grid{grid-template-columns:1fr}
- .company-page .news-thumb{display:block}
+ .company-page .news-thumb{display:none}
  .company-page .news-item>.news-meta{padding:21px 23px 0}
  .company-page .news-item h3{padding:12px 23px 23px}
 }
@@ -135,7 +135,7 @@
 @media(max-width:900px){.company-page .company-mobile-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.company-page .company-mobile-nav a{font-size:14px}}
 @media(max-width:600px){
  .company-page .news-grid{grid-template-columns:1fr}
- .company-page .news-thumb{display:block}
+ .company-page .news-thumb{display:none}
  .company-page .company-mobile-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
  .company-page .news-item h3{font-size:20px}
 }
@@ -195,7 +195,7 @@
 @media(max-width:1000px){.company-page .timeline-year>summary.timeline-year-label{width:120px}.company-page .timeline-year>summary.timeline-year-label h2{font-size:40px}.company-page .timeline-year>.timeline-events{margin-left:155px}}
 @media(max-width:600px){.company-page details.timeline-year{min-height:80px}.company-page .timeline-year>summary.timeline-year-label{float:none;width:100%;margin-bottom:24px}.company-page .timeline-year>summary.timeline-year-label h2{font-size:32px}.company-page .timeline-year>.timeline-events{margin-left:8px}}
 
-/* Compact press thumbnails on desktop and mobile. */
+/* Press thumbnails appear on desktop; mobile uses text-only cards. */
 @media(min-width:601px){.company-page .news-thumb{height:150px;aspect-ratio:auto;object-fit:cover}}
 @media(min-width:601px) and (max-width:1000px){.company-page .news-thumb{height:120px}}
 
@@ -220,7 +220,7 @@
 
 .company-page .header .section-brand{display:flex;align-items:center;gap:15px;white-space:nowrap}.company-page .header .section-brand>span{border-left:1px solid #d7dce4;padding-left:15px;font-size:18px;font-weight:600;color:#4e5968;line-height:1.5;letter-spacing:-.02em}@media(max-width:1100px){.company-page .header .section-brand{gap:10px}.company-page .header .section-brand>span{font-size:16px;padding-left:10px}}
 
-@media(max-width:600px){.company-page .news-thumb{display:block;height:170px;aspect-ratio:auto;object-fit:cover}}
+@media(max-width:600px){.company-page .news-thumb{display:none}}
 
 /* Keep the year selector arrow inside its reserved right inset. */
 .company-page .news-year-control{position:relative;display:block}
