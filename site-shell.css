@@ -79,3 +79,8 @@ body.company-page .section-heading,body.recruit-page .career-section-head{margin
 
 /* Privacy policy emphasis in every common footer, including older markup. */
 body .app-footer .footer-secondary a.footer-privacy,body .app-footer .footer-secondary a[href*="policy/privacy"],body .app-footer .footer-secondary a[href*="privacy1"]{font-weight:700!important}
+
+/* Keep mobile company section tabs below the sticky shared header. */
+@media(max-width:900px){
+ body.company-page .company-mobile-nav{position:sticky;top:var(--site-header-height);z-index:59;background:#fff}
+}
