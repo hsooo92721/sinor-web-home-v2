@@ -15,6 +15,16 @@ for page in ROOT.rglob('*.html'):
     base_dir = (page.parent / base[1]).resolve() if base else page.parent
     prefix = Path(os.path.relpath(ROOT, base_dir)).as_posix() + '/'
     footer = template.replace('="../', '="' + prefix)
+    # Footer-linked inner pages navigate to each other in the current tab.
+    # Preserve home prototype and external-link behavior.
+    if page.parent != ROOT:
+        def current_tab(match):
+            tag = match.group(0)
+            href = re.search(r'href="([^"]+)"', tag)
+            if href and not re.match(r'(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//)', href[1]):
+                tag = tag.replace(' target="_blank"', '').replace(' rel="noopener noreferrer"', '')
+            return tag
+        footer = re.sub(r'<a\b[^>]*>', current_tab, footer)
     source = re.sub(r'<footer\b[^>]*class="[^"]*\bapp-footer\b[^>]*>.*?</footer>', lambda _: footer, source, flags=re.S)
     source = re.sub(r'<link\b[^>]*href="[^"]*footer\.css[^\"]*"[^>]*>', '', source)
     source = re.sub(r'<script\b[^>]*src="[^"]*footer\.js[^\"]*"[^>]*>\s*</script>', '', source)
