@@ -46,9 +46,10 @@ function validate(input){
  const readMinutes=Number(input.readMinutes??6);if(!Number.isInteger(readMinutes)||readMinutes<1||readMinutes>120)throw new Error('읽는 시간은 1~120분으로 입력해 주세요.');
  const displayDate=String(input.displayDate||'');if(displayDate&&(!/^\d{4}-\d{2}-\d{2}$/.test(displayDate)||Number.isNaN(Date.parse(displayDate))||new Date(displayDate).toISOString().slice(0,10)!==displayDate))throw new Error('날짜를 확인해 주세요.');
  const keywords=normalizeKeywords(input.keywords);if(keywords.length>30||keywords.some(k=>k.length>60))throw new Error('키워드는 최대 30개, 각 60자까지 입력할 수 있어요.');
+ const customCss=String(input.customCss||'');if(customCss.length>200000)throw new Error('스타일 코드는 200,000자 이하로 입력해 주세요.');
  const bodyHtml=sanitizeHtml(input.bodyHtml);
  if(input.status==='published'&&!bodyHtml.replace(/<[^>]*>/g,'').trim()&&!/<img\b/.test(bodyHtml))throw new Error('공개할 칼럼의 본문을 입력해 주세요.');
- return {...input,title,bodyHtml,keywords,readMinutes,displayDate,subtitle:String(input.subtitle||'').trim().slice(0,300),expertName:String(input.expertName||'').trim().slice(0,100),excerpt:String(input.excerpt||'').trim().slice(0,240),author:String(input.author||'시놀').trim().slice(0,60),thumbnail:safeUrl(input.thumbnail||'',true),featured:!!input.featured};
+ return {...input,title,bodyHtml,customCss,keywords,readMinutes,displayDate,subtitle:String(input.subtitle||'').trim().slice(0,300),expertName:String(input.expertName||'').trim().slice(0,100),excerpt:String(input.excerpt||'').trim().slice(0,240),author:String(input.author||'시놀').trim().slice(0,60),thumbnail:safeUrl(input.thumbnail||'',true),featured:!!input.featured};
 }
 export const cms={
  async categories(){return mode==='api'?request('/columns/categories'):(await store('categories','getAll')).sort((a,b)=>a.order-b.order)},
