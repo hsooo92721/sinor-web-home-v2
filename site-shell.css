@@ -87,3 +87,5 @@ body .app-footer .footer-secondary a.footer-privacy,body .app-footer .footer-sec
 }
 
 @media(max-width:900px){body.company-page .company-page-heading{display:none}}
+
+@media(max-width:900px){body.company-page:not(.page-overview) main>.section{padding-top:12px}}
