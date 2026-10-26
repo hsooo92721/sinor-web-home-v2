@@ -6,7 +6,7 @@ import {normalizeKeywords} from '../cms/keywords.js';
 import {installColumnComposer,defaultColumnBody} from './column-composer.js?v=2';
 import {today,fieldText,metadataText,installHtmlImport,renderHeader,importColumnHtml} from '../cms/column-document.js';
 import {companyAdmin} from './company-admin.js?v=8';
-import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js';
+import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=15';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;
