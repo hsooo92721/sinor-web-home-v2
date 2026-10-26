@@ -162,5 +162,5 @@ function updateBodyPeople() {
 window.addEventListener("load", fitSidebars);
 document.fonts?.ready.then(fitSidebars);
 fitSidebars();
-hydrateColumnCards();
+// CMS module supplies the home column cards.
 updateFloatingState();
