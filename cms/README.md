@@ -112,3 +112,21 @@ HTML 편집 버튼은 어두운 배경, 고정폭 글꼴, 줄 번호, 태그·�
 - `DELETE /admin/columns/styles/:id` → 204. 기본 스타일 및 사용 중인 스타일 삭제 거부.
 - 스타일 필드: id, name, primary/text/muted/surface/insight(HEX), bodySize, headingSize, lineHeight, radius, font(sans/serif), extraCss.
 - 칼럼 API는 styleId를 저장·반환합니다. 서버가 처음 구축될 때 law와 travel 기본 스타일도 함께 등록해야 합니다. 운영 HTML/SSR에서도 동일 스타일을 적용해야 합니다.
+
+## 로고 검색 보완
+
+기관명 검색에서 Wikidata 한글/영문 기관 식별 → P154 로고 파일 조회 → 영문명 Commons 보조 검색을 병행합니다. P856 홈페이지가 있으면 /favicon.ico 사이트 아이콘도 별도 후보로 표시합니다. 해당 데이터에 없는 기관이나 정식 로고가 없는 기관도 있으므로 결과를 보장하지 않습니다. 홈페이지 아이콘은 실제 로고와 구분하고 로드 실패 시 적용 버튼을 비활성화합니다.
+
+홈페이지 주소의 사이트 아이콘 후보, 직접 이미지 URL 입력, 웹 이미지 검색 링크도 제공합니다. 직접 입력한 이미지는 URL 참조로 저장하며 미디어 서버에 복제하지 않습니다. 운영 API 모드는 기존 /admin/company/partners/logos 계약을 유지하고 검색 제공자는 서버에서 교체할 수 있습니다.
+
+## 협력사 구분과 다중 선택
+
+협력사 관리의 ‘구분별 보기’에서 기본 구분과 추가 구분을 필터링합니다. ‘구분 추가’는 1~40자 이름을 받고 중복 이름을 막습니다. 새 구분은 파트너 영역에 구분명별로 공개되며, 비어 있으면 독자 화면에 보이지 않습니다. 이미지가 없는 항목은 기관명으로 표시합니다.
+
+카드 체크박스와 ‘현재 목록 전체 선택’으로 다중 선택한 뒤 구분을 한꺼번에 변경합니다. 선택은 검색·구분 필터를 바꿔도 유지하며 필터 밖 선택이 있으면 표시합니다. 일괄 변경은 선택 항목의 group만 바꾸고 이름·이미지·출처·순서는 유지합니다. 데모에서는 하나의 IndexedDB 트랜잭션으로 갱신하여 부분 변경을 방지합니다. 구분 데이터는 기존 회사 콘텐츠 DB의 partner-groups 키에 저장합니다.
+
+회사 API 추가 계약:
+- `GET /company/partner-groups` → `[{id,name,layout}]`. 기본 social/partner/directory를 포함합니다.
+- `POST /admin/company/partner-groups` → 새 구분 객체 `{id,name,layout:'logos'}` 저장 및 반환.
+- `PUT /admin/company/partners/bulk-group` → `{ids:[선택 ID],group:대상 구분 ID}`, 응답은 변경 후 전체 협력사 배열.
+- 단건 협력사 저장도 동적 구분 ID를 허용합니다. 서버는 모든 ID와 구분 존재 여부·권한을 검증하고 일괄 변경은 원자적으로 처리해야 합니다. 새 구분으로 기존 이미지 없는 항목을 이동할 수 있습니다.
