@@ -4,7 +4,8 @@ body .app-footer .company-info{display:block;width:100%;margin:0}
 body .app-footer .company-info summary{display:flex;align-items:center;justify-content:space-between;gap:13px;min-height:48px;margin:0;padding:0;cursor:pointer;list-style:none;font-size:14px;font-weight:600;line-height:1.5;color:#69737f}
 body .app-footer summary::-webkit-details-marker{display:none}
 body .app-footer .company-info summary::after{content:none}
-body .app-footer .footer-brand{display:flex;align-items:center;gap:7.737px;flex-shrink:0;width:114.4216px;height:30px}
+body .app-footer .footer-brand{display:block;flex-shrink:0;width:102.97944px;height:27px}
+body .app-footer .footer-brand-art{display:flex;align-items:center;gap:7.737px;width:114.4216px;height:30px;transform:scale(.9);transform-origin:top left}
 body .app-footer .footer-symbol{position:relative;display:block;flex-shrink:0;width:64.737px;height:30px}
 body .app-footer .footer-symbol-a{position:absolute;left:0;top:1.326px}
 body .app-footer .footer-symbol-b{position:absolute;right:0;top:0}
