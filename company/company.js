@@ -3,7 +3,8 @@
  const hash=location.hash.slice(1);if(document.body.classList.contains('page-overview')&&legacy[hash]){location.replace(new URL(legacy[hash],document.baseURI).href);return;}
  if(document.querySelector('#newsYear')){
 
- const year=document.querySelector('#newsYear'),search=document.querySelector('#newsSearch'),items=[...document.querySelectorAll('.news-item')],count=document.querySelector('#newsCount'),pager=document.querySelector('#newsPagination'),empty=document.querySelector('#newsEmpty');
+ let items=[...document.querySelectorAll('.news-item')];
+ const year=document.querySelector('#newsYear'),search=document.querySelector('#newsSearch'),count=document.querySelector('#newsCount'),pager=document.querySelector('#newsPagination'),empty=document.querySelector('#newsEmpty');
  const pageSize=8;let page=1,filtered=items;
  function render(moveFocus=false){
   const pages=Math.ceil(filtered.length/pageSize);page=Math.max(1,Math.min(page,pages||1));items.forEach(item=>item.hidden=true);filtered.slice((page-1)*pageSize,page*pageSize).forEach(item=>item.hidden=false);
@@ -14,6 +15,43 @@
  }
  function filter(){const term=search.value.trim().toLocaleLowerCase();filtered=items.filter(item=>(year.value==='all'||year.value===item.dataset.year)&&item.textContent.toLocaleLowerCase().includes(term));page=1;render();}
  year.addEventListener('change',filter);search.addEventListener('input',filter);filter();
+ function dateKey(item){return item.date.map(n=>String(n).padStart(2,'0')).join('-')+'T'+(item.publishedAt||'');}
+ async function loadNews(){
+  // Scheduled GITHUB_TOKEN commits do not rebuild legacy GitHub Pages. Read the
+  // public repository feed there; a company deployment uses its own relative feed.
+  const githubPreview=location.hostname==='hsooo92721.github.io'&&location.pathname.startsWith('/sinor-web-home-v2/');
+  const feed=githubPreview?'https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/news-data.json':new URL('news-data.json',document.baseURI).href;
+  try{
+   const response=await fetch(feed,{cache:'no-store',signal:AbortSignal.timeout(12000)});
+   if(!response.ok)throw new Error('News data unavailable');
+   const data=await response.json();if(!Array.isArray(data)||!data.length)throw new Error('Invalid news data');
+   const records=data.map(item=>{
+    if(typeof item.title!=='string'||!item.title.trim()||typeof item.meta!=='string'||!Array.isArray(item.date)||item.date.length!==3||!item.date.every(Number.isInteger))throw new Error('Invalid article');
+    const [y,m,d]=item.date;const checked=new Date(Date.UTC(y,m-1,d));
+    if(checked.getUTCFullYear()!==y||checked.getUTCMonth()!==m-1||checked.getUTCDate()!==d)throw new Error('Invalid article date');
+    const url=new URL(item.url);if(!['https:','http:'].includes(url.protocol))throw new Error('Invalid article URL');
+    return {...item,url:url.href,year:String(y)};
+   }).sort((a,b)=>dateKey(b).localeCompare(dateKey(a)));
+   const fragment=document.createDocumentFragment();
+   const nextItems=records.map(item=>{
+    const a=document.createElement('a');a.className='news-item';a.dataset.year=item.year;a.dataset.date=item.date.join('-');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',item.title);
+    const img=document.createElement('img');img.className='news-thumb';img.alt='';img.loading='lazy';img.decoding='async';img.width=640;img.height=346;
+    // Only local article thumbnails; API results without an image use the shared placeholder.
+    img.src=typeof item.image==='string'&&/^assets\/[a-zA-Z0-9_./-]+$/.test(item.image)&&!item.image.includes('..')?item.image:'assets/news-placeholder.svg';
+    img.addEventListener('error',()=>{img.src='assets/news-placeholder.svg'},{once:true});
+    const meta=document.createElement('span');meta.className='news-meta';meta.textContent=item.meta;
+    const title=document.createElement('h3');title.textContent=item.title;
+    a.append(img,meta,title);fragment.append(a);return a;
+   });
+   const chosenYear=year.value;const years=[...new Set(records.map(item=>item.year))].sort((a,b)=>Number(b)-Number(a));
+   const all=document.createElement('option');all.value='all';all.textContent='전체 연도';year.replaceChildren(all);
+   years.forEach(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;year.append(option)});
+   year.value=years.includes(chosenYear)?chosenYear:'all';
+   document.querySelector('#newsResults').replaceChildren(fragment);items=nextItems;filter();
+  }catch(error){console.warn('최신 기사 데이터를 불러오지 못해 저장된 목록을 표시합니다.');}
+ }
+ loadNews();
+
  }
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  // Directional, one-time reveals are scoped to content, never navigation or controls.
