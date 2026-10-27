@@ -165,43 +165,11 @@ social HTML은 company-boot.js가 company-release.json 버전을 캐시 우회 �
 
 회사 API는 구분 객체의 displayArea를 저장·반환하고, 구분 수정에서 social-carousel 선택 시 다른 구분은 partners로 바꾸는 작업을 원자적으로 처리해야 합니다. 기존 데이터 마이그레이션 역시 서버에 적용해야 합니다.
 
-## 디자인 모드 — 페이지 관리 (1차)
-
-- 관리자 상단 및 메뉴의 디자인 모드: `/admin/design/`
-- 현재 16개 실제 독자 페이지를 `pages-seed.json`의 경로·계층으로 초기 등록합니다. 회사소개 하위 사회공헌/연혁/언론보도 계층을 유지합니다. 기존 리디렉션·관리자·칼럼 상세 등 시스템 경로는 새 페이지 URL로 사용할 수 없습니다.
-- 페이지 추가, 상위 페이지 지정, 메뉴명, URL, 페이지 제목·설명, 공유 대표 이미지, 메뉴 표시 여부를 설정합니다. 페이지 목록을 접고 펼치거나 하위 목록을 접을 수 있습니다. 저장 후 가운데 iframe에서 결과를 봅니다.
-- 새 페이지는 공통 헤더/푸터와 제목·설명·대표 이미지의 기본 틀로 생성합니다. 본문·이미지 블록 편집 및 순서 조정은 아직 포함하지 않았습니다.
-- 삭제는 soft delete이며 메뉴와 직접 접근에서 제외하고 ‘삭제된 페이지’에서 복원합니다. 하위 페이지가 남아 있으면 삭제를 막습니다. 홈은 삭제·URL 변경을 막습니다. 메뉴 숨김은 페이지 삭제와 다르므로 직접 주소 접근은 유지됩니다.
-- 기존 페이지 URL을 바꾸면 sourcePath는 유지해 원본 레이아웃을 재사용하고, 이전 경로는 aliases로 기록해 새 주소로 이동합니다. 각 경로의 사용 여부(삭제된 페이지와 예약된 이전 경로 포함)를 검사합니다. 다른 화면의 수정과 충돌하면 version 검사로 저장을 막습니다.
-
-### 데모와 운영 범위
-
-현재는 같은 사이트 경로·같은 브라우저의 별도 IndexedDB `sinor-site-pages`에 저장합니다. 기존 회사/칼럼 저장소를 수정하거나 비우지 않습니다. 이 브라우저에만 설정·새 페이지·삭제 상태가 반영됩니다. 새 페이지 링크는 푸터의 추가 페이지 영역에 나오고, 기존 메뉴 링크는 설정된 이름·주소·표시 여부를 반영합니다.
-
-GitHub Pages에는 동적 URL 재작성 서버가 없으므로 새 URL 및 변경된 기존 URL은 404.html의 클라이언트 라우터로 표시합니다. 따라서 임의 신규 URL의 HTTP 상태는 404일 수 있으며 검색 노출용 운영 라우팅으로 사용하면 안 됩니다. `/pages/view/?pageId=ID`는 관리자 미리보기용 정상 정적 경로입니다. 기존 페이지 원본 파일을 지우지 않고 브라우저 런타임에서 삭제 상태를 처리합니다. 다른 브라우저에서 원본 소스 URL이 삭제되는 것은 아닙니다.
-
-실제 운영에는 회사 서버가 저장된 경로마다 200 HTML을 제공하고, 삭제는 실제 404/410, 이전 주소는 301 리디렉션, 제목/설명/og:image/canonical은 서버 HTML head에 출력해야 합니다. 서버 및 미디어 업로드 인증·권한도 회사 환경에서 적용해야 합니다. JavaScript만으로 모든 검색/소셜 공유 봇의 프리뷰가 완성된다고 보장하지 않습니다.
-
-### 회사 API 계약
-
-`pages-client.js`에 저장 접근을 분리했습니다. mode=api 시 다음을 사용합니다.
-
-| 메서드 | 경로 | 응답 |
-| --- | --- | --- |
-| GET | /admin/site/pages | 삭제 포함 전체 페이지 배열 |
-| GET | /site/pages | 공개 라우팅·메뉴 정보 배열 (기존 정적 경로의 삭제를 처리하려면 삭제 경로 tombstone 포함, 또는 서버에서 직접 차단) |
-| POST | /admin/site/pages | 저장된 새 페이지 객체 |
-| PUT | /admin/site/pages/:id | 저장된 수정 객체 (삭제/복원은 deleted로 처리) |
-
-페이지 필드: id, parentId(null 가능), menuName, path(사이트 루트 기준 /경로/), title, description, image, sourcePath(기존 원본 경로, 생성 페이지는 null), builtin, deleted, menuVisible, order, version, aliases, updatedAt.
-
-서버는 URL 중복·예약 경로·상하위 순환·하위 항목 삭제·홈 보호·미디어 URL·version 충돌을 검증하고 원자적으로 저장해야 합니다. 기존 원본 레이아웃을 재사용할 sourcePath는 서버에서 관리하며 요청자가 임의 파일을 지정할 수 없게 해야 합니다. 미디어 업로드는 기존 `/admin/media`를 공유합니다. 새 페이지용 콘텐츠 스키마는 다음 본문 편집 단계에서 확장합니다.
-
 ## Codex 개발 수정 바로가기
 
-관리자 사이드 메뉴·상단과 디자인 모드에 ‘Codex로 개발 수정’ 버튼을 제공합니다. 수정 내용을 적고 개인/회사 연결을 선택할 수 있습니다. 연결 설정은 브라우저별 localStorage `sinor-development-chat`에 저장하며 로그인 정보·토큰·API 키는 저장하지 않습니다.
+관리자 사이드 메뉴·상단에 ‘Codex로 개발 수정’ 버튼을 제공합니다. 수정 내용을 적고 개인/회사 연결을 선택할 수 있습니다. 연결 설정은 브라우저별 localStorage `sinor-development-chat`에 저장하며 로그인 정보·토큰·API 키는 저장하지 않습니다.
 
-기본 개인 연결은 이 저장소 originUrl을 지정한 Codex 새 채팅입니다. `codex://new?originUrl=...&prompt=...`는 요청을 입력창에 준비할 뿐 자동 전송하지 않습니다. 기존 수정 채팅 링크를 지정하면 해당 채팅을 열며 요청문을 복사해 붙여넣을 수 있습니다. 디자인 모드에서 선택한 페이지 주소·제목도 요청문에 포함됩니다. 공유 보기 링크(/share)는 수정 채팅으로 받지 않습니다.
+기본 개인 연결은 이 저장소 originUrl을 지정한 Codex 새 채팅입니다. `codex://new?originUrl=...&prompt=...`는 요청을 입력창에 준비할 뿐 자동 전송하지 않습니다. 기존 수정 채팅 링크를 지정하면 해당 채팅을 열며 요청문을 복사해 붙여넣을 수 있습니다. 공유 보기 링크(/share)는 수정 채팅으로 받지 않습니다.
 
 개인/회사 프로필 선택은 링크·저장소 설정만 바꾸며 ChatGPT 계정이나 워크스페이스를 자동으로 전환하지 않습니다. 회사 Codex 로그인·저장소 권한·로컬 작업공간 연결은 Codex에서 별도로 준비해야 합니다. `originUrl`은 Codex에 등록된 작업공간 중 같은 Git remote를 찾는 방식이며 저장소 권한을 새로 부여하거나 자동 복제하는 기능이 아닙니다. API 기반 자동 실행·자동 커밋·메시지 전송 기능은 아닙니다.
 
@@ -214,9 +182,14 @@ GitHub Pages에는 동적 URL 재작성 서버가 없으므로 새 URL 및 변�
 - 공개 페이지는 명시적인 페이지별 SEO 정보를 우선하고 기본 설명·공유 이미지를 보완합니다. 사이트 이름은 `og:site_name`, 파비콘은 탭 아이콘에 연결합니다. 푸터의 로고/내부 링크 구조는 유지하고 사업자 정보만 공통 적용합니다.
 - `/admin/statistics/`는 현재 저장된 칼럼 상태별 개수입니다. 방문자·조회 수 집계가 아닙니다.
 
-### 디자인 모드 페이지 작업
-- 각 행의 ⋮ 메뉴: 페이지 설정, 페이지 복제, 페이지 삭제. +는 그 페이지를 상위로 선택한 새 페이지 생성입니다.
-- 드래그 손잡이로 같은 상위 페이지에 속한 페이지를 정렬합니다. 홈도 정렬 가능하며 손잡이에 포커스 후 위/아래 방향키로도 이동합니다. 상위 페이지 변경은 페이지 설정에서 합니다.
-- 순서는 demo에서 전체 활성 페이지를 한 IndexedDB 트랜잭션으로 저장하며 버전 충돌 시 중단합니다. 공개 화면은 각 내비게이션 안에 이미 존재하는 같은 단계 링크에 순서를 적용합니다.
-- API: `PUT /admin/site/pages/reorder` body `{ids:[활성 페이지 ID 전체],versions:{[id]:version}}`. 서버는 같은 집합/버전 검증 후 order·version을 원자적으로 갱신합니다.
-- API: `POST /admin/site/pages/:id/duplicate` body `{menuName,title,description,image,path,parentId,menuVisible:false}`. 원본 페이지의 sourcePath를 복사하고 새 ID/독립 설정을 반환합니다. 하위 페이지는 복제하지 않습니다. 현재 기존 정적 페이지 본문은 같은 원본 템플릿을 사용하며 본문 자체의 독립 복제·편집은 향후 콘텐츠 편집 기능에서 연결합니다.
+## 시놀 공통 비주얼 칼럼 에디터
+
+- `/admin/columns/new/` 및 `/admin/columns/edit/?id=...`는 카테고리 → 제목/부제목 → 작성자 → 읽는 시간/날짜 → 본문 순서입니다. 카테고리·작성자는 옆의 추가 버튼에서 생성하고 즉시 선택합니다.
+- 글별 ‘법률/여행’ 스타일 선택은 제거했습니다. 본문 공통 스타일은 `columns/content.css`에 있고 관리자/미리보기/독자 화면에서 동일한 클래스를 사용합니다.
+- 도구: 본문/H2/H3/H4, 글자 크기/색상, 굵게/기울임/밑줄/가운데줄, 정렬/목록, 인용 4종, 형광펜 4색, SINOR INSIGHT, 행·열 선택 표, 사진/설명/대표이미지 지정, 링크, HTML/CSS 전환입니다.
+- 공통 클래스: `sinor-column-quote-label-pink`, `sinor-column-quote-label-blue`, `sinor-column-quote-quote-pink`, `sinor-column-quote-quote-blue`; `sinor-column-highlight-yellow/pink/blue/green`; 기존 `sinor-column-insight*`, `sinor-column-figure` 표/사진도 지원합니다.
+- HTML 편집에서 `<style>`과 본문을 붙여넣고 비주얼로 돌아오면 CSS를 본문 안으로 한정해 표시합니다. 실행 스크립트/iframe/외부 CSS 가져오기는 제거하며, 원문 CSS를 별도 SEO 화면에 넣을 필요가 없습니다. 임의의 안전한 클래스와 허용된 인라인 서식을 보존합니다.
+- 작성자 저장: 별도 IndexedDB `sinor-column-authors:<siteRoot.pathname>`. `{id,name,affiliation,image}`. 게시글은 `authorId`, `authorProfile` 스냅샷과 기존 `author` 이름을 함께 저장해 독자 화면에 사진·이름·소속을 표시합니다. 소속에 ‘시놀 대표’나 ‘세무회계 열린 · 세무사’처럼 입력합니다. 기존 author/expertName 데이터도 계속 표시합니다.
+- 회사 API 계약: `GET /columns/authors`, `POST /admin/columns/authors`, `PUT /admin/columns/authors/:id`. 응답은 작성자 객체(목록은 배열). 작성자 사진은 기존 `/admin/media`를 사용합니다. 칼럼 API는 `authorId`, `authorProfile`, `styleId:'common'`을 저장·반환해야 합니다.
+- 회사 API 연결 전에는 관리자 수정/작성자/카테고리가 같은 브라우저에만 저장됩니다. 기존 217개 칼럼 대량 이전은 중단했으며 관련 콘텐츠/이미지는 이 배포에 포함하지 않습니다.
+- 디자인 모드 UI, 페이지 생성/복제/정렬, 페이지별 브라우저 라우팅 기능은 사용자 요청으로 제거했습니다. 기존 칼럼 저장소를 초기화하지 않습니다.
