@@ -1,11 +1,6 @@
-import {columnEditor} from './column-editor.js?v=1';
+import {columnEditor} from './column-editor.js?v=2';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=2';
 import {installDevelopmentChat} from './development-chat.js';
-import {styleAdmin} from './column-style-admin.js';
-import {styleCms,selectedStyle,applyStyle,watchStyles} from '../cms/column-styles.js';
-import {setColumnCss} from '../cms/column-css.js';
-import {normalizeKeywords} from '../cms/keywords.js';
-import {today,fieldText,metadataText,installHtmlImport,renderHeader,importColumnHtml} from '../cms/column-document.js?v=2';
 import {companyAdmin} from './company-admin.js?v=10';
 import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=17';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
@@ -31,5 +26,5 @@ async function categories(){let editing=null;const [items,posts]=await Promise.a
 }
 async function editor(){await columnEditor(content(),toast)}
 
-shell();const rail=document.querySelector('.admin-sidebar'),toggle=rail.querySelector('.rail-toggle');toggle.onclick=()=>{const opened=rail.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(opened));toggle.setAttribute('aria-label',opened?'메뉴 접기':'메뉴 펼치기')};document.addEventListener('keydown',event=>{if(event.key==='Escape'){rail.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','메뉴 펼치기');if(rail.contains(document.activeElement))document.activeElement.blur()}});installDevelopmentChat();try{await (['settings','footer'].includes(page)?settingsAdmin(page,content(),toast):page==='statistics'?contentStatistics(content()):page==='styles'?styleAdmin(content(),toast):['news','history','partners'].includes(page)?companyAdmin(page,content(),toast):({dashboard,list,categories,editor}[page]||dashboard)())}catch(error){content().innerHTML=`<div class="error-box" role="alert">${E(error.message)}</div><button class="button" id="retry">다시 시도</button>`;document.querySelector('#retry').onclick=()=>location.reload()}
+shell();const rail=document.querySelector('.admin-sidebar'),toggle=rail.querySelector('.rail-toggle');toggle.onclick=()=>{const opened=rail.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(opened));toggle.setAttribute('aria-label',opened?'메뉴 접기':'메뉴 펼치기')};document.addEventListener('keydown',event=>{if(event.key==='Escape'){rail.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','메뉴 펼치기');if(rail.contains(document.activeElement))document.activeElement.blur()}});installDevelopmentChat();try{await (['settings','footer'].includes(page)?settingsAdmin(page,content(),toast):page==='statistics'?contentStatistics(content()):['news','history','partners'].includes(page)?companyAdmin(page,content(),toast):({dashboard,list,categories,editor}[page]||dashboard)())}catch(error){content().innerHTML=`<div class="error-box" role="alert">${E(error.message)}</div><button class="button" id="retry">다시 시도</button>`;document.querySelector('#retry').onclick=()=>location.reload()}
 if(page==='dashboard')watch(()=>dashboard().catch(error=>toast(error.message,true)));
