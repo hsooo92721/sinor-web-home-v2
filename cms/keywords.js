@@ -1,1 +1,3 @@
 export function normalizeKeywords(value){const items=Array.isArray(value)?value:String(value||'').split(/[,，]/);const seen=new Set();return items.map(v=>String(v).trim()).filter(v=>{const key=v.toLocaleLowerCase();if(!v||seen.has(key))return false;seen.add(key);return true})}
+const escapeKeyword=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function renderKeywordTags(value){const keywords=normalizeKeywords(normalizeKeywords(value).map(k=>k.replace(/^#+/,'').trim()));return keywords.length?`<section class="column-keyword-tags" aria-label="글 키워드" role="list">${keywords.map(k=>`<span class="column-keyword-tag" role="listitem">#${escapeKeyword(k)}</span>`).join('')}</section>`:''}

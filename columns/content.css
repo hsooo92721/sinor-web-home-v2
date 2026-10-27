@@ -16,3 +16,4 @@
 .sinor-column table th,.sinor-column table td{min-width:0!important;max-width:100%;white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere!important;padding-inline:clamp(3px,1vw,18px)}
 .sinor-column .sinor-column-figure .sinor-column-caption{overflow-wrap:anywhere}
 @media(max-width:767px){.sinor-column table th,.sinor-column table td{padding:10px clamp(2px,1.4vw,10px)}}
+.column-keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0;max-width:100%;padding:0}.column-keyword-tag{display:inline-block;padding:8px 14px;border-radius:999px;background:#f1f1f5;color:#55565f;font:700 13px/1.5 Pretendard,-apple-system,sans-serif;max-width:100%;overflow-wrap:anywhere}
