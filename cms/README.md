@@ -196,3 +196,8 @@ social HTML은 company-boot.js가 company-release.json 버전을 캐시 우회 �
 
 ### 작성 화면의 관리 모달
 카테고리와 작성자의 ‘편집’ 버튼은 전체 목록 관리 모달을 엽니다. 카테고리 이름, 작성자 사진·이름·소속을 수정하고 사용하지 않는 항목을 삭제할 수 있습니다. 저장 즉시 현재 작성 화면의 선택 목록을 갱신하며 입력 중인 제목/본문은 유지합니다. 작성자의 게시글 스냅샷은 해당 글을 저장할 때 갱신합니다. 사용 중인 작성자 삭제는 차단합니다. 회사 API는 `DELETE /admin/columns/authors/:id`에도 사용 여부 검증을 적용하고 성공 시 204 또는 JSON을 반환해야 합니다.
+
+### 전문 HTML/CSS 코드 편집기
+CodeMirror 6와 Prettier를 `assets/vendor/code-editor/editor.js`에 함께 번들링합니다. 외부 CDN 요청 없이 구문 색상, 태그 자동 닫기/완성, 줄 번호/접기, Tab 및 줄바꿈 자동 들여쓰기, 붙여넣기 자동 정리를 제공합니다. ‘코드 정리’ 버튼 또는 Shift+Alt+F로 HTML과 `<style>` 안의 CSS를 정돈합니다. 문법 오류가 있거나 정리 중 사용자가 내용을 변경하면 원문을 덮어쓰지 않습니다. CodeMirror의 실제 편집 DOM을 사용하므로 별도 표시층으로 인한 선택 위치 어긋남이 없습니다.
+
+재빌드: `cd tools/code-editor && npm ci && npm run build`. 버전은 package-lock.json으로 고정하며 배포 파일과 LICENSES.json을 함께 보관합니다. 코드 모드의 문서는 기존 textarea 값과 동기화하므로 저장/비주얼 전환 계약을 유지합니다.
