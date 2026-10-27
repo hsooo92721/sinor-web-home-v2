@@ -196,3 +196,13 @@ GitHub Pages에는 동적 URL 재작성 서버가 없으므로 새 URL 및 변�
 페이지 필드: id, parentId(null 가능), menuName, path(사이트 루트 기준 /경로/), title, description, image, sourcePath(기존 원본 경로, 생성 페이지는 null), builtin, deleted, menuVisible, order, version, aliases, updatedAt.
 
 서버는 URL 중복·예약 경로·상하위 순환·하위 항목 삭제·홈 보호·미디어 URL·version 충돌을 검증하고 원자적으로 저장해야 합니다. 기존 원본 레이아웃을 재사용할 sourcePath는 서버에서 관리하며 요청자가 임의 파일을 지정할 수 없게 해야 합니다. 미디어 업로드는 기존 `/admin/media`를 공유합니다. 새 페이지용 콘텐츠 스키마는 다음 본문 편집 단계에서 확장합니다.
+
+## Codex 개발 수정 바로가기
+
+관리자 사이드 메뉴·상단과 디자인 모드에 ‘Codex로 개발 수정’ 버튼을 제공합니다. 수정 내용을 적고 개인/회사 연결을 선택할 수 있습니다. 연결 설정은 브라우저별 localStorage `sinor-development-chat`에 저장하며 로그인 정보·토큰·API 키는 저장하지 않습니다.
+
+기본 개인 연결은 이 저장소 originUrl을 지정한 Codex 새 채팅입니다. `codex://new?originUrl=...&prompt=...`는 요청을 입력창에 준비할 뿐 자동 전송하지 않습니다. 기존 수정 채팅 링크를 지정하면 해당 채팅을 열며 요청문을 복사해 붙여넣을 수 있습니다. 디자인 모드에서 선택한 페이지 주소·제목도 요청문에 포함됩니다. 공유 보기 링크(/share)는 수정 채팅으로 받지 않습니다.
+
+개인/회사 프로필 선택은 링크·저장소 설정만 바꾸며 ChatGPT 계정이나 워크스페이스를 자동으로 전환하지 않습니다. 회사 Codex 로그인·저장소 권한·로컬 작업공간 연결은 Codex에서 별도로 준비해야 합니다. `originUrl`은 Codex에 등록된 작업공간 중 같은 Git remote를 찾는 방식이며 저장소 권한을 새로 부여하거나 자동 복제하는 기능이 아닙니다. API 기반 자동 실행·자동 커밋·메시지 전송 기능은 아닙니다.
+
+공식 Deep link 문서: https://learn.chatgpt.com/docs/app/commands#deep-links
