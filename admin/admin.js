@@ -1,4 +1,4 @@
-import {columnEditor} from './column-editor.js?v=2';
+import {columnEditor} from './column-editor.js?v=3';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=2';
 import {installDevelopmentChat} from './development-chat.js';
 import {companyAdmin} from './company-admin.js?v=10';
