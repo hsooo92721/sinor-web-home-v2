@@ -213,3 +213,10 @@ GitHub Pages에는 동적 URL 재작성 서버가 없으므로 새 URL 및 변�
 - API 모드 계약: 관리자 `GET/PUT /admin/site/settings`, 공개용 `GET /site/settings`. JSON `{basic:{siteName,description,favicon,image},footer:{company,representative,address,businessNumber,commerce,tourism,marriage,email,phone,copyright}}`. PUT은 전체 객체, 응답은 저장된 객체입니다. 회사 API 구현 시 관리자 쓰기 인증과 이미지 업로드 저장을 연결해야 합니다.
 - 공개 페이지는 명시적인 페이지별 SEO 정보를 우선하고 기본 설명·공유 이미지를 보완합니다. 사이트 이름은 `og:site_name`, 파비콘은 탭 아이콘에 연결합니다. 푸터의 로고/내부 링크 구조는 유지하고 사업자 정보만 공통 적용합니다.
 - `/admin/statistics/`는 현재 저장된 칼럼 상태별 개수입니다. 방문자·조회 수 집계가 아닙니다.
+
+### 디자인 모드 페이지 작업
+- 각 행의 ⋮ 메뉴: 페이지 설정, 페이지 복제, 페이지 삭제. +는 그 페이지를 상위로 선택한 새 페이지 생성입니다.
+- 드래그 손잡이로 같은 상위 페이지에 속한 페이지를 정렬합니다. 홈도 정렬 가능하며 손잡이에 포커스 후 위/아래 방향키로도 이동합니다. 상위 페이지 변경은 페이지 설정에서 합니다.
+- 순서는 demo에서 전체 활성 페이지를 한 IndexedDB 트랜잭션으로 저장하며 버전 충돌 시 중단합니다. 공개 화면은 각 내비게이션 안에 이미 존재하는 같은 단계 링크에 순서를 적용합니다.
+- API: `PUT /admin/site/pages/reorder` body `{ids:[활성 페이지 ID 전체],versions:{[id]:version}}`. 서버는 같은 집합/버전 검증 후 order·version을 원자적으로 갱신합니다.
+- API: `POST /admin/site/pages/:id/duplicate` body `{menuName,title,description,image,path,parentId,menuVisible:false}`. 원본 페이지의 sourcePath를 복사하고 새 ID/독립 설정을 반환합니다. 하위 페이지는 복제하지 않습니다. 현재 기존 정적 페이지 본문은 같은 원본 템플릿을 사용하며 본문 자체의 독립 복제·편집은 향후 콘텐츠 편집 기능에서 연결합니다.

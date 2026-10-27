@@ -1,6 +1,6 @@
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=1';
 import {installDevelopmentChat} from './development-chat.js';
-import {pageDesign} from './page-design.js?v=2';
+import {pageDesign} from './page-design.js?v=3';
 import {styleAdmin} from './column-style-admin.js';
 import {styleCms,selectedStyle,applyStyle,watchStyles} from '../cms/column-styles.js';
 import {installCodeEditor} from './code-editor.js';
