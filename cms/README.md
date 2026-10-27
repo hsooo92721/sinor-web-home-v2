@@ -206,3 +206,10 @@ GitHub Pages에는 동적 URL 재작성 서버가 없으므로 새 URL 및 변�
 개인/회사 프로필 선택은 링크·저장소 설정만 바꾸며 ChatGPT 계정이나 워크스페이스를 자동으로 전환하지 않습니다. 회사 Codex 로그인·저장소 권한·로컬 작업공간 연결은 Codex에서 별도로 준비해야 합니다. `originUrl`은 Codex에 등록된 작업공간 중 같은 Git remote를 찾는 방식이며 저장소 권한을 새로 부여하거나 자동 복제하는 기능이 아닙니다. API 기반 자동 실행·자동 커밋·메시지 전송 기능은 아닙니다.
 
 공식 Deep link 문서: https://learn.chatgpt.com/docs/app/commands#deep-links
+
+### 공통 사이트 설정
+- 관리자: `/admin/settings/` (사이트 이름·기본 설명·파비콘·공유 이미지), `/admin/settings/footer/` (공통 사업자 정보).
+- demo는 `sinor-site-settings:<siteRoot.pathname>` localStorage를 사용합니다. 같은 브라우저·도메인에서만 공유되며 회사 서버에 게시하지 않습니다. 이미지는 최대 5MB data URL로 저장하며 브라우저 저장 한도 초과 시 오류를 표시합니다.
+- API 모드 계약: 관리자 `GET/PUT /admin/site/settings`, 공개용 `GET /site/settings`. JSON `{basic:{siteName,description,favicon,image},footer:{company,representative,address,businessNumber,commerce,tourism,marriage,email,phone,copyright}}`. PUT은 전체 객체, 응답은 저장된 객체입니다. 회사 API 구현 시 관리자 쓰기 인증과 이미지 업로드 저장을 연결해야 합니다.
+- 공개 페이지는 명시적인 페이지별 SEO 정보를 우선하고 기본 설명·공유 이미지를 보완합니다. 사이트 이름은 `og:site_name`, 파비콘은 탭 아이콘에 연결합니다. 푸터의 로고/내부 링크 구조는 유지하고 사업자 정보만 공통 적용합니다.
+- `/admin/statistics/`는 현재 저장된 칼럼 상태별 개수입니다. 방문자·조회 수 집계가 아닙니다.
