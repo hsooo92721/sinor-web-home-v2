@@ -7,3 +7,18 @@
 /* Published HTML uses the same editorial styles as the visual editor.
    Source formatting must not create visible blank lines. */
 .article-content.sinor-column{white-space:normal;padding-top:22px;overflow-wrap:anywhere}
+
+/* Reader gallery cards: image badges and a single rounded white surface. */
+.reader-card{border:1px solid #edf0f4;border-radius:22px;overflow:hidden;background:#fff;transition:box-shadow .18s ease}
+.reader-card:hover{box-shadow:0 8px 28px #191f2810}
+.reader-card-media{position:relative}
+.reader-card .cover{aspect-ratio:1.6;border-radius:0;margin:0}
+.reader-card-category{position:absolute;top:16px;left:16px;right:72px;pointer-events:none}
+.reader-card-category .column-category-chip{background:#fffffff0;color:var(--category-color);font-size:13px;padding:7px 12px;max-width:100%}
+.reader-card-media>.column-new-badge{position:absolute;top:16px;right:16px;margin:0;background:#2871e9;color:#fff;padding:5px 8px;border-radius:6px;font-size:11px}
+.reader-card-body{padding:22px 22px 28px}
+.reader-card h2{font-size:22px;line-height:1.5;font-weight:800;color:#171719;margin:0 0 12px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+.reader-card p{font-size:16px;line-height:1.8;color:#333;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;margin:0}
+.reader-card-byline{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:14px;line-height:1.6;color:#555}
+.reader-card-byline strong{font-weight:750;color:#171719}
+@media(max-width:520px){.reader-card-body{padding:20px 20px 26px}.reader-card-category{top:14px;left:14px}.reader-card-media>.column-new-badge{top:14px;right:14px}}
