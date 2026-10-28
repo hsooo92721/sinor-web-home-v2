@@ -2,7 +2,7 @@ import {findLegacyColumn} from '../cms/legacy-urls.js?v=1';
 import {installToolbarState} from './editor-toolbar-state.js?v=1';
 import {installEditorLinks} from './editor-links.js?v=1';
 import {openColumnManager} from './column-managers.js?v=3';
-import {cms,siteUrl,articleUrl,formatDate,sanitizeHtml,safeUrl} from '../cms/client.js?v=20';
+import {cms,siteUrl,articleUrl,formatDate,sanitizeHtml,safeUrl} from '../cms/client.js?v=21';
 import {authorCms} from '../cms/authors.js?v=2';
 import {today,importColumnHtml,renderHeader} from '../cms/column-document.js?v=4';
 import {setColumnCss} from '../cms/column-css.js';

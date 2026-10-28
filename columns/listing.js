@@ -1,5 +1,5 @@
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=20';
+import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=21';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=1';
 import {newBadge} from '../cms/publication.js?v=2';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

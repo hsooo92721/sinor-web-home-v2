@@ -5,7 +5,7 @@ import {columnEditor} from './column-editor.js?v=13';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=3';
 import {installDevelopmentChat} from './development-chat.js';
 import {companyAdmin} from './company-admin.js?v=10';
-import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=20';
+import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=21';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;

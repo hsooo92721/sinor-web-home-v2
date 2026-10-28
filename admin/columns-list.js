@@ -1,5 +1,5 @@
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {cms,siteUrl,articleUrl,formatDate,excerpt} from '../cms/client.js?v=20';
+import {cms,siteUrl,articleUrl,formatDate,excerpt} from '../cms/client.js?v=21';
 import {newBadge} from '../cms/publication.js?v=2';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=1';
 import {openColumnManager} from './column-managers.js?v=3';

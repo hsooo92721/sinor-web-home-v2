@@ -1,11 +1,13 @@
 import {normalizeLegacyUrls} from './legacy-urls.js?v=1';
-import {numberedPosts} from './column-listing.js?v=1';
+import {numberedPosts as assignNumbers} from './column-listing.js?v=1';
 import {normalizeKeywords} from './keywords.js';
 const config=window.SINOR_CMS_CONFIG||{mode:'demo',apiBase:'/api'};
 export const mode=config.mode;
 export const siteRoot=new URL('../',import.meta.url);
 export const siteUrl=path=>{const url=new URL(path,siteRoot);if(window.SINOR_ADMIN_BUILD&&url.pathname.startsWith(new URL('admin/',siteRoot).pathname))url.searchParams.set('v',window.SINOR_ADMIN_BUILD);return url.href};
-export const articleUrl=(id,preview=false)=>siteUrl(`columns/view/?id=${encodeURIComponent(id)}${preview?'&preview=1':''}`);
+const columnNumbers=new Map();
+function numberedPosts(items){const posts=assignNumbers(items);posts.forEach(p=>{if(p.columnNumber)columnNumbers.set(p.id,p.columnNumber)});return posts}
+export const articleUrl=(id,preview=false)=>!preview&&columnNumbers.has(id)?siteUrl(`columns/${columnNumbers.get(id)}`):siteUrl(`columns/view/?id=${encodeURIComponent(id)}${preview?'&preview=1':''}`);
 export const defaults=[{id:'travel',name:'여행',order:0},{id:'life',name:'생활·문화',order:1},{id:'health',name:'건강',order:2}];
 const now=()=>new Date().toISOString();
 let database;

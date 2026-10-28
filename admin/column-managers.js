@@ -1,5 +1,5 @@
 import {categoryColor,renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {cms} from '../cms/client.js?v=20';
+import {cms} from '../cms/client.js?v=21';
 import {authorCms} from '../cms/authors.js?v=2';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function openColumnManager({kind,dialog,selectedId,onChange,toast}){const isAuthor=kind==='author',title=isAuthor?'작성자 관리':'카테고리 관리';let items=await (isAuthor?authorCms.list():cms.categories()),selected=items.find(i=>i.id===selectedId)||items[0]||null,image='',busy=false;dialog.classList.add('column-manager-dialog');dialog.setAttribute('aria-label',title);dialog.innerHTML=`<div class="manager-heading"><h2>${title}</h2><div class="actions"><button type="button" class="button small" data-add>+ 추가</button><button type="button" class="button small" data-close>닫기</button></div></div><p class="help">${isAuthor?'작성자의 사진·이름·소속을 수정하세요. 글에 표시되는 정보는 해당 글을 저장할 때 반영됩니다.':'카테고리 이름을 수정하거나 사용하지 않는 카테고리를 삭제하세요.'}</p><div class="manager-layout"><nav class="manager-list" aria-label="${title} 목록"></nav><div class="manager-detail"></div></div><p class="form-error" role="alert"></p>`;
