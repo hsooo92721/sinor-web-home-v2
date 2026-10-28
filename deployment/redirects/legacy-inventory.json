@@ -1,0 +1,1850 @@
+{
+  "source": "https://sinor.co.kr/sitemap.xml",
+  "checkedAt": "2026-10-28",
+  "entries": [
+    {
+      "sourceUrl": "https://sinor.co.kr/company",
+      "kind": "page",
+      "targetPath": "/company/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/main",
+      "kind": "page",
+      "targetPath": "/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/download",
+      "kind": "page",
+      "targetPath": "/download/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/silove",
+      "kind": "page",
+      "targetPath": "/silove/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/moim",
+      "kind": "page",
+      "targetPath": "/moim/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information",
+      "kind": "page",
+      "targetPath": "/columns/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/sinorlab",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/terms",
+      "kind": "page",
+      "targetPath": "/policy/terms/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/privacy",
+      "kind": "page",
+      "targetPath": "/policy/privacy/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/compensation",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/fees",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/meeting",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/tour",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/contract",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort01",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort04",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort02",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort11",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort10",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort03",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort05",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/74",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort07",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort08",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort09",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/gangwon",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/jeju",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/gyeongsang",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/Jeolla",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/chungcheong",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/resort",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/montly_promotion",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/meeting1",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/meeting2",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/profile",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/research_251202",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/terms1",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/privacy1",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/location1",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/silovematch",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/silovematch_event",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/silovematch-consult",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/adv",
+      "kind": "page",
+      "targetPath": "/adv/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/imgfolder",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/hammanna-casting",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/carehub",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/136",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/carehub_event",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/travel-terms",
+      "kind": "page",
+      "targetPath": "/policy/travel/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/domestic-special-terms",
+      "kind": "page",
+      "targetPath": "/policy/travel-special/",
+      "state": "mapped"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/shop_view/18",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/shop_view/13",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/shop_view/17",
+      "kind": "page",
+      "targetPath": null,
+      "state": "needs_mapping"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175294941",
+      "kind": "column",
+      "title": "[시놀 칼럼] 60대의 절반이 AI를 씁니다, 그런데 목적이 다릅니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175233260",
+      "kind": "column",
+      "title": "[시놀 칼럼] 10년을 함께 살았는데 공제를 못 받는 경우가 있습니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175219445",
+      "kind": "column",
+      "title": "[시놀 칼럼] 배우자 상속공제, 최대 30억까지 받으려면",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175102603",
+      "kind": "column",
+      "title": "[시놀 칼럼] 함께여서 더 오래 남을 여행, 울릉도·독도에서 보낸 2박 3일",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175073016",
+      "kind": "column",
+      "title": "[시놀 칼럼] 5060 소개팅, 경쟁률이 2 대 1을 넘습니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=175005337",
+      "kind": "column",
+      "title": "[시놀 칼럼] AI 시대일수록, 사람은 다시 사람에게 갑니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=174997523",
+      "kind": "column",
+      "title": "[시놀 칼럼] AI는 정답을 대체합니다. 하지만 마음에는 정답이 없습니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=174921046",
+      "kind": "column",
+      "title": "[시놀 칼럼] 상속세 낼 돈은 어디서 마련해야 할까요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=174703606",
+      "kind": "column",
+      "title": "[시놀 칼럼] 언젠가 가보고 싶었던 울릉도, 혼자여도 떠나요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=174664456",
+      "kind": "column",
+      "title": "[시놀 칼럼] 처음엔 혼자, 돌아올 땐 친구와 영종도에서 보낸 1박 2일",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=174135616",
+      "kind": "column",
+      "title": "[시놀 칼럼] 집 한 채가 전부일 때, 무엇부터 준비해야 할까요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=173079643",
+      "kind": "column",
+      "title": "[시놀 칼럼] 살아서 넘길까, 남기고 갈까",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=172862081",
+      "kind": "column",
+      "title": "[시놀 칼럼] 혼인신고 한 장이 상속세를 억 단위로 가를 수 있습니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=172861099",
+      "kind": "column",
+      "title": "‘나는 늙었다’에 동의한 5060은 4%뿐",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=172752031",
+      "kind": "column",
+      "title": "유학원의 새 손님은 20대가 아니라 60대입니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=172553600",
+      "kind": "column",
+      "title": "일본은 교과서가 아니라 오답노트입니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=172529713",
+      "kind": "column",
+      "title": "전국 지자체 절반이 AI에게 안부 전화를 맡겼습니다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=170069534",
+      "kind": "column",
+      "title": "Advisor Insight - 2월 시장의 투자 공포를 해부하다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168681969",
+      "kind": "column",
+      "title": "Advisor Insight -11월 '강세장의 초입에서' 시장이 오르는 이유와 흔들리지 않는 투자 전략",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168222611",
+      "kind": "column",
+      "title": "[황규만 칼럼] 간덩이가 부었나 보다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168216210",
+      "kind": "column",
+      "title": "[양은미 칼럼] 누구나 갖고 있는 마음의 방패 .. 마음 해우소(解憂所) ①",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168022254",
+      "kind": "column",
+      "title": "[황규만의 컨택센터 칼럼] 언제까지 관망만 할겨 - 인공지능의 시대",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168018401",
+      "kind": "column",
+      "title": "[황규만의 우리가 몰랐던 역사 이야기] 사발통문(沙鉢通文) - 동학농민운동",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=168017957",
+      "kind": "column",
+      "title": "[황규만의 컨택센터 칼럼] 액티브시니어들의 건강수명을 획기적으로 늘리다 - 대관령두메길 노르딕워킹",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167906397",
+      "kind": "column",
+      "title": "디펜드 안심 언더웨어와 함께 쓰는 속기저귀 출시 ✨",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167529925",
+      "kind": "column",
+      "title": "✝️ 기독교 5060 미팅 | 믿음으로 만나는 새로운 인연 단체 미팅",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167529430",
+      "kind": "column",
+      "title": "속초 5060 미팅여행 | 가을 단풍과 바다에서 찾는 새로운 인연 1박2일",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167528580",
+      "kind": "column",
+      "title": "나트랑 여행 5060 단체미팅 | 끝사랑 스타일 중장년 매칭여행",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167527810",
+      "kind": "column",
+      "title": "만 65세 이상, ‘스포츠 상품권’ 지원받으세요…8월, 10월 신청",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167527729",
+      "kind": "column",
+      "title": "서울시민이라면 우선!…서울&전국의 캠핑장",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167525226",
+      "kind": "column",
+      "title": "건강식품 해외직구시, 꼭 확인하세요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167525058",
+      "kind": "column",
+      "title": "동네 책방, 문화 아지트로 변신중!...서울형책방 60곳",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167524884",
+      "kind": "column",
+      "title": "서울시 택시 호출, 이제 전화 한 통으로",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167524799",
+      "kind": "column",
+      "title": "7월 1일부터 헬스장, 수영장 등록시 꼭! 챙기세요…소득공제 혜택",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167524705",
+      "kind": "column",
+      "title": "바뀌는 정책 속, 앞으로 꼭 챙겨야 할 '부모님 혜택 TOP 8'",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167524266",
+      "kind": "column",
+      "title": "\"홀로 외로워 마세요\"…서울시 1인가구 커뮤니티 '씽글벙글 사회참여단' 모집",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167524105",
+      "kind": "column",
+      "title": "7월 1~2일, 서울시 중장년 일자리박람회…사전 신청으로 현장면접까지",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167523997",
+      "kind": "column",
+      "title": "달리면서, 동네 안전까지 챙겨요…서울러닝순찰대",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167523838",
+      "kind": "column",
+      "title": "서울 사는 65세 이상이라면, 알아두세요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167523674",
+      "kind": "column",
+      "title": "[시놀 모임소개 12] '토요일 숲길 걷기 명상' 모임 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167523505",
+      "kind": "column",
+      "title": "[시놀 모임소개 11] '내면을 가꾸는 그림감상 모임' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167487961",
+      "kind": "column",
+      "title": "[시놀 모임소개 10] '재즈음악에는 스윙댄스, 스윙프랜즈' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167464215",
+      "kind": "column",
+      "title": "[시놀 모임소개 09] '청년운동장 모임' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167464124",
+      "kind": "column",
+      "title": "50대, 60대 노후자금 준비, 필요한 노후자금은 얼마?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167464028",
+      "kind": "column",
+      "title": "60대가 새해를 맞아 읽으면 좋을 책 3가지📚",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167463886",
+      "kind": "column",
+      "title": "[시놀 모임소개 08] '5분 인공지능 아트' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167463741",
+      "kind": "column",
+      "title": "[시놀 모임소개 07] '오카리나 동아리' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167463503",
+      "kind": "column",
+      "title": "2025 을사년, 60대가 되었다면 꼭 해야 할 3가지",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167463390",
+      "kind": "column",
+      "title": "[시놀 모임소개 06] '책과, 글 그리고 수다' 모임장님 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167463039",
+      "kind": "column",
+      "title": "2025 을사년, 신년 운세 보는 곳은?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167356240",
+      "kind": "column",
+      "title": "첫인상을 바꾸는 이 것은? 모임 데이트 전 필수 체크하기!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167209952",
+      "kind": "column",
+      "title": "겨울 등산/ 일출 감상지 추천! 등산 함께갈 사람 찾는 방법",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167209785",
+      "kind": "column",
+      "title": "✨블링블링 '블루린' 뷰티 마사지기 체험단 모집✨",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167209721",
+      "kind": "column",
+      "title": "젊은 시니어, YOLD(욜드)들의 여행 삼매경",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194809",
+      "kind": "column",
+      "title": "중년 채팅앱 시럽 어플 후기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194717",
+      "kind": "column",
+      "title": "경기 베이비부머 행복캠퍼스 교육생 모집!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194606",
+      "kind": "column",
+      "title": "[시놀] 건강한 미래를 원하신다면 지금부터 '예방의학' 하세요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194563",
+      "kind": "column",
+      "title": "아치를 올리다, 건강을 올리다.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194299",
+      "kind": "column",
+      "title": "남다른 라이프의 시작 14일만의 변화를 만나다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194260",
+      "kind": "column",
+      "title": "성큼성큼 걸으며 인지 건강을 챙겨보자",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194149",
+      "kind": "column",
+      "title": "일상을 특별하게! 일생을 건강하게! \"고품격 시니어 레지던스 심포니아\"",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194113",
+      "kind": "column",
+      "title": "[시놀] 더위크앤 리조트 웰니스 패키지 특가할",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167194036",
+      "kind": "column",
+      "title": "내 삶의 기록을 책으로 출판하다, \"고:요 Book 살롱\"",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167193934",
+      "kind": "column",
+      "title": "[시놀] 5060 전용 특별 모임✨ㅡ프라이빗 요트투어 / 원데이 메이크오버",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167193795",
+      "kind": "column",
+      "title": "[시놀] 숲과 바다에 설레이는 봄 울산여행🌸",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167193721",
+      "kind": "column",
+      "title": "[시놀] 50대 60대 등산 모임 힘들게 찾지마세요! 😍",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167193598",
+      "kind": "column",
+      "title": "역대급 시설,럭셔리 실버타운 \"백운호수 푸르지오 숲속의 아침 스위트",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192834",
+      "kind": "column",
+      "title": "💖 5070 마음맞는 친구 찾는다면? - 시니어 놀이터: 시놀 앱 다운 받는 법 / 가입하기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192652",
+      "kind": "column",
+      "title": "[시놀] 은퇴 준비를 위한 체크리스트 6가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192582",
+      "kind": "column",
+      "title": "[시놀] 꼭 알아둬야 할 실버타운 선택 시 주의사항!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192458",
+      "kind": "column",
+      "title": "[시놀] 50대 이상이 뽑은 시니어 버킷리스트 TOP5!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192367",
+      "kind": "column",
+      "title": "[시놀] 시니어가 하기 좋은 시니어 스포츠 추천!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192301",
+      "kind": "column",
+      "title": "[시놀] 노인 한랭질환자 급증! 한랭질환 예방 건강 수칙을 알려드려요.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167192229",
+      "kind": "column",
+      "title": "[시놀] 겨울철 집에서 하기 좋은 시니어 운동, 시놀과 알아보아요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167174718",
+      "kind": "column",
+      "title": "[시놀] 패션의 시간은 거꾸로! 시니어 패션 팁 TOP3",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167174578",
+      "kind": "column",
+      "title": "[시놀] 시니어에게 추천하는 노년을 위한 책 리스트!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167174441",
+      "kind": "column",
+      "title": "[시놀] 최악의 생존율 췌장암 원인과 예방법을 알려드려요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167170867",
+      "kind": "column",
+      "title": "[시놀] 시니어 은퇴 후 취미, 악기 배우기의 장점과 악기 추천!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119878",
+      "kind": "column",
+      "title": "[시놀] ‘혹시 나도 갱년기 우울증?’ 시놀과 알아보아요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119818",
+      "kind": "column",
+      "title": "[시놀] 시니어라면 알아야 할 심뇌혈관 질환 예방 9대 생활 수칙!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119772",
+      "kind": "column",
+      "title": "[시놀] 시니어에게 추천하는 인생 명언 4가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119696",
+      "kind": "column",
+      "title": "[시놀] 노후를 대비하는 50대를 위한 자격증 추천 3가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119602",
+      "kind": "column",
+      "title": "[시놀] 은퇴 후 시니어가 하기 좋은 취미생활 4가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119495",
+      "kind": "column",
+      "title": "[시놀] 알면 좋은 노인복지 정책! 시놀과 알아봐요.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119436",
+      "kind": "column",
+      "title": "[시놀] 쌀쌀해진 요즘, 따뜻한 차 한 잔 어때요?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119350",
+      "kind": "column",
+      "title": "[시놀] 요즘 열풍인 맨발걷기, 효능과 부작용을 알아보아요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119283",
+      "kind": "column",
+      "title": "[시놀] 요양원과 요양병원, 무슨 차이일까요?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119177",
+      "kind": "column",
+      "title": "[시놀] 시니어에게 더욱 위험한 낙상사고! 시놀과 예방해요.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167119078",
+      "kind": "column",
+      "title": "[시놀] 시니어를 위한 국내 스타트업, 시놀이 알려드립니다!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167118988",
+      "kind": "column",
+      "title": "[시놀] 시니어 관절 운동, 왜 그리고 어떻게 해야 할까요?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167118920",
+      "kind": "column",
+      "title": "[시놀] 노화의 시계를 조절하는 법! 노화의 원인과 예방법",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167113110",
+      "kind": "column",
+      "title": "아름다움에 반응하는 뇌",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167101659",
+      "kind": "column",
+      "title": "“계속 사랑하고, 사랑받고 싶어요”...7080 재혼 커플 탄생 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167101467",
+      "kind": "column",
+      "title": "황혼 재혼, 행복한 선택을 위해 꼭 알아야 할 것들(3)…법적 보호사항&새로운 가족관계",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167101247",
+      "kind": "column",
+      "title": "황혼 재혼, 행복한 선택을 위해 꼭 알아야 할 것들(2)...경제적 현실 파악하기&자녀 설득하기, 로맨스 스캠 대비",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167101087",
+      "kind": "column",
+      "title": "황혼 재혼, 행복한 선택을 위해 꼭 알아야 할 것들(1)…과거와 완전히 결별하기&필수 대화 주제들",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167100877",
+      "kind": "column",
+      "title": "황혼 재혼, 고령사회의 새로운 솔루션이 되고 있어요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167100731",
+      "kind": "column",
+      "title": "혼자 남겨진 노년, 그 아픔과 새로운 희망",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167100584",
+      "kind": "column",
+      "title": "황혼 재혼, 통계로 알아볼까요",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167100302",
+      "kind": "column",
+      "title": "[시놀] ‘나는 액티브 시니어일까?’ 액티브 시니어 자가 진단!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099953",
+      "kind": "column",
+      "title": "[시놀] 갱년기 여성이 조심해야 할 음식 3가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099838",
+      "kind": "column",
+      "title": "[시놀] 빨리 늙는 습관이 있다?! 이 습관들은 버리세요!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099737",
+      "kind": "column",
+      "title": "[시놀] 시니어 일자리로 노후를 건강하게! 시니어 일자리 신청 방법 알려드려요.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099628",
+      "kind": "column",
+      "title": "[시놀] 시놀에서 알려드리는 부모님 명절 선물 순위 BEST 5!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099539",
+      "kind": "column",
+      "title": "[시놀] 건강하고 매끈한 피부를 위해! 노화 방지 5060 영양소 음식",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099417",
+      "kind": "column",
+      "title": "[시놀] 걷기 운동도 제대로! '7530 걷기 운동'을 아시나요?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099281",
+      "kind": "column",
+      "title": "[시놀] 액티브 시니어가 하기 좋은 일자리! 시놀과 알아보아요.",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099173",
+      "kind": "column",
+      "title": "[시놀] 운세, 사주 등을 볼 수 있는 무료 사주 어플 추천!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167099063",
+      "kind": "column",
+      "title": "[시놀] 건강도 챙기는 치매 예방 음식 BEST 3!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167098936",
+      "kind": "column",
+      "title": "[시놀] 액티브 시니어가 읽기 좋은 도서 추천 3가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167098789",
+      "kind": "column",
+      "title": "[시놀] 패션 피플 액티브 시니어를 위해, 미리 보는 시니어 가을 패션!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167098722",
+      "kind": "column",
+      "title": "[시놀] 집에서도 체력을 증진시켜봐요! 시니어 추천 홈트레이닝",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167097617",
+      "kind": "column",
+      "title": "[시놀] 노년에도 일자리 가질 수 있다! 노년 유망 자격증 추천",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167097348",
+      "kind": "column",
+      "title": "[시놀] 알수록 예방하기 쉬운 ‘알츠하이머’ 파헤치기!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167097230",
+      "kind": "column",
+      "title": "[시놀] 신중년에게 인기 있는 취미 모임 4가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167097080",
+      "kind": "column",
+      "title": "[시놀] ‘5060 추억의 단체미팅’에 여러분을 초대합니다!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167097016",
+      "kind": "column",
+      "title": "[시놀] 은퇴 후 저축 어떻게 하나요? 은퇴 후 저축 전략 팁 4가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167096919",
+      "kind": "column",
+      "title": "[시놀] 음식으로 마음 찾고 건강 찾기! 갱년기 추천 음식 BEST3",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=167096843",
+      "kind": "column",
+      "title": "[2탄] 고물가 시대, 핸드폰만 있으면 돈 벌 수 있는 앱테크 추천",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166991259",
+      "kind": "column",
+      "title": "[1탄] 고물가 시대, 핸드폰만 있으면 돈 벌 수 있는 앱테크 추천",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166990672",
+      "kind": "column",
+      "title": "시니어 안성맞춤 운동 \"파크골프\"를 소개합니다💪",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166989542",
+      "kind": "column",
+      "title": "시놀과 함께 나의 인연을 찾아봐요_50대 60대 70대 친구만들기 인연찾기 인생동행 시니어사랑찾기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166989469",
+      "kind": "column",
+      "title": "\"시놀\" 5070 1인가구 350만명을 위한 놀이터",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166989259",
+      "kind": "column",
+      "title": "\b시니어들의 놀이터 ! 누가누가 시놀에? (feat. Persona)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166988735",
+      "kind": "column",
+      "title": "지금 MZ들은 모르는 찐 레트로 핫플레이스 Top3 - 시놀 (액티브 시니어)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166987685",
+      "kind": "column",
+      "title": "100세 시대 건강수명을 위하여 '시놀'",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166987071",
+      "kind": "column",
+      "title": "이제는 우리가 대세! 액티브 시니어 - 시놀",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166986906",
+      "kind": "column",
+      "title": "시니어를 위한 사회는 있다! (시니어전용 앱 '시놀')",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166985810",
+      "kind": "column",
+      "title": "팬데믹 이후, 앱으로 중년친구 만들기 - 시놀(시니어 놀이터) 친구찾기 앱",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166985413",
+      "kind": "column",
+      "title": "‘건강 수명’ 늘리는 사소한 습관들 - 친구만들기 '시놀' 앱추천",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166983785",
+      "kind": "column",
+      "title": "시니어모델 · 창업 · 와인 자격증, 5070 버킷리스트 도전하기 - 시니어 앱 '시놀'(시니어놀이터)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166983514",
+      "kind": "column",
+      "title": "요즘 애들은 스마트폰으로 동네에서 친구 찾는데~! (부모님 추천앱 - 시놀, 스쿨비즈칸, 토스)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166983409",
+      "kind": "column",
+      "title": "506070 Tip - 내 손에 있는 스마트폰 활용하기 (돋보기, 시놀 친구만들기, 비대면 진료 굿닥, 반려식물 모야모, 스팸차단 후후)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166983117",
+      "kind": "column",
+      "title": "인생 3모작을 준비하는 액티브 시니어의 새로운 라이프스타일 - 노인일자리여기, 꿈꾸는 여행자, 시니어놀이터 시놀",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=166982271",
+      "kind": "column",
+      "title": "스마트한 시니어 라이프스타일을 위한스마트한 서비스 3가지 - 시놀, 위드플, 모라니크",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165912111",
+      "kind": "column",
+      "title": "중년, 이성과 대화할 때 가장 반응 좋은 주제 바로 이것!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165911413",
+      "kind": "column",
+      "title": "황혼재혼, 다들 '이것' 때문에 실패한다.. 실패 이유 TOP3",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165792699",
+      "kind": "column",
+      "title": "‘아버님은 데이트 중’, 용돈 얼마나 드려야 할까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165792154",
+      "kind": "column",
+      "title": "황혼 재혼, 가장 큰 문제는? 시럽인연 실제 후기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165791953",
+      "kind": "column",
+      "title": "황혼재혼, 나도 할 수 있을까? 황혼재혼에 성공한 연예인",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165791572",
+      "kind": "column",
+      "title": "50대, 60대 이상 재혼한다면 필수, 재산분할 계약!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165791340",
+      "kind": "column",
+      "title": "50대 돌싱 이상민 재혼, 빚과 현재 소득은?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165790710",
+      "kind": "column",
+      "title": "결정사, 다 똑같다고? 국내 결혼정보회사 30곳 총정리!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165789533",
+      "kind": "column",
+      "title": "50대 이상 결혼정보회사 현실/ 가입시 체크리스트",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165769174",
+      "kind": "column",
+      "title": "치매 예방 시작해야 하는 시기 & 쉬운 예방법 5가지",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165768980",
+      "kind": "column",
+      "title": "60대 이상 부모님, 짝 찾아드리고 싶다면? '시럽인연'",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165768411",
+      "kind": "column",
+      "title": "국내 최초, 50대 이상을 위한 결혼정보서비스 시럽인연 론칭 이벤트",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165767998",
+      "kind": "column",
+      "title": "황혼연애 장점 3가지: 새로운 시작을 망설이는 당신에게",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165766564",
+      "kind": "column",
+      "title": "적적한 연말, 혼자가 아닌 함께! 요즘 시니어는 여기서 만난다!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165766321",
+      "kind": "column",
+      "title": "연말 볼거리 추천! 황혼 로맨스 '실버벨이 울리면' 줄거리 / 보는 법",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165764030",
+      "kind": "column",
+      "title": "'이젠 사랑할 수 있을까' 주병진 나이 / 사별여부",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165763843",
+      "kind": "column",
+      "title": "어른들의 연애 \"끝사랑\", 출연진 직업/나이/자녀유무/끝사랑같은 중년 소개팅앱 \"시럽\"",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165762000",
+      "kind": "column",
+      "title": "50대 연애 잘 하고 싶다면? 꼭 확인해야 할 3가지!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=165761092",
+      "kind": "column",
+      "title": "아이든 노인이든 호모 루덴스(Homo Ludens)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=163398814",
+      "kind": "column",
+      "title": "고독 속에서 건강한 삶을 선택하는 법",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=159642488",
+      "kind": "column",
+      "title": "100세 시대, ‘시골 쥐와 도시 쥐’",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=157900427",
+      "kind": "column",
+      "title": "신중년의 스탠딩 오더(Standing Order)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=157900282",
+      "kind": "column",
+      "title": "찰나의 빛으로 남아 있는 “그때 그 기억”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=157899819",
+      "kind": "column",
+      "title": "부모님께 장갑(glove: give-love) 선물은 어떨까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=156332806",
+      "kind": "column",
+      "title": "50+세대의 무선이어폰 사용 트렌드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=144371729",
+      "kind": "column",
+      "title": "시니어에게 솔깃한 주택연금 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=130459381",
+      "kind": "column",
+      "title": "50+세대가 즐기는 맥주 브랜드는 과연?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=130455097",
+      "kind": "column",
+      "title": "액티브 시니어의 무선청소기 이용 트렌드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=127481695",
+      "kind": "column",
+      "title": "50+세대의 막걸리 이용 트렌드는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=127480595",
+      "kind": "column",
+      "title": "50+세대 스마트폰 이용 트렌드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=126076548",
+      "kind": "column",
+      "title": "용기 있는 뮤지션의 빛나는 굿바이 투어(Goodbye Tour)",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=126074135",
+      "kind": "column",
+      "title": "액티브 시니어가 선택한 라면 브랜드는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=125406533",
+      "kind": "column",
+      "title": "액티브 시니어가 생각하는 경기체감도는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=125404090",
+      "kind": "column",
+      "title": "요즘 유행은 C커머스라고?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=125275350",
+      "kind": "column",
+      "title": "액티브 시니어의 주유소 이용 트렌드는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=125274384",
+      "kind": "column",
+      "title": "50+세대의 이동하기 위한 수단은?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=123312307",
+      "kind": "column",
+      "title": "엑티브시니어가 평소 구매하는 와인 금액대는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=123302567",
+      "kind": "column",
+      "title": "50+세대의 요즘 의류 스타일은?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=123301952",
+      "kind": "column",
+      "title": "A세대 카카오톡 선물하기 트렌드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=123301276",
+      "kind": "column",
+      "title": "50+세대의 요즘 음주 문화는?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=123300863",
+      "kind": "column",
+      "title": "합리적인 소비 생활은 쿠팡과!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=114843130",
+      "kind": "column",
+      "title": "레이건 대통령의 마지막 선물",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=100606107",
+      "kind": "column",
+      "title": "A세대 스마트워치 이용 트렌드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=86988954",
+      "kind": "column",
+      "title": "시원하게 머릿속 안개를 걷어내자",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=86795507",
+      "kind": "column",
+      "title": "시니어 자산관리 성공과 실패",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=51735115",
+      "kind": "column",
+      "title": "노후 3층 연금 이야기",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=51643774",
+      "kind": "column",
+      "title": "머릿속 안개 특보, 두뇌 건강에 유의",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=33180775",
+      "kind": "column",
+      "title": "시니어 자산관리 3N3",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=30197055",
+      "kind": "column",
+      "title": "성큼성큼 걸으며 인지 건강을 챙겨보자",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=24791395",
+      "kind": "column",
+      "title": "혀끝에만 빙글빙글 맴도는 야속한 \"그거...\"",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=20658656",
+      "kind": "column",
+      "title": "나이가 젊다고 인지 건강 과신은 금물",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=19929838",
+      "kind": "column",
+      "title": "벤자민 버튼의 시간처럼 인지장애 어르신의 시간도 거꾸로 간다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=18916079",
+      "kind": "column",
+      "title": "쓱쓱 알록달록! 색칠로 두뇌를 반짝반짝 닦아보자",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=18915976",
+      "kind": "column",
+      "title": "치매를 그냥 '인지저하증'이라고 하면 안 될까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=18902432",
+      "kind": "column",
+      "title": "잠자는 액션배우? 꿈에서 배달된 뇌 건강 옐로카드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17961705",
+      "kind": "column",
+      "title": "경도인지장애는 ‘철학적 죽음’의 옐로카드",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17946921",
+      "kind": "column",
+      "title": "나이 들수록 쓸만해지는 사람들",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17734537",
+      "kind": "column",
+      "title": "집 청소도 중요하고 뇌 청소도 중요하다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17519442",
+      "kind": "column",
+      "title": "100세 시대, '중년의 위기' 어떻게 지나갈 것인가?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17336494",
+      "kind": "column",
+      "title": "30년 이상 증가한 기대수명은 보너스인가?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17249637",
+      "kind": "column",
+      "title": "브레인포그에서 탈출법",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170236",
+      "kind": "column",
+      "title": "초로기 치매인가? 브레인포그인가?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170213",
+      "kind": "column",
+      "title": "하버드식 건강 식단으로 스트레스 해소, 건강 지킨다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170192",
+      "kind": "column",
+      "title": "분노폭발 방지법? 감정 쓰레기통을 종종 비워라",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170136",
+      "kind": "column",
+      "title": "스트레스를 불러오는 생각의 습관",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170120",
+      "kind": "column",
+      "title": "삶의 해독제, 꿀잠",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170101",
+      "kind": "column",
+      "title": "두뇌 최적화는 어떻게 할까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170066",
+      "kind": "column",
+      "title": "두뇌 최적화는 나이 들수록 더 필요하다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170034",
+      "kind": "column",
+      "title": "동안(童顔)으로 못 돌아가도 노안(老顔)은 늦추고 싶다",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17170020",
+      "kind": "column",
+      "title": "나만 늙은 것 같네? 노화의 주범을 찾아서!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169989",
+      "kind": "column",
+      "title": "걷기의 장점 살리는 '바른 걷기' 자세",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169975",
+      "kind": "column",
+      "title": "스트레스를 가려주는 마음의 우산이 있는가?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169954",
+      "kind": "column",
+      "title": "100세 시대를 살면서 천천히 늙을 수 없을까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169936",
+      "kind": "column",
+      "title": "뇌가 신나는 ‘걷기’, 어떻게 하면 될까?",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169905",
+      "kind": "column",
+      "title": "도시병의 가장 좋은 약, ‘걷기’",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169886",
+      "kind": "column",
+      "title": "'걷기'로 다이어트와 치매 예방, 두 마리 토끼를 잡아라!",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169852",
+      "kind": "column",
+      "title": "“9988 1234, 백세시대를 사는 사람의 소망”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169783",
+      "kind": "column",
+      "title": "\"신중년의 위기? 초로기치매!”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169699",
+      "kind": "column",
+      "title": "“감사, 용서, 그리고 망각의 힘”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169684",
+      "kind": "column",
+      "title": "“무엇이 로빈 윌리엄스를 삶의 절벽 아래로 밀었을까?”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169640",
+      "kind": "column",
+      "title": "“신(新)중년, 이제는 삶 속에 레버리지를 활용해야 한다”",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169576",
+      "kind": "column",
+      "title": "”포노사피엔스 시대를 살아가야 하는 사람들“",
+      "targetPath": null,
+      "state": "not_imported"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17159823",
+      "kind": "column",
+      "title": "\"아름다운 황혼의 노신사와 예쁜 치매 여사\"",
+      "targetPath": null,
+      "state": "not_imported"
+    }
+  ]
+}

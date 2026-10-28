@@ -79,3 +79,7 @@
 `/admin/columns/`에서 작성·수정·공개·비공개·휴지통 및 카테고리를 관리합니다. `/columns/` 목록·상세와 홈 칼럼이 같은 데이터를 사용합니다. 현재 같은 브라우저에 저장하는 작업용 모드이며, 전체 방문자 반영을 위한 회사 API 연결 계약은 [cms/README.md](cms/README.md)를 참고하세요.
 
 회사소개 콘텐츠는 `/admin/news/`(전체 기사 ON/OFF), `/admin/history/`(연혁), `/admin/partners/`(협력사 로고·이름)에서 관리합니다. 기사 자동 수집은 유지하며 신규 기사는 기본 ON입니다. 기존 중복 자동 숨김 대신 개별 토글로 노출을 결정합니다. 현재 같은 브라우저에만 저장·반영되며 회사 API 계약은 `cms/README.md`에 정리했습니다.
+
+## 기존 URL 연결 및 복구 자료
+
+[기존 주소·제목·내용 요약 대응표](deployment/redirects/legacy-url-reference.md)와 [CSV](deployment/redirects/legacy-url-reference.csv)를 보관합니다. 실제 301 규칙/미연결 주소 점검/회사 서버·도메인 전환 절차는 [리디렉션 안내](deployment/redirects/README.md)에 있습니다. 현재 호스팅에서 모든 301이 적용된 상태라는 의미는 아닙니다.

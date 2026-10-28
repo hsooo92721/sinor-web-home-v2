@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "canonicalOrigin": "https://sinor.co.kr",
+  "pages": [
+    {
+      "sourcePath": "/main",
+      "targetPath": "/"
+    },
+    {
+      "sourcePath": "/company",
+      "targetPath": "/company/"
+    },
+    {
+      "sourcePath": "/download",
+      "targetPath": "/download/"
+    },
+    {
+      "sourcePath": "/silove",
+      "targetPath": "/silove/"
+    },
+    {
+      "sourcePath": "/moim",
+      "targetPath": "/moim/"
+    },
+    {
+      "sourcePath": "/information",
+      "targetPath": "/columns/"
+    },
+    {
+      "sourcePath": "/terms",
+      "targetPath": "/policy/terms/"
+    },
+    {
+      "sourcePath": "/privacy",
+      "targetPath": "/policy/privacy/"
+    },
+    {
+      "sourcePath": "/travel-terms",
+      "targetPath": "/policy/travel/"
+    },
+    {
+      "sourcePath": "/domestic-special-terms",
+      "targetPath": "/policy/travel-special/"
+    },
+    {
+      "sourcePath": "/adv",
+      "targetPath": "/adv/"
+    }
+  ],
+  "queries": [
+    {
+      "sourcePath": "/",
+      "params": {
+        "mode": "policy"
+      },
+      "targetPath": "/policy/terms/"
+    },
+    {
+      "sourcePath": "/",
+      "params": {
+        "mode": "privacy"
+      },
+      "targetPath": "/policy/privacy/"
+    }
+  ],
+  "columns": [],
+  "hashes": {
+    "/#doz_menu_moim": "/moim/",
+    "/#doz_menu_silove": "/silove/"
+  }
+}
