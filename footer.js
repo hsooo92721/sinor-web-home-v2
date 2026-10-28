@@ -10,4 +10,4 @@ document.querySelectorAll('.app-footer .company-info').forEach(details => {
   });
 });
 // Shared site settings also cover article pages outside the managed page router.
-import(new URL('cms/site-settings-public.js?v=1',document.currentScript.src).href).catch(error=>console.warn('사이트 설정을 불러오지 못했습니다.',error));
+import(new URL('cms/site-settings-public.js?v=2',document.currentScript.src).href).catch(error=>console.warn('사이트 설정을 불러오지 못했습니다.',error));

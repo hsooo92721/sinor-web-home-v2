@@ -2,7 +2,7 @@ import {columnsList} from './columns-list.js?v=2';
 import {newBadge} from '../cms/publication.js?v=2';
 import {openColumnManager} from './column-managers.js?v=2';
 import {columnEditor} from './column-editor.js?v=13';
-import {settingsAdmin,contentStatistics} from './site-settings.js?v=2';
+import {settingsAdmin,contentStatistics} from './site-settings.js?v=3';
 import {installDevelopmentChat} from './development-chat.js';
 import {companyAdmin} from './company-admin.js?v=10';
 import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=20';
