@@ -33,3 +33,7 @@
 - 운영 API는 기존 주소의 중복을 DB에서 원자적으로 차단하고 legacyUrls/columnNumber를 저장·반환해야 합니다. 글 번호는 실제 발행일 오름차순의 표시 번호이며 URL 키로 사용하지 않습니다.
 
 참고: https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes
+
+## 향후 페이지 관리 구현 시 반드시 반영
+
+사용자가 요청한 [페이지별 기존 URL 입력·수정 및 301 관리 요구사항](../../docs/future-page-management.md)을 따른다. 기존에 만든 페이지와 앞으로 추가할 모든 페이지에 조사된 주소를 자동 입력하고 관리자에서 확인/수정할 수 있게 해야 한다. 페이지 생성·삭제·숨김 UI 자체는 현재 구현 범위가 아니다.

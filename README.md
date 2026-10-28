@@ -83,3 +83,5 @@
 ## 기존 URL 연결 및 복구 자료
 
 [기존 주소·제목·내용 요약 대응표](deployment/redirects/legacy-url-reference.md)와 [CSV](deployment/redirects/legacy-url-reference.csv)를 보관합니다. 실제 301 규칙/미연결 주소 점검/회사 서버·도메인 전환 절차는 [리디렉션 안내](deployment/redirects/README.md)에 있습니다. 현재 호스팅에서 모든 301이 적용된 상태라는 의미는 아닙니다.
+
+향후 페이지 생성·삭제·숨김을 다시 구현할 때는 [페이지별 기존 URL/301 관리 요구사항](docs/future-page-management.md)을 포함합니다. 현재는 요구사항만 기록합니다.
