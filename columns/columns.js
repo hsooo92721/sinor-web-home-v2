@@ -1,4 +1,4 @@
-import {newBadge} from '../cms/publication.js?v=1';
+import {newBadge} from '../cms/publication.js?v=2';
 import {renderKeywordTags} from '../cms/keywords.js?v=2';
 import {setColumnCss} from '../cms/column-css.js';
 import {applyArticleMetadata,clearArticleMetadata} from './metadata.js?v=2';
