@@ -36,3 +36,7 @@
 .editor-profile-dialog .column-author-bio{margin:16px 0 0;background:#fff;padding:16px 0}
 .editor-profile-close{display:block;margin-left:auto;border:0;background:#f2f4f6;border-radius:50%;width:36px;height:36px;font-size:26px;cursor:pointer}
 @media(max-width:520px){.column-author-bio{padding:24px;gap:16px;flex-direction:column}.column-author-bio>img{width:64px;height:64px;flex-basis:64px}.column-author-bio .column-author-description{font-size:15px}.editor-profile-dialog{padding:20px}}
+
+/* Compact article byline; the profile dialog retains the complete biography. */
+.column-author-bio .column-author-description{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;text-overflow:ellipsis;white-space:normal}
+.editor-profile-dialog .column-author-description{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible;white-space:pre-line}

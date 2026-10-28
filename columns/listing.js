@@ -1,4 +1,4 @@
-import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=1';
+import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=2';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=22';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=1';
