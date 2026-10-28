@@ -53,7 +53,7 @@ function validate(input){
  const customCss=String(input.customCss||'');if(customCss.length>200000)throw new Error('스타일 코드는 200,000자 이하로 입력해 주세요.');
  const bodyHtml=sanitizeHtml(input.bodyHtml);
  if(input.status==='published'&&!bodyHtml.replace(/<[^>]*>/g,'').trim()&&!/<img\b/.test(bodyHtml))throw new Error('공개할 칼럼의 본문을 입력해 주세요.');
- const authorId=String(input.authorId||'').slice(0,80),authorProfile=input.authorProfile?{id:authorId,name:String(input.authorProfile.name||'').trim().slice(0,60),affiliation:String(input.authorProfile.affiliation||'').trim().slice(0,100),image:safeUrl(input.authorProfile.image||'',true)}:null;
+ const authorId=String(input.authorId||'').slice(0,80),authorProfile=input.authorProfile?{id:authorId,name:String(input.authorProfile.name||'').trim().slice(0,60),affiliation:String(input.authorProfile.affiliation||'').trim().slice(0,100),position:String(input.authorProfile.position||'').trim().slice(0,100),bio:String(input.authorProfile.bio||'').trim().slice(0,3000),image:safeUrl(input.authorProfile.image||'',true)}:null;
  return {...input,legacyUrls:normalizeLegacyUrls(input.legacyUrls||input.sourceUrl||[]),authorId,authorProfile,title,bodyHtml,customCss,styleId:String(input.styleId||'common'),keywords,readMinutes,displayDate,subtitle:String(input.subtitle||'').trim().slice(0,300),expertName:String(input.expertName||'').trim().slice(0,100),excerpt:String(input.excerpt||'').trim().slice(0,240),author:String(input.author||'시놀').trim().slice(0,60),thumbnail:safeUrl(input.thumbnail||'',true),featured:!!input.featured};
 }
 export const cms={

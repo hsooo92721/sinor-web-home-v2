@@ -1,5 +1,5 @@
 import {installLogoSearch,installPartnerDrag} from './partner-tools.js?v=3';
-import {companyCms} from '../cms/company-client.js?v=21';
+import {companyCms} from '../cms/company-client.js?v=22';
 import {cms,siteUrl,safeUrl} from '../cms/client.js';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function companyAdmin(kind,root,toast){

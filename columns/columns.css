@@ -22,3 +22,18 @@
 .reader-card-byline{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:14px;line-height:1.6;color:#555}
 .reader-card-byline strong{font-weight:750;color:#171719}
 @media(max-width:520px){.reader-card-body{padding:20px 20px 26px}.reader-card-category{top:14px;left:14px}.reader-card-media>.column-new-badge{top:14px;right:14px}}
+
+.reader-category-tabs{position:sticky;top:0;z-index:25;display:flex;gap:8px;overflow-x:auto;padding:14px 0;margin:0 0 24px;background:#fff;border-bottom:1px solid #e5e8eb;scrollbar-width:thin}
+.reader-category-tabs button{flex-shrink:0;border:0;border-radius:999px;padding:10px 18px;background:#f2f4f6;color:#6b7684;font-family:inherit;font-size:14px;font-weight:600;line-height:1.5;cursor:pointer}
+.reader-category-tabs button[aria-pressed=true]{background:#171719;color:#fff}
+.column-editors{padding:48px 0 64px;border-top:1px solid #e5e8eb;margin-top:40px}
+.column-editors>h2{font-size:22px;letter-spacing:.04em;margin:0 0 32px}
+.column-editors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.column-editor-profile{text-align:left;border:0;background:none;padding:0;cursor:pointer;min-width:0;color:#171719}
+.column-editor-profile>img,.editor-avatar-empty{display:flex;align-items:center;justify-content:center;width:min(100%,180px);aspect-ratio:1;object-fit:cover;border-radius:50%;background:#f2f4f6;font-size:48px;margin-bottom:20px}
+.column-editor-profile>strong{display:block;font-size:21px;margin-bottom:8px}
+.column-editor-profile>span:not(.editor-avatar-empty){display:block;font-size:15px;color:#6b7684;line-height:1.6;overflow-wrap:anywhere}
+.column-editor-profile:hover>strong{color:#2871e9}
+@media(max-width:650px){.column-editors-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}.column-editor-profile>strong{font-size:18px}.column-editor-profile>span:not(.editor-avatar-empty){font-size:13px}}
+
+.column-about-link{display:inline-block;margin-top:18px;font-size:14px;font-weight:650;color:#2871e9!important}
