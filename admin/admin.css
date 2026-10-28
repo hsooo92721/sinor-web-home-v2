@@ -64,3 +64,12 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .column-admin-table .column-category-chip{max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 @media(max-width:1000px){.column-admin-table th,.column-admin-table td{padding:12px 6px}.column-admin-table th:nth-child(1){width:32px}.column-admin-table th:nth-child(4){width:78px}.column-admin-table th:nth-child(5){width:86px}.column-admin-table th:nth-child(6){width:88px}.column-admin-table .list-thumb{display:none}}
 @media(max-width:650px){.column-admin-table th,.column-admin-table td{font-size:11px;padding:12px 4px}.column-admin-table th:nth-child(3){width:12%}.column-admin-table th:nth-child(4){width:40px}.column-admin-table th:nth-child(5){width:52px}.column-admin-table th:nth-child(6){width:76px}.column-admin-table .publication-toggle>span:last-child{display:none}.column-admin-table .column-category-chip{padding:4px;font-size:10px;gap:3px}.column-admin-table .column-category-dot{display:none}.column-row-actions{gap:2px}.column-row-actions .button{padding:5px 6px}.column-admin-table .post-title{font-size:13px}}
+
+/* A consistent inset around the complete column list panel. */
+.column-list-panel{padding:24px}
+.column-list-panel .list-toolbar{padding:0 0 20px}
+.column-list-panel .column-list-options{padding:16px 0}
+.column-list-panel .admin-column-gallery{padding:20px 0 0}
+.column-list-panel .pagination{padding:20px 0 0}
+.column-list-panel .pagination:empty{display:none}
+@media(max-width:650px){.column-list-panel{padding:16px}.column-list-panel .list-toolbar{padding:0 0 16px}.column-list-panel .column-list-options{padding:16px 0}.column-list-panel .admin-column-gallery{padding:16px 0 0}}
