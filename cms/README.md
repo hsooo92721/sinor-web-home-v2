@@ -201,3 +201,6 @@ social HTML은 company-boot.js가 company-release.json 버전을 캐시 우회 �
 CodeMirror 6와 Prettier를 `assets/vendor/code-editor/editor.js`에 함께 번들링합니다. 외부 CDN 요청 없이 구문 색상, 태그 자동 닫기/완성, 줄 번호/접기, Tab 및 줄바꿈 자동 들여쓰기, 붙여넣기 자동 정리를 제공합니다. ‘코드 정리’ 버튼 또는 Shift+Alt+F로 HTML과 `<style>` 안의 CSS를 정돈합니다. 문법 오류가 있거나 정리 중 사용자가 내용을 변경하면 원문을 덮어쓰지 않습니다. CodeMirror의 실제 편집 DOM을 사용하므로 별도 표시층으로 인한 선택 위치 어긋남이 없습니다.
 
 재빌드: `cd tools/code-editor && npm ci && npm run build`. 버전은 package-lock.json으로 고정하며 배포 파일과 LICENSES.json을 함께 보관합니다. 코드 모드의 문서는 기존 textarea 값과 동기화하므로 저장/비주얼 전환 계약을 유지합니다.
+
+### 비주얼 편집기의 링크
+HTML로 붙여넣은 `<a href>`와 툴바로 삽입한 링크는 동일하게 처리합니다. 작성 중 링크를 클릭하면 주소 열기(새 탭), 주소 수정, 링크 해제 도구가 뜹니다. 해제 시 텍스트/굵게 등 기존 서식을 유지합니다. 주소 입력 모달은 검증 후 닫고 본문 선택 영역을 복원한 다음 링크를 적용합니다. 이 순서를 지켜 native dialog의 inert 처리로 링크 삽입이 실패하지 않게 합니다. 미리보기·독자 화면의 링크는 일반 링크로 열립니다.
