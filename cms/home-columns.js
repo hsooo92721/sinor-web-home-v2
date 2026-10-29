@@ -1,4 +1,4 @@
-import {cms,articleUrl,siteUrl,watch} from './client.js?v=22';
+import {cms,articleUrl,siteUrl,watch} from './client.js?v=23';
 async function render(){
  const section=document.querySelector('.column-section');if(!section)return;
  const [posts,categories]=await Promise.all([cms.publicPosts(),cms.categories()]);

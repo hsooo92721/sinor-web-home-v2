@@ -1,12 +1,12 @@
-import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=3';
+import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=4';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {readerListing} from './listing.js?v=6';
+import {readerListing} from './listing.js?v=7';
 import {newBadge} from '../cms/publication.js?v=2';
 import {renderKeywordTags} from '../cms/keywords.js?v=2';
 import {setColumnCss} from '../cms/column-css.js';
-import {applyArticleMetadata,clearArticleMetadata} from './metadata.js?v=4';
+import {applyArticleMetadata,clearArticleMetadata} from './metadata.js?v=5';
 import {renderHeader,renderAuthorBio} from '../cms/column-document.js?v=6';
-import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=22';
+import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=23';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;
 const main=document.querySelector('#columnsMain'),isDetail=document.body.dataset.page==='detail';

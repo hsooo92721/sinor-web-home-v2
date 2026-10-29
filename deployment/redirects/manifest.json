@@ -63,7 +63,43 @@
       "targetPath": "/policy/privacy/"
     }
   ],
-  "columns": [],
+  "columns": [
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17159823",
+      "sourcePath": "/information/",
+      "sourceId": "17159823",
+      "targetPath": "/columns/1",
+      "postId": "imweb-17159823"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169576",
+      "sourcePath": "/information/",
+      "sourceId": "17169576",
+      "targetPath": "/columns/2",
+      "postId": "imweb-17169576"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169640",
+      "sourcePath": "/information/",
+      "sourceId": "17169640",
+      "targetPath": "/columns/3",
+      "postId": "imweb-17169640"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169684",
+      "sourcePath": "/information/",
+      "sourceId": "17169684",
+      "targetPath": "/columns/4",
+      "postId": "imweb-17169684"
+    },
+    {
+      "sourceUrl": "https://sinor.co.kr/information/?bmode=view&idx=17169699",
+      "sourcePath": "/information/",
+      "sourceId": "17169699",
+      "targetPath": "/columns/5",
+      "postId": "imweb-17169699"
+    }
+  ],
   "hashes": {
     "/#doz_menu_moim": "/moim/",
     "/#doz_menu_silove": "/silove/"

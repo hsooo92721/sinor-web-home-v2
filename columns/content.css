@@ -53,3 +53,5 @@
 .editor-profile-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0;scrollbar-gutter:stable}
 .editor-profile-scroll p{white-space:pre-line;font-size:16px;line-height:1.85;margin:0;overflow-wrap:anywhere}
 @media(max-width:520px){.editor-profile-dialog{padding:20px}.editor-profile-dialog[open]{gap:20px}.editor-profile-header{gap:12px}.editor-profile-header>img{width:56px;height:56px}.editor-profile-header h2{font-size:21px}.editor-profile-header p{font-size:13px}}
+
+.sinor-column .sinor-column-source-logo{width:158px;max-width:100%}

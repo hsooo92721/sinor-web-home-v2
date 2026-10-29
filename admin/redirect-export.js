@@ -1,3 +1,3 @@
-import {siteUrl} from '../cms/client.js?v=22';
-import {columnRedirects} from '../cms/legacy-urls.js?v=1';
+import {siteUrl} from '../cms/client.js?v=23';
+import {columnRedirects} from '../cms/legacy-urls.js?v=2';
 export async function exportRedirectPlan(posts,toast){try{const response=await fetch(siteUrl('deployment/redirects/manifest.json'));if(!response.ok)throw Error('이전 주소 기본 목록을 읽지 못했습니다.');const manifest=await response.json();manifest.columns=columnRedirects(posts);manifest.exportedAt=new Date().toISOString();manifest.note='운영 서버 적용용 301 연결 목록입니다. 다운로드만으로 현재 도메인에 적용되지는 않습니다.';const blob=new Blob([JSON.stringify(manifest,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='sinor-redirects.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('이전 주소 연결 목록을 내보냈습니다. 회사 서버 배포에 적용해 주세요.')}catch(error){toast(error.message,true)}}
