@@ -232,3 +232,8 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .author-list-meta{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:12px;line-height:1.6;color:#6b7684;overflow-wrap:anywhere}
 .author-post-count{font-weight:650;white-space:nowrap;color:#3182f6}
 @media(max-width:760px){.author-manager-body{grid-template-columns:1fr;gap:20px}.author-manager-list{order:-1;max-height:220px}.author-manager-body>.form-error{grid-column:auto}}
+
+.author-manager-list{overflow-y:auto;scrollbar-width:thin;scrollbar-gutter:stable;overscroll-behavior:contain}
+.author-delete-dialog{width:calc(100% - 32px);max-width:440px;padding:28px;border-radius:20px}
+.author-delete-dialog h2{font-size:20px;line-height:1.5;margin:0 0 16px}.author-delete-dialog p{color:#6b7684;line-height:1.7;margin:0 0 24px}
+.author-delete-dialog .actions{display:flex;gap:8px}.author-delete-dialog .actions>*{flex:1;justify-content:center}

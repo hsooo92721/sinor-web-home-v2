@@ -1,4 +1,4 @@
-import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=23';
+import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=25';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const categoryTabs=[['','전체'],['travel','여행'],['life','생활문화'],['health','건강'],['economy','경제정책'],['trend','트렌드']];

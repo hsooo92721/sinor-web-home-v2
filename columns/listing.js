@@ -1,7 +1,7 @@
-import {categoryGroup} from './shell.js?v=3';
-import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=4';
+import {categoryGroup} from './shell.js?v=4';
+import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=5';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=23';
+import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=25';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=2';
 import {newBadge} from '../cms/publication.js?v=2';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
