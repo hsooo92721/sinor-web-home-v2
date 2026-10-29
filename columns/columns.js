@@ -1,17 +1,17 @@
-import {setupColumnShell} from './shell.js?v=5';
-import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=6';
+import {setupColumnShell} from './shell.js?v=6';
+import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=7';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
-import {readerListing} from './listing.js?v=13';
+import {readerListing} from './listing.js?v=14';
 import {renderKeywordTags} from '../cms/keywords.js?v=2';
 import {setColumnCss} from '../cms/column-css.js';
 import {applyArticleMetadata,clearArticleMetadata} from './metadata.js?v=7';
-import {renderHeader,renderAuthorBio} from '../cms/column-document.js?v=8';
+import {renderHeader,renderAuthorBio,renderReadingTime} from '../cms/column-document.js?v=9';
 import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=26';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;
 const main=document.querySelector('#columnsMain'),isDetail=document.body.dataset.page==='detail';
 if(mode==='demo'&&new URLSearchParams(location.search).has('preview')){const notice=document.createElement('div');notice.className='columns-demo';notice.textContent='작업용 미리보기 · 이 브라우저에서 공개한 칼럼이 표시됩니다. 방문자 전체 공개는 회사 API 연동 후 적용됩니다.';document.querySelector('.columns-header').after(notice)}
-function card(p,categories,badges=null){return `<a class="reader-card" href="${articleUrl(p.id)}"><div class="reader-card-media"><div class="cover${p.thumbnail?'':' placeholder'}"><img src="${E(p.thumbnail||siteUrl('assets/sinor-logo-official.png'))}" alt="" loading="lazy"></div><div class="reader-card-category">${renderCategoryChip(categories.find(c=>c.id===p.categoryId))}</div>${typeof badges==='function'?badges(p,{compact:true}):''}</div><div class="reader-card-body"><h2>${E(p.title.replace(/^\s*\[시놀\s*칼럼\]\s*/,''))}</h2><p>${E(p.excerpt||p.subtitle||excerpt(p.bodyHtml))}</p><div class="reader-card-byline">${p.authorProfile?.name||p.author?`<strong>${E(p.authorProfile?.name||p.author)}</strong>`:''}${p.authorProfile?.affiliation||p.authorProfile?.position?`<span class="reader-card-affiliation">${E([p.authorProfile.affiliation,p.authorProfile.position].filter(Boolean).join(' · '))}</span>`:''}${p.author&&p.readMinutes?'<span aria-hidden="true">·</span>':''}${p.readMinutes?`<span>${E(p.readMinutes)}분 읽기</span>`:''}</div></div></a>`}
+function card(p,categories,badges=null){return `<a class="reader-card" href="${articleUrl(p.id)}"><div class="reader-card-media"><div class="cover${p.thumbnail?'':' placeholder'}"><img src="${E(p.thumbnail||siteUrl('assets/sinor-logo-official.png'))}" alt="" loading="lazy"></div><div class="reader-card-category">${renderCategoryChip(categories.find(c=>c.id===p.categoryId))}</div>${typeof badges==='function'?badges(p,{compact:true}):''}</div><div class="reader-card-body"><h2>${E(p.title.replace(/^\s*\[시놀\s*칼럼\]\s*/,''))}</h2><p>${E(p.excerpt||p.subtitle||excerpt(p.bodyHtml))}</p><div class="reader-card-byline">${p.authorProfile?.name||p.author?`<strong>${E(p.authorProfile?.name||p.author)}</strong>`:''}${p.authorProfile?.affiliation||p.authorProfile?.position?`<span class="reader-card-affiliation">${E([p.authorProfile.affiliation,p.authorProfile.position].filter(Boolean).join(' · '))}</span>`:''}${p.author&&p.readMinutes?'<span aria-hidden="true">·</span>':''}${p.readMinutes?renderReadingTime(p.readMinutes):''}</div></div></a>`}
 let selectedCategory='',query='',page=1;
 async function list(){await readerListing(main,card)}
 

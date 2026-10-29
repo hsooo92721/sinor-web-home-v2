@@ -55,3 +55,5 @@
 @media(max-width:520px){.editor-profile-dialog{padding:20px}.editor-profile-dialog[open]{gap:20px}.editor-profile-header{gap:12px}.editor-profile-header>img{width:56px;height:56px}.editor-profile-header h2{font-size:21px}.editor-profile-header p{font-size:13px}}
 
 .sinor-column .sinor-column-source-logo{width:158px;max-width:100%}
+
+.column-reading-time{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}.column-reading-time>i{font-size:.9em}

@@ -1,5 +1,5 @@
-import {categoryGroup} from './shell.js?v=5';
-import {currentAuthors,hydrateAuthors} from './editors.js?v=6';
+import {categoryGroup} from './shell.js?v=6';
+import {currentAuthors,hydrateAuthors} from './editors.js?v=7';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=26';
 import {latestFirst,readListPreference,saveListPreference} from '../cms/column-listing.js?v=2';
