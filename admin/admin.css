@@ -125,3 +125,11 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .history-edit-modal #companyForm>.actions{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;gap:8px;padding-top:20px;margin:0;flex-shrink:0}
 .history-edit-modal #companyForm>.actions .button{min-width:88px}
 @media(max-width:520px){.company-modal.history-edit-modal{padding:20px;border-radius:20px}.history-modal-top{gap:12px}.history-modal-top label{font-size:13px}.history-modal-top input[type=file]{font-size:11px}}
+
+.history-date-upload{min-width:0}
+.history-date-upload>.field+ .field{margin-top:20px}
+.history-image-preview{min-width:0;padding:0}
+.history-preview-label{display:block;font-size:13px;font-weight:600;color:#4e5968;margin-bottom:8px}
+.history-image-preview .company-edit-image{width:100%;height:160px;object-fit:contain;border-radius:10px;margin:0 0 8px}
+.history-edit-modal #companyForm>.actions{width:100%;gap:8px}
+.history-edit-modal #companyForm>.actions .button{flex:1 1 0;min-width:0;width:0}
