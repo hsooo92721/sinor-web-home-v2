@@ -90,3 +90,16 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .company-history-list .company-card.drop-target[data-drop-side=after]{box-shadow:0 4px 0 #3182f6}
 @media(hover:none){.history-insert-slot button{opacity:1}}
 @media(max-width:650px){.company-history-list .company-card{padding:12px;gap:10px}.company-history-list .company-card-image{width:64px;height:52px}}
+
+/* Compact full-width history rows, with consistent column positions. */
+.company-history-list .company-card{display:grid;grid-template-columns:30px 72px 72px minmax(0,1fr) auto;gap:12px;width:100%;max-width:none;align-self:stretch;min-height:76px;padding:10px 14px}
+.company-history-list .partner-order-tools{grid-column:1;grid-row:1}
+.company-history-list .panel-body{display:contents}
+.company-history-list .panel-body>small{grid-column:2;grid-row:1;white-space:nowrap}
+.company-history-list .company-card-image{grid-column:3;grid-row:1;width:72px;height:52px}
+.company-history-list .panel-body>h2{grid-column:4;grid-row:1;margin:0;font-size:15px;line-height:1.6}
+.company-history-list .panel-body>.actions{grid-column:5;grid-row:1;flex-wrap:nowrap;gap:6px}
+.company-history-list .history-insert-slot{height:24px;width:100%;align-self:stretch}
+.history-insert-slot button{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;padding:0;box-sizing:border-box}
+.history-insert-slot button svg{display:block}
+@media(max-width:650px){.company-history-list .company-card{grid-template-columns:24px 52px 40px minmax(0,1fr) auto;gap:6px;padding:10px 8px;min-height:64px}.company-history-list .company-card-image{width:40px;height:36px}.company-history-list .panel-body>small{font-size:10px}.company-history-list .panel-body>h2{font-size:12px}.company-history-list .panel-body>.actions{gap:2px}.company-history-list .panel-body>.actions .button{font-size:11px;padding:5px;min-height:30px}}
