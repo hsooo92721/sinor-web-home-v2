@@ -7,3 +7,5 @@ Company API: GET /columns/authors, POST /admin/columns/authors and PUT /admin/co
 /columns/ and /columns/about/ show the editor directory with profile dialogs. Article details automatically show the linked author introduction. Category buttons remain sticky at the top of the reader list while scrolling and reset pagination when changed.
 
 Demo mode retains browser-local IndexedDB storage. Shared public persistence requires the company API, as before.
+
+Photo adjustment stores imageOriginal (original source) and imageCrop ({x,y:0..1, zoom:1..3}) alongside image (the cropped square display image). Company author endpoints should retain these optional fields for later readjustment. All reader avatars continue using image so the applied crop looks consistent without view-specific positioning logic.

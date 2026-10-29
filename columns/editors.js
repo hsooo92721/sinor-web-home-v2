@@ -1,4 +1,4 @@
-import {authorCms} from '../cms/authors.js?v=3';
+import {authorCms} from '../cms/authors.js?v=4';
 import {renderAuthorBio} from '../cms/column-document.js?v=6';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function currentAuthors(posts=[]){const authors=await authorCms.list();const map=new Map(authors.map(a=>[a.id,a]));for(const p of posts){const a=p.authorProfile;if(a?.id&&!map.has(a.id))map.set(a.id,a)}return [...map.values()]}
