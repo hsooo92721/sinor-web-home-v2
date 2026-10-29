@@ -1,4 +1,4 @@
-import {articleUrl,safeUrl,excerpt,mode} from '../cms/client.js?v=25';
+import {articleUrl,safeUrl,excerpt,mode} from '../cms/client.js?v=26';
 import {normalizeKeywords} from '../cms/keywords.js';
 function meta(key,value,property=false){const attr=property?'property':'name';let el=document.head.querySelector(`meta[${attr}="${key}"]`);if(value===null||value===''){el?.remove();return}if(!el){el=document.createElement('meta');el.setAttribute(attr,key);document.head.append(el)}el.content=String(value)}
 export function clearArticleMetadata(){document.querySelector('#columnArticleData')?.remove();for(const key of ['keywords','author'])meta(key,null);for(const key of ['og:image','article:published_time','article:modified_time'])meta(key,null,true);document.head.querySelector('link[rel=canonical]')?.remove();meta('robots','noindex,follow');document.title='칼럼을 찾을 수 없습니다 · 시놀칼럼';meta('description','요청하신 칼럼을 확인할 수 없습니다.');meta('og:title',document.title,true);meta('og:description','요청하신 칼럼을 확인할 수 없습니다.',true)}

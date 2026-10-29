@@ -249,3 +249,11 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .badge-style-preview{display:flex;justify-content:center;align-items:center;background:#f7f8fa;padding:16px;margin:14px 0;border-radius:8px}.badge-style-preview .column-custom-badge{font-size:13px}
 .badge-manager-detail .actions{display:flex;gap:8px}.badge-manager-detail .actions>*{flex:1;justify-content:center}
 .column-admin-table .column-badge-group{max-width:45%;flex-wrap:wrap}
+.studio-aside{align-self:start;position:sticky;top:20px;max-height:calc(100dvh - 40px);overflow-y:auto;scrollbar-width:thin}
+.studio-publish-actions{display:flex;flex-direction:column;gap:8px;margin-top:20px}.studio-publish-actions>.button{width:100%}
+.studio-redirects{margin-top:20px;border-top:1px solid #e5e8eb;padding-top:16px}.studio-redirects summary{cursor:pointer;font-size:13px;color:#6b7684;font-weight:600;margin-bottom:12px}.studio-redirects textarea{width:100%;margin-top:10px}
+@media(max-width:900px){.studio-aside{top:12px;max-height:calc(100dvh - 24px)}}
+@media(max-width:650px){.studio-aside{position:static;max-height:none;overflow:visible}.studio-publish-actions{position:sticky;bottom:12px;z-index:5;background:white;padding:8px;border-radius:10px;flex-direction:row}}
+@media(min-width:1000px) and (max-width:1200px){.studio-layout{grid-template-columns:minmax(0,1fr) 220px}}
+@media(max-width:999px){.studio-main{padding-bottom:90px}.studio-aside{position:static;max-height:none;overflow:visible}.studio-publish-actions{position:fixed;bottom:16px;right:24px;width:320px;max-width:calc(100% - 48px);z-index:35;flex-direction:row;gap:8px;padding:10px;background:#fff;border:1px solid #e5e8eb;border-radius:12px;box-shadow:0 5px 20px #0001}}
+@media(max-width:650px){.studio-publish-actions{left:16px;right:16px;bottom:12px;width:auto;max-width:none}}

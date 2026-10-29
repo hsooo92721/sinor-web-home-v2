@@ -1,11 +1,11 @@
-import {columnsList} from './columns-list.js?v=14';
+import {columnsList} from './columns-list.js?v=15';
 import {newBadge} from '../cms/publication.js?v=2';
-import {openColumnManager} from './column-managers.js?v=10';
-import {columnEditor} from './column-editor.js?v=23';
+import {openColumnManager} from './column-managers.js?v=11';
+import {columnEditor} from './column-editor.js?v=24';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=5';
 import {installDevelopmentChat} from './development-chat.js';
 import {companyAdmin} from './company-admin.js?v=18';
-import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=25';
+import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=26';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icon=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;

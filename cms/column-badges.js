@@ -1,4 +1,4 @@
-import {siteRoot,mode} from './client.js?v=25';
+import {siteRoot,mode} from './client.js?v=26';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const key='sinor-column-badges:'+siteRoot.pathname;
 export const badgeConditions={recent:'발행일로부터 며칠 이내',topViews:'조회수 상위 순위',minViews:'최소 조회수',category:'카테고리 지정',manual:'글 직접 선택'};

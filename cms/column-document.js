@@ -1,6 +1,6 @@
 import {renderCategoryChip} from './category-colors.js?v=1';
 import {normalizeLegacyUrls} from './legacy-urls.js?v=2';
-import {sanitizeHtml} from './client.js?v=25';
+import {sanitizeHtml} from './client.js?v=26';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const today=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 export const fieldText=el=>(el?.textContent||'').trim();

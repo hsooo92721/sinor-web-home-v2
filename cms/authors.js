@@ -1,5 +1,5 @@
 import {importedColumns,mergeImportedAuthors} from './imported-columns.js?v=1';
-import {cms,mode,siteRoot,safeUrl} from './client.js?v=25';
+import {cms,mode,siteRoot,safeUrl} from './client.js?v=26';
 let database;const channel=typeof BroadcastChannel==='function'?new BroadcastChannel('sinor-authors:'+siteRoot.pathname):null;
 async function db(){return database??=new Promise((resolve,reject)=>{const r=indexedDB.open('sinor-column-authors:'+siteRoot.pathname,1);r.onupgradeneeded=()=>r.result.createObjectStore('authors',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(Error('작성자 저장소를 열 수 없습니다.'))})}
 async function api(path,method='GET',body){const c=window.SINOR_CMS_CONFIG,r=await fetch(c.apiBase.replace(/\/$/,'')+path,{method,credentials:c.credentials||'same-origin',headers:{'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});if(!r.ok)throw Error('작성자 정보를 처리하지 못했습니다.');return r.status===204?null:r.json()}

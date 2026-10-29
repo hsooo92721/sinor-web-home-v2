@@ -1,6 +1,6 @@
 import {adjustAuthorPhoto} from './author-photo-crop.js?v=1';
-import {authorCms,authorArticleCount} from '../cms/authors.js?v=7';
-import {cms} from '../cms/client.js?v=25';
+import {authorCms,authorArticleCount} from '../cms/authors.js?v=8';
+import {cms} from '../cms/client.js?v=26';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function openAuthorManager({dialog,selectedId,onChange,toast}){
  let [items,posts]=await Promise.all([authorCms.list(),cms.adminPosts()]);let selected=items.find(a=>a.id===selectedId)||items[0]||null,image='',imageOriginal='',imageCrop={},busy=false;
