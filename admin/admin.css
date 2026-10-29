@@ -103,3 +103,11 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .history-insert-slot button{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;padding:0;box-sizing:border-box}
 .history-insert-slot button svg{display:block}
 @media(max-width:650px){.company-history-list .company-card{grid-template-columns:24px 52px 40px minmax(0,1fr) auto;gap:6px;padding:10px 8px;min-height:64px}.company-history-list .company-card-image{width:40px;height:36px}.company-history-list .panel-body>small{font-size:10px}.company-history-list .panel-body>h2{font-size:12px}.company-history-list .panel-body>.actions{gap:2px}.company-history-list .panel-body>.actions .button{font-size:11px;padding:5px;min-height:30px}}
+
+.history-year-group{width:100%;margin-bottom:20px;min-width:0}
+.history-year-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0 8px}
+.history-year-toggle{display:flex;align-items:center;gap:12px;padding:0;border:0;background:none;font:700 24px/1.4 Pretendard,sans-serif;color:#191f28}
+.history-year-toggle i{font-size:13px;transition:transform .15s}
+.history-year-toggle[aria-expanded=false] i{transform:rotate(-90deg)}
+.history-year-default{gap:10px;flex-shrink:0}
+.history-year-rows{display:flex;flex-direction:column;gap:0;width:100%;min-width:0}
