@@ -814,3 +814,7 @@ button {
     display: none;
   }
 }
+
+/* Text fields indicate focus through their existing border only. */
+:is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]),textarea,select):focus{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-color:#3182f6!important}
+[contenteditable=true]:focus{outline:none!important;box-shadow:none!important;border-color:#3182f6!important}

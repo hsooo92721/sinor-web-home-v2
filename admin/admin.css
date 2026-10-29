@@ -182,3 +182,7 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .author-manager-actions .primary{flex:2;min-width:0}
 .author-manager-actions .danger{flex:1;min-width:0}
 @media(max-width:520px){.author-manager-dialog{padding:20px}.author-manager-body{max-height:calc(90dvh - 100px)}.author-profile-fields{grid-template-columns:100px minmax(0,1fr);gap:14px}.author-photo-picker{width:96px;height:96px}.author-carousel-item{flex-basis:94px;width:94px}.author-carousel{gap:4px}.author-manager-heading h2{font-size:20px}}
+
+/* Text fields indicate focus through their existing border only. */
+:is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]),textarea,select):focus{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-color:#3182f6!important}
+[contenteditable=true]:focus{outline:none!important;box-shadow:none!important;border-color:#3182f6!important}
