@@ -6,7 +6,7 @@
 
 /* Published HTML uses the same editorial styles as the visual editor.
    Source formatting must not create visible blank lines. */
-.article-content.sinor-column{white-space:normal;padding-top:22px;overflow-wrap:anywhere}
+.article-content.sinor-column{white-space:normal;overflow-wrap:anywhere}
 
 /* Reader gallery cards: image badges and a single rounded white surface. */
 .reader-card{border:1px solid #edf0f4;border-radius:22px;overflow:hidden;background:#fff;transition:box-shadow .18s ease}
