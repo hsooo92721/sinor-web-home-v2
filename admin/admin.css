@@ -237,3 +237,15 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .author-delete-dialog{width:calc(100% - 32px);max-width:440px;padding:28px;border-radius:20px}
 .author-delete-dialog h2{font-size:20px;line-height:1.5;margin:0 0 16px}.author-delete-dialog p{color:#6b7684;line-height:1.7;margin:0 0 24px}
 .author-delete-dialog .actions{display:flex;gap:8px}.author-delete-dialog .actions>*{flex:1;justify-content:center}
+.column-badge-group{display:inline-flex;align-items:center;gap:4px;flex-shrink:0;vertical-align:middle}
+.column-custom-badge{display:inline-block;white-space:nowrap;padding:3px 6px;font-size:10px;line-height:1.5;font-weight:750}
+.badge-manager-dialog{width:calc(100% - 32px);max-width:460px;padding:24px;border-radius:18px;max-height:88dvh;overflow:auto}
+.badge-manager-dialog>header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.badge-manager-dialog h2{margin:0;font-size:21px}
+.badge-modal-close{border:0;background:none;padding:4px;font-size:22px;color:#6b7684;cursor:pointer}
+.badge-manager-list{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.badge-manager-list .active{background:#edf4ff;color:#2871e9;border-color:#a9c9fa}
+.badge-manager-detail{margin-top:18px}.badge-manager-detail form>label:not(.badge-enabled),.badge-style-fields label,.badge-manager-detail [data-condition]>label{display:grid;gap:7px;font-size:13px;margin-bottom:14px;color:#4e5968}
+.badge-style-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.badge-style-fields input[type=color]{width:100%;height:40px;border:1px solid #dfe4ea;border-radius:8px;padding:4px;background:white}
+.badge-manager-detail .select{width:100%;min-width:0}.badge-multiple{max-width:100%;font-size:12px;overflow-x:hidden}.badge-enabled{display:flex;gap:8px;align-items:center;font-size:13px}
+.badge-style-preview{display:flex;justify-content:center;align-items:center;background:#f7f8fa;padding:16px;margin:14px 0;border-radius:8px}.badge-style-preview .column-custom-badge{font-size:13px}
+.badge-manager-detail .actions{display:flex;gap:8px}.badge-manager-detail .actions>*{flex:1;justify-content:center}
+.column-admin-table .column-badge-group{max-width:45%;flex-wrap:wrap}

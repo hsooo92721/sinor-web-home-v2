@@ -1,0 +1,1 @@
+{"version":1,"rules":[{"id":"new","label":"NEW","background":"#2871e9","color":"#ffffff","radius":6,"enabled":true,"condition":{"type":"recent","value":7}}]}
