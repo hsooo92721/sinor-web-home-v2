@@ -1,4 +1,4 @@
-import {columnsList} from './columns-list.js?v=10';
+import {columnsList} from './columns-list.js?v=11';
 import {newBadge} from '../cms/publication.js?v=2';
 import {openColumnManager} from './column-managers.js?v=8';
 import {columnEditor} from './column-editor.js?v=21';
