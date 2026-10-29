@@ -111,3 +111,17 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .history-year-toggle[aria-expanded=false] i{transform:rotate(-90deg)}
 .history-year-default{gap:10px;flex-shrink:0}
 .history-year-rows{display:flex;flex-direction:column;gap:0;width:100%;min-width:0}
+
+/* History date/image above content, with an inset scroll area and fixed actions. */
+.company-modal.history-edit-modal{width:min(680px,calc(100vw - 32px));padding:24px;border-radius:20px;overflow:hidden;max-height:90dvh}
+.history-edit-modal>h2{margin:0 0 20px}
+.history-edit-modal #companyForm{display:flex;flex-direction:column;min-height:0;max-height:calc(90dvh - 100px)}
+.history-modal-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:6px}
+.history-modal-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin-bottom:20px}
+.history-modal-top .field{margin:0;min-width:0}
+.history-modal-top input{max-width:100%;min-width:0}
+.history-modal-top .company-edit-image{width:100%;height:120px;border-radius:10px;background:#f6f8fa}
+.history-edit-modal .history-content-field textarea{min-height:140px;resize:vertical}
+.history-edit-modal #companyForm>.actions{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;gap:8px;padding-top:20px;margin:0;flex-shrink:0}
+.history-edit-modal #companyForm>.actions .button{min-width:88px}
+@media(max-width:520px){.company-modal.history-edit-modal{padding:20px;border-radius:20px}.history-modal-top{gap:12px}.history-modal-top label{font-size:13px}.history-modal-top input[type=file]{font-size:11px}}
