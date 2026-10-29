@@ -1,4 +1,4 @@
-import {getSettings,saveSettings,imageUrl} from '../cms/site-settings.js?v=2';
+import {getSettings,saveSettings,imageUrl} from '../cms/site-settings.js?v=3';
 import {cms,siteUrl} from '../cms/client.js?v=26';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function settingsAdmin(page,content,toast){const section=page==='footer'?'footer':'basic',settings=await getSettings(),values=settings[section],title=section==='basic'?'기본 설정':'푸터 설정';const fields=section==='basic'?[['siteName','사이트 이름','브라우저와 공유 미리보기의 기본 사이트 이름입니다.'],['description','사이트 설명','페이지별 설명이 없는 경우 사용하는 기본 설명입니다.'],['favicon','파비콘','브라우저 탭에 표시할 아이콘을 업로드하거나 이미지 주소를 입력하세요.'],['image','대표 이미지','페이지별 대표 이미지가 없을 때 링크 공유 미리보기에 사용합니다.']]:[['company','상호명'],['representative','대표자'],['address','주소'],['businessNumber','사업자등록번호'],['commerce','통신판매업신고'],['tourism','관광사업자등록'],['marriage','국내결혼중개업'],['email','이메일'],['phone','문의 전화'],['copyright','저작권 표시']];
