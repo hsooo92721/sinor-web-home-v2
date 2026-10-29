@@ -40,3 +40,16 @@
 /* Compact article byline; the profile dialog retains the complete biography. */
 .column-author-bio .column-author-description{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;text-overflow:ellipsis;white-space:normal}
 .editor-profile-dialog .column-author-description{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible;white-space:pre-line}
+
+/* Fixed profile identity with a separately scrolling biography. */
+.editor-profile-dialog{padding:28px;overflow:hidden;max-height:min(760px,85dvh)}
+.editor-profile-dialog[open]{display:flex;flex-direction:column;gap:24px}
+.editor-profile-header{display:flex;align-items:center;gap:18px;flex-shrink:0;min-width:0}
+.editor-profile-header>img{width:76px;height:76px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.editor-profile-header>div{min-width:0;flex:1}
+.editor-profile-header h2{font-size:24px;line-height:1.4;margin:0 0 8px;overflow-wrap:anywhere}
+.editor-profile-header p{font-size:15px;line-height:1.6;margin:0;color:#2871e9;overflow-wrap:anywhere}
+.editor-profile-header .editor-profile-close{margin:0;align-self:flex-start;flex:0 0 40px;width:40px;height:40px;border:0;border-radius:0;background:none;font-size:38px;line-height:1;padding:0;color:#4e5968}
+.editor-profile-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0;scrollbar-gutter:stable}
+.editor-profile-scroll p{white-space:pre-line;font-size:16px;line-height:1.85;margin:0;overflow-wrap:anywhere}
+@media(max-width:520px){.editor-profile-dialog{padding:20px}.editor-profile-dialog[open]{gap:20px}.editor-profile-header{gap:12px}.editor-profile-header>img{width:56px;height:56px}.editor-profile-header h2{font-size:21px}.editor-profile-header p{font-size:13px}}

@@ -73,3 +73,20 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .column-list-panel .pagination{padding:20px 0 0}
 .column-list-panel .pagination:empty{display:none}
 @media(max-width:650px){.column-list-panel{padding:16px}.column-list-panel .list-toolbar{padding:0 0 16px}.column-list-panel .column-list-options{padding:16px 0}.column-list-panel .admin-column-gallery{padding:16px 0 0}}
+
+.company-admin-grid.company-history-list{display:flex;flex-direction:column;gap:0}
+.company-history-list .company-card{display:flex;align-items:center;gap:16px;padding:16px;min-height:100px;overflow:visible}
+.company-history-list .partner-order-tools{padding:0;border:0;flex-shrink:0;flex-direction:column}
+.company-history-list .partner-order-tools [data-order]{display:none}
+.company-history-list .company-card-image{width:96px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.company-history-list .panel-body{padding:0;min-width:0;flex:1}
+.company-history-list .panel-body h2{font-size:16px;margin:6px 0 12px;overflow-wrap:anywhere}
+.history-insert-slot{height:28px;display:flex;justify-content:center;align-items:center;position:relative;flex-shrink:0}
+.history-insert-slot:before{content:'';position:absolute;left:0;right:0;height:1px;background:#b5cef3;opacity:0}
+.history-insert-slot button{position:relative;width:26px;height:26px;border:1px solid #b5cef3;border-radius:50%;background:white;color:#2871e9;font-size:22px;line-height:1;padding:0;opacity:0;transition:opacity .12s}
+.history-insert-slot:hover button,.history-insert-slot:focus-within button,.history-insert-slot:hover:before{opacity:1}
+.partner-drag-placeholder.drop-home{border-color:#3182f6;background:#deedff;box-shadow:inset 0 0 0 1px #3182f6}
+.company-history-list .company-card.drop-target[data-drop-side=before]{box-shadow:0 -4px 0 #3182f6}
+.company-history-list .company-card.drop-target[data-drop-side=after]{box-shadow:0 4px 0 #3182f6}
+@media(hover:none){.history-insert-slot button{opacity:1}}
+@media(max-width:650px){.company-history-list .company-card{padding:12px;gap:10px}.company-history-list .company-card-image{width:64px;height:52px}}

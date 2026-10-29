@@ -1,4 +1,4 @@
-import {bindEditorProfiles} from '../columns/editors.js?v=2';
+import {bindEditorProfiles} from '../columns/editors.js?v=3';
 import {findLegacyColumn} from '../cms/legacy-urls.js?v=1';
 import {installToolbarState} from './editor-toolbar-state.js?v=1';
 import {installEditorLinks} from './editor-links.js?v=1';
