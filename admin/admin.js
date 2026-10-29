@@ -4,7 +4,7 @@ import {openColumnManager} from './column-managers.js?v=2';
 import {columnEditor} from './column-editor.js?v=16';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=3';
 import {installDevelopmentChat} from './development-chat.js';
-import {companyAdmin} from './company-admin.js?v=17';
+import {companyAdmin} from './company-admin.js?v=18';
 import {cms,mode,siteUrl,articleUrl,formatDate,sanitizeHtml,excerpt,watch} from '../cms/client.js?v=22';
 const app=document.querySelector('#adminApp'),page=document.body.dataset.page||'dashboard';
 const E=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

@@ -147,3 +147,9 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .history-edit-modal .history-file-row input[type=file]{width:190px;min-width:0;font-size:12px}
 .history-edit-modal .history-file-row .help{margin:0;font-size:11px;white-space:nowrap}
 @media(max-width:520px){.history-edit-modal .history-file-row{gap:6px}.history-edit-modal .history-file-row label{font-size:11px;gap:4px;flex:1}.history-edit-modal .history-file-row input[type=file]{width:95px;font-size:10px}.history-edit-modal .history-file-row .help{font-size:9px}}
+
+.filters.news-search-row{display:flex;align-items:center;flex-wrap:nowrap;gap:8px;width:100%}
+.news-search-row #companySearch{flex:1;min-width:0;width:auto;max-width:none}
+.news-search-row #searchCompanyNews{flex-shrink:0}
+.news-search-row #visibilityFilter{flex:0 0 150px;min-width:0;width:150px}
+@media(max-width:650px){.news-search-row #visibilityFilter{flex-basis:100px;width:100px}.news-search-row #searchCompanyNews{padding-inline:12px}}
