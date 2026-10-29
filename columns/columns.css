@@ -71,3 +71,5 @@
 .column-search-form .column-search-clear[hidden]{display:none!important}
 .reader-category-tabs.column-global-tabs{display:flex;gap:0;padding:0;overflow-x:visible}
 .column-global-tabs button{flex:1 1 0;min-width:0;white-space:nowrap;text-align:center;padding-inline:4px}
+
+.column-search-dialog .column-search-close{font-size:22px;width:32px;height:32px}

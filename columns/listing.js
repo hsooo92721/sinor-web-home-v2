@@ -1,4 +1,4 @@
-import {categoryGroup} from './shell.js?v=2';
+import {categoryGroup} from './shell.js?v=3';
 import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=4';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=23';
