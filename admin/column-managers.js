@@ -1,4 +1,4 @@
-import {openAuthorManager} from './author-manager.js?v=3';
+import {openAuthorManager} from './author-manager.js?v=4';
 import {categoryColor,renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms} from '../cms/client.js?v=23';
 import {authorCms} from '../cms/authors.js?v=6';

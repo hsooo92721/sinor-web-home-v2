@@ -3,7 +3,7 @@ import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms,siteUrl,articleUrl,formatDate,excerpt} from '../cms/client.js?v=24';
 import {newBadge} from '../cms/publication.js?v=2';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=2';
-import {openColumnManager} from './column-managers.js?v=8';
+import {openColumnManager} from './column-managers.js?v=9';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={draft:'임시저장',published:'공개',private:'비공개',trash:'휴지통'};
 export async function columnsList(root,toast){let posts=await cms.adminPosts(),categories=await cms.categories(),status='all',query='',category='',current=1;const selected=new Set();let visible=[],filteredPosts=[],busy=false;const key='sinor-admin-columns-view',preferences=readListPreference(key,{size:10,view:'list'});let size=[10,15,20,30,50].includes(Number(preferences.size))?Number(preferences.size):10,view=preferences.view==='gallery'?'gallery':'list';
