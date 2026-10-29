@@ -2,7 +2,7 @@ import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 import {cms,siteUrl,articleUrl,formatDate,excerpt} from '../cms/client.js?v=22';
 import {newBadge} from '../cms/publication.js?v=2';
 import {latestFirst,pagination,readListPreference,saveListPreference} from '../cms/column-listing.js?v=1';
-import {openColumnManager} from './column-managers.js?v=4';
+import {openColumnManager} from './column-managers.js?v=5';
 import {exportRedirectPlan} from './redirect-export.js?v=1';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={draft:'임시저장',published:'공개',private:'비공개',trash:'휴지통'};
