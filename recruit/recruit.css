@@ -82,8 +82,8 @@ html{scroll-padding-top:100px}.recruit-page main{overflow-x:clip}.recruit-page a
  .recruit-page .benefit-tabs button>i{opacity:1;transform:rotate(90deg);transition:transform .2s ease;color:#8b95a1}
  .recruit-page .benefit-tabs button[aria-expanded=true]{border-bottom:0;color:var(--career-blue)}
  .recruit-page .benefit-tabs button[aria-expanded=true]>i{transform:rotate(270deg);color:var(--career-blue)}
- .recruit-page .benefit-tabs>[role=region]{padding:0 16px 20px 16px;margin:0 0 8px;background:#fff;border-radius:12px}
- .recruit-page .benefit-tabs>[role=region] h3{font-size:20px;line-height:1.5;margin:0 0 16px;padding-top:8px}
+ .recruit-page .benefit-tabs>[role=region]{padding:20px;margin:0 0 8px;background:#fff;border-radius:12px}
+ .recruit-page .benefit-tabs>[role=region] h3{font-size:20px;line-height:1.5;margin:0 0 16px}
  .recruit-page .benefit-tabs>[role=region] ul{list-style:none;margin:0;padding:0}
  .recruit-page .benefit-tabs>[role=region] li{position:relative;padding:0 0 12px 18px;font-size:16px;line-height:1.8;color:#6b7684}
  .recruit-page .benefit-tabs>[role=region] li:before{content:'';position:absolute;left:0;top:12px;width:4px;height:4px;border-radius:50%;background:#7c9fec}
