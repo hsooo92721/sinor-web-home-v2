@@ -1,0 +1,11 @@
+import {formatHtml} from '../assets/vendor/code-editor/editor.js?v=1';
+const path=(root,node)=>{const result=[];while(node&&node!==root){result.unshift([...node.parentNode.childNodes].indexOf(node));node=node.parentNode}return result};
+const at=(root,indices)=>indices.reduce((node,index)=>node.childNodes[index],root);
+export async function visualCodePosition(body,range,serialize,prefix=''){
+ const clone=body.cloneNode(true),token='SINORCURSOR'+crypto.randomUUID().replaceAll('-',''),a=token+'START',b=token+'END';let marked=false;
+ if(range&&body.contains(range.startContainer)&&body.contains(range.endContainer)){const start=document.createRange(),end=document.createRange();start.setStart(at(clone,path(body,range.startContainer)),range.startOffset);start.collapse(true);end.setStart(at(clone,path(body,range.endContainer)),range.endOffset);end.collapse(true);end.insertNode(document.createTextNode(b));start.insertNode(document.createTextNode(a));marked=true}
+ let html=prefix+serialize(clone);try{html=await formatHtml(html)}catch{}
+ if(!marked)return {html,anchor:0,head:0};const anchor=html.indexOf(a);html=html.replace(a,'');const head=html.indexOf(b);html=html.replace(b,'');return {html,anchor:Math.max(0,anchor),head:Math.max(0,head)};
+}
+export function markCodeCursor(html,offset){let at=Math.max(0,Math.min(offset,html.length));if(html.lastIndexOf('<',at)>html.lastIndexOf('>',at))at=html.indexOf('>',at)+1||html.length;const styleStart=html.lastIndexOf('<style',at),styleEnd=html.lastIndexOf('</style>',at);if(styleStart>styleEnd)at=html.indexOf('</style>',at)+8;const marker='SINORVISUAL'+crypto.randomUUID().replaceAll('-','');return {html:html.slice(0,at)+marker+html.slice(at),marker}}
+export function restoreVisualCursor(body,marker,focus=false){const walker=document.createTreeWalker(body,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){const offset=node.data.indexOf(marker);if(offset<0)continue;node.deleteData(offset,marker.length);const range=document.createRange();range.setStart(node,offset);range.collapse(true);if(focus){body.focus({preventScroll:true});const s=getSelection();s.removeAllRanges();s.addRange(range);node.parentElement?.scrollIntoView({block:'nearest'})}return range}return null}
