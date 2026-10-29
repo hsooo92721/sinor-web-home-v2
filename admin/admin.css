@@ -229,3 +229,19 @@ body .admin-sidebar .admin-brand-symbol{display:flex;align-items:center;gap:2px;
 .analytics-table-wrap{max-width:100%;overflow:auto}
 @media(max-width:1000px){.column-stats-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:650px){.column-stats-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.column-stats-two{grid-template-columns:1fr}.column-stats-panel{padding:16px}.column-stats-period label{min-width:0;flex:1}.column-stats-period .input{min-width:0;width:100%}}
+.admin-sidebar>nav{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;flex:1}
+.column-statistics-nav-heading{display:flex;align-items:center;min-width:0}
+.column-statistics-nav-heading>a{flex:1;min-width:0}
+.column-statistics-nav-heading>button{border:0;background:none;color:#8b95a1;padding:8px;width:30px;flex-shrink:0;font-size:11px}
+.column-statistics-nav-heading>button i{transition:transform .15s}
+.column-statistics-nav-heading>button[aria-expanded=false] i{transform:rotate(-90deg)}
+.column-statistics-nav-group{margin:8px 0 12px;padding-left:42px}
+.column-statistics-nav-group>span{display:block;color:#a6adb6;font-size:10px;font-weight:650;padding:6px 12px}
+.admin-sidebar .column-statistics-nav-group>a{display:block;font-size:12px;padding:7px 12px;line-height:1.6}
+.analytics-single-value{font-size:36px;font-weight:750;color:#191f28;margin:20px 0}
+.analytics-single-value small{font-size:14px;font-weight:500;margin-left:6px;color:#8b95a1}
+.analytics-unavailable{padding:24px;background:#f7f9fc;border-radius:10px;font-size:14px;color:#8b95a1;line-height:1.8}
+.analytics-ranking-table{table-layout:fixed;white-space:normal}
+.analytics-ranking-table th:first-child{width:55px}.analytics-ranking-table th:nth-child(3){width:70px}.analytics-ranking-table th:last-child{width:100px}
+.analytics-ranking-table td:nth-child(2){overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+@media(max-width:650px){.analytics-ranking-table th:last-child{width:80px}.analytics-ranking-table th,.analytics-ranking-table td{padding:12px 6px;font-size:11px}}

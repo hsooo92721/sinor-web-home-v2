@@ -1,4 +1,4 @@
-import {trackColumnVisit} from '../cms/column-analytics.js?v=1';
+import {trackColumnVisit} from '../cms/column-analytics.js?v=2';
 import {setupColumnShell} from './shell.js?v=3';
 import {currentAuthors,hydrateAuthors,renderEditors,bindEditorProfiles} from './editors.js?v=4';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';

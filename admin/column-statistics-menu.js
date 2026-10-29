@@ -1,0 +1,2 @@
+export const statisticGroups=[['오늘',[['daily','일간 현황']]],['방문 분석',[['views','조회수'],['visitors','순방문자수'],['visits','방문 횟수'],['frequency','평균 방문 횟수'],['retention','재방문율'],['duration','평균 사용 시간']]],['사용자 분석',[['referrers','유입 분석'],['hours','시간대 분석'],['demographics','성별·연령별 분포'],['devices','기기별 분포'],['countries','국가별 분포']]],['순위',[['ranking','조회수 순위']]]];
+export const statisticViews=Object.fromEntries(statisticGroups.flatMap(([,items])=>items));
