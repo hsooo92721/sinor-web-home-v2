@@ -1,6 +1,6 @@
-import {logoCarousel} from './logo-carousel.js';
+import {logoCarousel} from './logo-carousel.js?v=2';
 let disposeCarousel;
-import {companyCms,watchCompany} from './company-client.js?v=26';
+import {companyCms,watchCompany} from './company-client.js?v=27';
 import {safeUrl} from './client.js';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 async function render(){try{

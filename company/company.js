@@ -5,22 +5,22 @@
 
  let items=[...document.querySelectorAll('.news-item')];
  const year=document.querySelector('#newsYear'),search=document.querySelector('#newsSearch'),count=document.querySelector('#newsCount'),pager=document.querySelector('#newsPagination'),empty=document.querySelector('#newsEmpty');
- const pageSize=8;let page=1,filtered=items;
+ let layout={pcColumns:2,mobileColumns:1,pcSize:8,mobileSize:8};const pageSize=()=>matchMedia('(max-width:767px)').matches?layout.mobileSize:layout.pcSize;let page=1,filtered=items;
  function render(moveFocus=false){
-  const pages=Math.ceil(filtered.length/pageSize);page=Math.max(1,Math.min(page,pages||1));items.forEach(item=>item.hidden=true);filtered.slice((page-1)*pageSize,page*pageSize).forEach(item=>item.hidden=false);
+  const pages=Math.ceil(filtered.length/pageSize());page=Math.max(1,Math.min(page,pages||1));items.forEach(item=>item.hidden=true);filtered.slice((page-1)*pageSize(),page*pageSize()).forEach(item=>item.hidden=false);
   count.textContent=filtered.length+'건';empty.hidden=filtered.length!==0;pager.replaceChildren();pager.hidden=pages<=1;
   const add=(label,number,{disabled=false,current=false,icon=''}={})=>{const b=document.createElement('button');b.type='button';b.className='page-btn';b.disabled=disabled;b.setAttribute('aria-label',label);b.setAttribute('aria-controls','newsResults');if(current)b.setAttribute('aria-current','page');if(icon){const i=document.createElement('i');i.className='fa-solid '+icon;i.setAttribute('aria-hidden','true');b.append(i);}else b.textContent=number;b.addEventListener('click',()=>{page=number;render(true)});pager.append(b);};
   if(pages>1){add('이전 페이지',page-1,{disabled:page===1,icon:'fa-chevron-left'});const start=Math.floor((page-1)/5)*5+1;for(let n=start;n<=Math.min(start+4,pages);n++)add(n+'페이지',n,{current:n===page});add('다음 페이지',page+1,{disabled:page===pages,icon:'fa-chevron-right'});}
   if(moveFocus){const top=document.querySelector('.news-tools');top.scrollIntoView({block:'start',behavior:'instant'});pager.querySelector('[aria-current="page"]')?.focus({preventScroll:true});}
  }
  function filter(){const term=search.value.trim().toLocaleLowerCase();filtered=items.filter(item=>(year.value==='all'||year.value===item.dataset.year)&&item.textContent.toLocaleLowerCase().includes(term));page=1;render();}
- year.addEventListener('change',filter);search.addEventListener('input',filter);filter();
+ matchMedia('(max-width:767px)').addEventListener('change',()=>{page=1;render()});year.addEventListener('change',filter);search.addEventListener('input',filter);filter();
  function dateKey(item){return item.date.map(n=>String(n).padStart(2,'0')).join('-')+'T'+(item.publishedAt||'');}
  async function loadNews(){
   const githubPreview=location.hostname==='hsooo92721.github.io'&&location.pathname.startsWith('/sinor-web-home-v2/');
   try{
-   const {companyCms}=await import('../cms/company-client.js');
-   const data=await companyCms.news();
+   const {companyCms}=await import('../cms/company-client.js?v=27');
+   const data=await companyCms.news();layout=await companyCms.newsLayout();const results=document.querySelector('#newsResults');results.style.setProperty('--news-pc-columns',layout.pcColumns);results.style.setProperty('--news-mobile-columns',layout.mobileColumns);
    const records=data.map(item=>{
     if(typeof item.title!=='string'||!item.title.trim()||typeof item.meta!=='string'||!Array.isArray(item.date)||item.date.length!==3||!item.date.every(Number.isInteger))throw new Error('Invalid article');
     const [y,m,d]=item.date;const checked=new Date(Date.UTC(y,m-1,d));
@@ -33,8 +33,8 @@
     const a=document.createElement('a');a.className='news-item';a.dataset.year=item.year;a.dataset.date=item.date.join('-');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',item.title);
     const img=document.createElement('img');img.className='news-thumb';img.alt='';img.loading='lazy';img.decoding='async';img.width=640;img.height=346;
     // Only local article thumbnails; API results without an image use the shared placeholder.
-    img.src=typeof item.image==='string'&&/^assets\/[a-zA-Z0-9_./-]+$/.test(item.image)&&!item.image.includes('..')?item.image:'assets/news-placeholder.svg';
-    if(githubPreview)img.src=new URL(item.image||'assets/news-placeholder.svg','https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/').href;
+    img.src=typeof item.image==='string'&&(/^(?:https?:|data:image\/)/.test(item.image)||(/^assets\/[a-zA-Z0-9_./-]+$/.test(item.image)&&!item.image.includes('..')))?item.image:'assets/news-placeholder.svg';
+    if(githubPreview&&/^assets\//.test(item.image||''))img.src=new URL(item.image||'assets/news-placeholder.svg','https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/').href;
     img.addEventListener('error',()=>{img.src='assets/news-placeholder.svg'},{once:true});
     const meta=document.createElement('span');meta.className='news-meta';meta.textContent=item.meta;
     const title=document.createElement('h3');title.textContent=item.title;
@@ -48,7 +48,7 @@
   }catch(error){console.warn('최신 기사 데이터를 불러오지 못해 저장된 목록을 표시합니다.');}
  }
  loadNews();
- import('../cms/company-client.js').then(({watchCompany})=>watchCompany(loadNews));
+ import('../cms/company-client.js?v=27').then(({watchCompany})=>watchCompany(loadNews));
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadNews()});
 
  }

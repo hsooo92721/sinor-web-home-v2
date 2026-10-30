@@ -1,5 +1,5 @@
 /* Figma footer 37:8200: shared by home, company, careers and policy pages. */
-body .app-footer{box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;gap:13px;margin-top:12px;padding:44px 28px 90px;background:#f5f6f7;color:#69737f;font-family:Pretendard,'Apple SD Gothic Neo',sans-serif;letter-spacing:-.0145em}
+body .app-footer{box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;gap:13px;margin-top:12px;padding:44px 28px 90px;background:#f5f6f7;color:#69737f;font-family:var(--site-font,Pretendard,'Apple SD Gothic Neo',sans-serif);letter-spacing:-.0145em}
 body .app-footer .company-info{display:block;width:100%;margin:0}
 body .app-footer .company-info summary{display:flex;align-items:center;justify-content:space-between;gap:13px;min-height:48px;margin:0;padding:0;cursor:pointer;list-style:none;font-size:14px;font-weight:600;line-height:1.5;color:#69737f}
 body .app-footer summary::-webkit-details-marker{display:none}
