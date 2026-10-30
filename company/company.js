@@ -19,7 +19,7 @@
  async function loadNews(){
   const githubPreview=location.hostname==='hsooo92721.github.io'&&location.pathname.startsWith('/sinor-web-home-v2/');
   try{
-   const {companyCms}=await import('../cms/company-client.js');
+   const {companyCms,newsImageUrl}=await import('../cms/company-client.js?v=27');
    const data=await companyCms.news();
    const records=data.map(item=>{
     if(typeof item.title!=='string'||!item.title.trim()||typeof item.meta!=='string'||!Array.isArray(item.date)||item.date.length!==3||!item.date.every(Number.isInteger))throw new Error('Invalid article');
@@ -32,9 +32,7 @@
    const nextItems=records.map(item=>{
     const a=document.createElement('a');a.className='news-item';a.dataset.year=item.year;a.dataset.date=item.date.join('-');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',item.title);
     const img=document.createElement('img');img.className='news-thumb';img.alt='';img.loading='lazy';img.decoding='async';img.width=640;img.height=346;
-    // Only local article thumbnails; API results without an image use the shared placeholder.
-    img.src=typeof item.image==='string'&&/^assets\/[a-zA-Z0-9_./-]+$/.test(item.image)&&!item.image.includes('..')?item.image:'assets/news-placeholder.svg';
-    if(githubPreview)img.src=new URL(item.image||'assets/news-placeholder.svg','https://raw.githubusercontent.com/hsooo92721/sinor-web-home-v2/main/company/').href;
+    img.src=newsImageUrl(item.image);
     img.addEventListener('error',()=>{img.src='assets/news-placeholder.svg'},{once:true});
     const meta=document.createElement('span');meta.className='news-meta';meta.textContent=item.meta;
     const title=document.createElement('h3');title.textContent=item.title;
@@ -48,7 +46,7 @@
   }catch(error){console.warn('최신 기사 데이터를 불러오지 못해 저장된 목록을 표시합니다.');}
  }
  loadNews();
- import('../cms/company-client.js').then(({watchCompany})=>watchCompany(loadNews));
+ import('../cms/company-client.js?v=27').then(({watchCompany})=>watchCompany(loadNews));
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)loadNews()});
 
  }
