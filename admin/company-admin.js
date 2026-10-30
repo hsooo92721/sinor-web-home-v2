@@ -1,9 +1,9 @@
-import {addNewsArticle} from './news-add.js?v=1';
+import {addNewsArticle} from './news-add.js?v=2';
 import {editNewsImage} from './news-images.js?v=1';
 import {pagination} from '../cms/column-listing.js?v=2';
 import {openNewsCollection} from './news-collection.js?v=3';
 import {installLogoSearch,installPartnerDrag} from './partner-tools.js?v=5';
-import {companyCms,newsImageUrl} from '../cms/company-client.js?v=27';
+import {companyCms,newsImageUrl} from '../cms/company-client.js?v=28';
 import {cms,siteUrl,safeUrl} from '../cms/client.js';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function companyAdmin(kind,root,toast){
@@ -12,7 +12,7 @@ export async function companyAdmin(kind,root,toast){
  let newsStatus='all';let newsPage=1;let ordering=false;let yearDefaults=kind==='history'?await companyCms.historyYearDefaults():{};const yearOpen=new Map();
  if(kind==='news')root.querySelector('#manageNewsCollection').onclick=()=>openNewsCollection(toast);
  let items=kind==='news'?await companyCms.news(true):await companyCms.list(kind,true),query='';
- if(kind==='news')root.querySelector('#addNewsArticle').onclick=()=>addNewsArticle(toast,next=>{items=next;query='';newsStatus='all';newsPage=1;root.querySelector('#companySearch').value='';draw()});
+ if(kind==='news')root.querySelector('#addNewsArticle').onclick=()=>addNewsArticle(toast,(next,added)=>{items=next;query='';newsStatus='all';const ordered=[...items].sort((a,b)=>b.date.map(n=>String(n).padStart(2,'0')).join('-').localeCompare(a.date.map(n=>String(n).padStart(2,'0')).join('-')));newsPage=Math.floor(Math.max(0,ordered.findIndex(x=>x.id===added?.id))/12)+1;root.querySelector('#companySearch').value='';draw();const card=[...cards.querySelectorAll('[data-news-id]')].find(el=>el.dataset.newsId===added?.id);card?.scrollIntoView({block:'center',behavior:'smooth'});card?.focus({preventScroll:true})});
  let groups=kind==='partners'?await companyCms.partnerGroups():[],activeGroup='',selected=new Set(),shownIds=[];const groupName=id=>groups.find(g=>g.id===id)?.name||'미분류';
  const cards=root.querySelector('#companyCards'),dialog=root.querySelector('#companyDialog');if(kind==='history')cards.classList.add('company-history-list');
  let newsPager;if(kind==='news'){newsPager=document.createElement('nav');newsPager.className='pagination news-admin-pagination';newsPager.setAttribute('aria-label','언론보도 페이지');cards.after(newsPager);newsPager.onclick=e=>{const button=e.target.closest('[data-page]');if(button&&!button.disabled){newsPage=Number(button.dataset.page);draw()}};cards.onkeydown=e=>{if(e.target.matches('[data-news-id]')&&['Enter',' '].includes(e.key)){e.preventDefault();e.target.click()}}}
