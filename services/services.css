@@ -1,5 +1,5 @@
-@font-face{font-family:var(--site-font,Pretendard);src:url('../assets/vendor/pretendard/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
-.service-page{--app-accent:#3182f6;--app-soft:#eff6ff;--app-deep:#1765cf;margin:0;background:#fff;color:var(--site-black,#191f28);font-family:var(--site-font,Pretendard,'Apple SD Gothic Neo',sans-serif);word-break:keep-all;-webkit-font-smoothing:antialiased}
+@font-face{font-family:Pretendard;src:url('../assets/vendor/pretendard/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+.service-page{--app-accent:#3182f6;--app-soft:#eff6ff;--app-deep:#1765cf;margin:0;background:#fff;color:#191f28;font-family:Pretendard,'Apple SD Gothic Neo',sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 .service-page.silove-page{--app-accent:#ee378b;--app-soft:#fff2f7;--app-deep:#c81765}
 .service-page *{box-sizing:border-box}
 .service-page a{text-decoration:none;color:inherit}
@@ -11,7 +11,7 @@
 .service-page .app-eyebrow{display:inline-block;font-size:18px;font-weight:700;color:var(--app-accent);line-height:1.5;margin-bottom:24px}
 .service-page .app-hero h1{font-size:clamp(48px,4.7vw,66px);line-height:1.23;letter-spacing:-.055em;font-weight:750}
 .service-page .app-hero h1 em,.service-page .app-heading h2 em{font-style:normal;color:var(--app-accent)}
-.service-page .app-lead{margin-top:28px;color:var(--site-gray,#6b7684);font-size:20px;line-height:1.8;letter-spacing:-.025em;max-width:480px}
+.service-page .app-lead{margin-top:28px;color:#6b7684;font-size:20px;line-height:1.8;letter-spacing:-.025em;max-width:480px}
 .service-page .app-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
 .service-page .app-button{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:15px 23px;border-radius:14px;background:var(--app-accent);color:#fff;font-size:17px;line-height:1.5;font-weight:650;transition:background .2s,transform .2s}
 .service-page .app-button:hover{background:var(--app-deep);transform:translateY(-2px)}
@@ -20,14 +20,14 @@
 .service-page .hero-art{position:relative;border-radius:40px;background:var(--app-soft);padding:38px 30px 0;overflow:hidden;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:520px}
 .service-page .hero-art>img{width:100%;max-height:600px;object-fit:contain;object-position:bottom;position:relative;z-index:1}
 .service-page .hero-art:before{content:'';position:absolute;width:360px;height:360px;border-radius:50%;background:#fff9;top:40px;right:-130px}
-.service-page .hero-art .art-caption{position:absolute;left:24px;top:24px;font-size:14px;font-weight:600;color:var(--site-gray,#6b7684);z-index:2}
+.service-page .hero-art .art-caption{position:absolute;left:24px;top:24px;font-size:13px;font-weight:600;color:#6b7684;z-index:2}
 .service-page .intro-band{background:#f9fafb;text-align:center;padding:100px 24px}
 .service-page .intro-band h2{font-size:38px;line-height:1.45;letter-spacing:-.04em}
-.service-page .intro-band p{margin:22px auto 0;max-width:650px;font-size:20px;line-height:1.8;color:var(--site-gray,#6b7684)}
+.service-page .intro-band p{margin:22px auto 0;max-width:650px;font-size:20px;line-height:1.8;color:#6b7684}
 .service-page .app-section{padding-block:120px}
 .service-page .app-heading{max-width:760px;margin-bottom:52px}
 .service-page .app-heading h2{font-size:44px;line-height:1.4;letter-spacing:-.045em;font-weight:700}
-.service-page .app-heading p{margin-top:22px;font-size:20px;line-height:1.8;color:var(--site-gray,#6b7684)}
+.service-page .app-heading p{margin-top:22px;font-size:20px;line-height:1.8;color:#6b7684}
 .service-page .interest-list{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0}
 .service-page .interest-list li{display:flex;align-items:center;gap:12px;padding:20px 24px;background:#f2f4f6;border-radius:18px;font-size:19px;font-weight:600;color:#4e5968}
 .service-page .interest-list i{font-size:23px;color:var(--app-accent);width:28px;text-align:center}
@@ -36,7 +36,7 @@
 .service-page .app-feature+.app-feature{border-top:1px solid #e9edf2}
 .service-page .app-feature.reverse .feature-copy{order:2}
 .service-page .feature-copy h2{font-size:42px;line-height:1.4;letter-spacing:-.04em;font-weight:700}
-.service-page .feature-copy p{margin-top:24px;color:var(--site-gray,#6b7684);font-size:19px;line-height:1.85}
+.service-page .feature-copy p{margin-top:24px;color:#6b7684;font-size:19px;line-height:1.85}
 .service-page .feature-number{display:block;margin-bottom:24px;color:var(--app-accent);font-size:17px;font-weight:700}
 .service-page .feature-art{display:flex;justify-content:center;align-items:center;border-radius:32px;background:var(--app-soft);padding:32px 28px 0;overflow:hidden;max-height:570px}
 .service-page .feature-art img{width:auto;max-width:100%;max-height:540px;object-fit:contain;align-self:flex-start}
@@ -47,28 +47,28 @@
 .service-page .feature-card{padding:36px;background:#f9fafb;border-radius:24px}
 .service-page .feature-card>i{display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:19px;background:var(--app-soft);color:var(--app-accent);font-size:26px;margin-bottom:30px}
 .service-page .feature-card h3{font-size:24px;line-height:1.45;letter-spacing:-.03em}
-.service-page .feature-card p{margin-top:15px;color:var(--site-gray,#6b7684);font-size:18px;line-height:1.8}
+.service-page .feature-card p{margin-top:15px;color:#6b7684;font-size:18px;line-height:1.8}
 .service-page .safety-band{background:var(--app-soft)}
 .service-page .safety-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:0}
 .service-page .safety-list li{border-top:2px solid #191f2814;padding-top:25px}
 .service-page .safety-list strong{display:block;font-size:22px;line-height:1.5}
-.service-page .safety-list p{margin-top:14px;color:var(--site-gray,#6b7684);font-size:17px;line-height:1.8}
+.service-page .safety-list p{margin-top:14px;color:#6b7684;font-size:17px;line-height:1.8}
 .service-page .app-faq{background:#f9fafb}
 .service-page .app-faq details{border-bottom:1px solid #e5e8eb;padding:0}
 .service-page .app-faq summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;list-style:none;padding:25px 0;font-size:21px;font-weight:600;line-height:1.6}
 .service-page .app-faq summary::-webkit-details-marker{display:none}
 .service-page .app-faq summary i{font-size:16px;color:#8b95a1;transition:transform .2s;flex-shrink:0}
 .service-page .app-faq details[open] summary i{transform:rotate(180deg)}
-.service-page .app-faq details p{padding:0 32px 26px 0;font-size:18px;line-height:1.85;color:var(--site-gray,#6b7684);max-width:850px}
+.service-page .app-faq details p{padding:0 32px 26px 0;font-size:18px;line-height:1.85;color:#6b7684;max-width:850px}
 .service-page .download-block{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;padding:64px;background:var(--app-soft);border-radius:32px}
 .service-page .download-block h2{font-size:38px;line-height:1.4;letter-spacing:-.04em}
-.service-page .download-block p{margin-top:18px;color:var(--site-gray,#6b7684);font-size:18px;line-height:1.8}
+.service-page .download-block p{margin-top:18px;color:#6b7684;font-size:18px;line-height:1.8}
 .service-page .download-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .service-page .store-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:13px 19px;background:#fff;border:1px solid #e5e8eb;border-radius:12px;font-size:16px;font-weight:600}
 .service-page .store-link i{font-size:22px}
 .service-page .download-qr{background:#fff;padding:14px;border-radius:20px;width:160px;height:160px;object-fit:contain}
 .service-page .download-web{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--app-accent);font-size:17px;font-weight:650}
-.service-page .other-app{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-top:32px;padding:24px 0;color:var(--site-gray,#6b7684);font-size:17px}
+.service-page .other-app{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-top:32px;padding:24px 0;color:#6b7684;font-size:17px}
 .service-page .other-app a{color:var(--app-accent);font-weight:650;white-space:nowrap}
 .service-page .service-footer{background:#f5f6f7}
 .service-page .service-footer .app-footer{max-width:1184px;margin:0 auto}

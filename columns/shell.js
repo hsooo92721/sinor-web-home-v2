@@ -1,4 +1,4 @@
-import {renderReadingTime} from '../cms/column-document.js?v=10';
+import {renderReadingTime} from '../cms/column-document.js?v=9';
 import {cms,siteUrl,articleUrl,formatDate} from '../cms/client.js?v=26';
 import {renderCategoryChip} from '../cms/category-colors.js?v=1';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

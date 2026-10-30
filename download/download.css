@@ -1,7 +1,7 @@
 .download-page .download-hero{padding-block:96px 64px;text-align:center}
 .download-page .download-hero h1{font-size:clamp(38px,4.3vw,58px);font-weight:750;line-height:1.35;letter-spacing:-.045em}
-.download-page .download-hero h1 em{font-style:normal;color:var(--site-primary,#3182f6)}
-.download-page .download-hero>p{font-size:20px;line-height:1.85;color:var(--site-gray,#6b7684);margin:26px auto 0}
+.download-page .download-hero h1 em{font-style:normal;color:#3182f6}
+.download-page .download-hero>p{font-size:20px;line-height:1.85;color:#6b7684;margin:26px auto 0}
 .download-page .download-app-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;scroll-margin-top:120px}
 .download-page .app-download-card{--download-accent:#3182f6;--download-tint:#f0f6ff;display:flex;flex-direction:column;min-width:0;padding:40px;background:var(--download-tint);border-radius:32px}
 .download-page .silove-download{--download-accent:#e93688;--download-tint:#fff2f7}
@@ -9,26 +9,26 @@
 .download-page .download-app-logo{width:140px;height:auto}
 .download-page .download-app-kind{font-size:14px;font-weight:650;color:var(--download-accent);background:#fff;padding:7px 11px;border-radius:9px;white-space:nowrap}
 .download-page .app-download-card h2{font-size:30px;line-height:1.45;letter-spacing:-.035em}
-.download-page .download-app-description{margin-top:20px;font-size:17px;line-height:1.85;color:var(--site-gray,#6b7684)}
+.download-page .download-app-description{margin-top:20px;font-size:17px;line-height:1.85;color:#6b7684}
 .download-page .download-topics{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:22px 0 32px}
-.download-page .download-topics li{padding:6px 10px;border-radius:8px;font-size:14px;font-weight:500;background:#fff9;color:var(--site-gray,#6b7684)}
+.download-page .download-topics li{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:500;background:#fff9;color:#6b7684}
 .download-page .download-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
 .download-page .store-link{gap:12px;padding:14px 12px;font-size:17px;justify-content:flex-start;border:0;min-height:76px}
 .download-page .store-link>i{font-size:24px;flex-shrink:0;color:#333d4b}
-.download-page .store-link small{display:block;font-size:14px;line-height:1.6;color:#8b95a1;font-weight:400;margin-top:3px}
+.download-page .store-link small{display:block;font-size:12px;line-height:1.6;color:#8b95a1;font-weight:400;margin-top:3px}
 .download-page .store-link:hover{box-shadow:0 4px 16px #191f280a}
 .download-page .download-browser-link{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:14px;padding:15px 12px;border-radius:12px;background:var(--download-accent);color:#fff;font-size:16px;font-weight:650;line-height:1.6}
-.download-page .download-browser-link i{font-size:14px}
+.download-page .download-browser-link i{font-size:13px}
 .download-page .download-qr-row{display:flex;align-items:center;gap:20px;margin-top:28px;padding-top:28px;border-top:1px solid #191f2810}
 .download-page .download-qr-row>img{display:block;width:104px;height:104px;padding:8px;background:#fff;border-radius:14px;object-fit:contain}
 .download-page .download-qr-row strong{font-size:15px;line-height:1.7;font-weight:650}
-.download-page .download-qr-row p{font-size:14px;line-height:1.7;color:var(--site-gray,#6b7684);margin-top:6px}
+.download-page .download-qr-row p{font-size:14px;line-height:1.7;color:#6b7684;margin-top:6px}
 .download-page .download-detail-link{display:flex;align-items:center;gap:8px;margin-top:28px;font-size:15px;color:var(--download-accent);font-weight:600}
 .download-page .download-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px;list-style:none;padding:0;margin:0}
 .download-page .download-steps li{border-top:1px solid #e5e8eb;padding-top:24px}
-.download-page .download-steps li>span{display:block;color:var(--site-primary,#3182f6);font-size:15px;font-weight:700;margin-bottom:20px}
+.download-page .download-steps li>span{display:block;color:#3182f6;font-size:15px;font-weight:700;margin-bottom:20px}
 .download-page .download-steps h3{font-size:23px;line-height:1.5;letter-spacing:-.03em}
-.download-page .download-steps p{margin-top:16px;font-size:18px;line-height:1.85;color:var(--site-gray,#6b7684)}
+.download-page .download-steps p{margin-top:16px;font-size:18px;line-height:1.85;color:#6b7684}
 @media(max-width:1000px){.download-page .app-download-card{padding:28px}.download-page .app-download-card h2{font-size:27px}.download-page .download-card-actions{grid-template-columns:1fr}.download-page .download-app-logo{width:120px}.download-page .download-steps{gap:28px}}
 @media(max-width:760px){
  .download-page .service-switcher{grid-template-columns:repeat(3,minmax(0,1fr))}

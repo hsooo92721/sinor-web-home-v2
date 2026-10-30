@@ -7,7 +7,7 @@ body .site-home-link{display:flex;align-items:center;flex-shrink:0;text-decorati
 body .site-header .site-home-link img{display:block;width:104px;height:auto;max-width:none;object-fit:contain}
 body .site-section-link{display:flex;align-items:center;border-left:1px solid #d7dce4;padding-left:15px;min-height:25px;font:600 20px/1.5 Pretendard,'Apple SD Gothic Neo',sans-serif;color:#4e5968;text-decoration:none;letter-spacing:-.02em}
 body .site-section-link:hover{color:var(--site-blue)}
-body .site-header .site-header-nav{display:flex;align-items:center;gap:28px;font-size:16px;font-weight:600;color:var(--site-gray,#6b7684)}
+body .site-header .site-header-nav{display:flex;align-items:center;gap:28px;font-size:16px;font-weight:600;color:#6b7684}
 body .site-header-nav a{color:inherit;text-decoration:none;line-height:1.5;white-space:nowrap}
 body .site-header-nav a:hover,body .site-header-nav a.is-current{color:var(--site-blue)}
 body .site-header .site-header-cta{display:inline-flex;align-items:center;gap:20px;justify-content:center;padding:11px 17px;border:0;border-radius:10px;background:var(--site-blue);color:#fff;font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;white-space:nowrap}
@@ -25,12 +25,12 @@ body .site-header a:focus-visible{outline:3px solid var(--site-blue);outline-off
 .company-page:not(.recruit-page) .company-page-heading p{font-size:19px;color:var(--site-muted)}
 .company-page .company-common-footer .app-footer{max-width:1184px;padding-inline:32px}
 /* Policies use the same white/soft-gray palette and readable editorial typography. */
-body.policy-page{background:white;color:var(--site-ink);font-family:var(--site-font,Pretendard,'Apple SD Gothic Neo',sans-serif)}
+body.policy-page{background:white;color:var(--site-ink);font-family:Pretendard,'Apple SD Gothic Neo',sans-serif}
 .policy-page .policy-layout{max-width:1184px;margin:0 auto;padding:64px 32px 88px;grid-template-columns:220px minmax(0,1fr);gap:56px}
 .policy-page .policy-nav{top:120px}
-.policy-page .policy-nav a{font-size:15px;color:var(--site-gray,#6b7684);border-radius:10px;padding:13px 15px}
+.policy-page .policy-nav a{font-size:15px;color:#6b7684;border-radius:10px;padding:13px 15px}
 .policy-page .policy-nav a.current{color:var(--site-blue);background:#edf3ff;font-weight:600}
-.policy-page .policy-eyebrow{font-size:14px;font-weight:600;color:#8b95a1;letter-spacing:.06em}
+.policy-page .policy-eyebrow{font-size:13px;font-weight:600;color:#8b95a1;letter-spacing:.06em}
 .policy-page .policy-intro h1{font-size:36px;line-height:1.4;letter-spacing:-.04em;color:var(--site-ink);margin:18px 0}
 .policy-page .policy-intro>p{font-size:18px;color:var(--site-muted);line-height:1.8}
 .policy-page .policy-meta{margin-top:28px;padding:20px 0;color:#8b95a1;border-color:#e5e8ed}
@@ -43,7 +43,7 @@ body.policy-page{background:white;color:var(--site-ink);font-family:var(--site-f
 .policy-page .policy-region-tabs button[aria-selected=true]{color:var(--site-blue)}
 .policy-page .policy-footer{background:#f5f6f7;border-color:#e1e7ee}
 .policy-page .policy-footer .app-footer{max-width:1184px;padding-inline:32px}
-.policy-page .policy-nav>details nav a{font-size:14px;padding:7px 12px}
+.policy-page .policy-nav>details nav a{font-size:13px;padding:7px 12px}
 @media(max-width:1100px){body .site-header .site-header-nav{gap:18px;font-size:15px}body .site-section-link{font-size:18px}}
 @media(max-width:1024px){.policy-page .policy-layout{display:block;padding:40px 32px 64px}.policy-page .policy-nav{position:static;margin-bottom:32px}.policy-page .policy-nav>nav>a{justify-content:center;text-align:center}.policy-page .policy-main{max-width:none}}
 @media(max-width:900px){.company-page .site-header .site-header-nav{display:none}.company-page .company-mobile-nav{border-color:#eef0f4;background:#fff}}
@@ -63,17 +63,17 @@ body.policy-page{background:white;color:var(--site-ink);font-family:var(--site-f
  .policy-page .policy-intro h1{font-size:30px}.policy-page .policy-intro>p{font-size:17px}
  .policy-page .policy-document{padding:24px 20px;margin-top:16px;border-radius:12px}
  .policy-page .policy-document h2{font-size:23px}.policy-page .policy-document h3{font-size:18px}.policy-page .policy-document p{font-size:16px;line-height:1.95}
- .policy-page .policy-nav>nav{margin:0;padding:6px}.policy-page .policy-nav>nav>a{font-size:14px;padding:11px 6px}
+ .policy-page .policy-nav>nav{margin:0;padding:6px}.policy-page .policy-nav>nav>a{font-size:13px;padding:11px 6px}
  .company-page .company-common-footer .app-footer,.policy-page .policy-footer .app-footer{padding-inline:24px}
 }
 
-.adv-page h1{font-size:clamp(34px,4vw,52px);line-height:1.35;letter-spacing:-.04em}.adv-contact{padding:40px;background:#f8f9fb;border-radius:16px}.adv-contact h2{font-size:26px}.adv-contact p{font-size:18px;line-height:1.85;color:var(--site-gray,#6b7684)}.adv-contact .career-button{margin-top:20px}@media(max-width:600px){.adv-contact{padding:24px}.adv-contact p br{display:none}}
+.adv-page h1{font-size:clamp(34px,4vw,52px);line-height:1.35;letter-spacing:-.04em}.adv-contact{padding:40px;background:#f8f9fb;border-radius:16px}.adv-contact h2{font-size:26px}.adv-contact p{font-size:18px;line-height:1.85;color:#6b7684}.adv-contact .career-button{margin-top:20px}@media(max-width:600px){.adv-contact{padding:24px}.adv-contact p br{display:none}}
 
 :root{--shared-section-space:88px;--shared-heading-gap:40px}
 body.company-page .section,body.company-page .manifesto,body.company-page .contact,body.recruit-page .career-section{padding-top:var(--shared-section-space);padding-bottom:var(--shared-section-space)}
 body.company-page .section-heading,body.recruit-page .career-section-head{margin-bottom:var(--shared-heading-gap)}
-.office-map-preview{display:block;position:relative;overflow:hidden;border-radius:16px;margin-top:32px;background:#f2f4f6}.office-map-preview img{display:block;width:100%;height:340px;object-fit:cover}.office-map-preview>span{position:absolute;right:16px;top:16px;background:white;padding:12px 16px;border-radius:8px;color:var(--site-black,#191f28);font-size:15px;box-shadow:0 2px 12px #0001}.mission-copy>.career-button{margin-top:24px} .fa-solid{vertical-align:middle}
-@media(max-width:760px){:root{--shared-section-space:64px;--shared-heading-gap:32px}.office-map-preview img{height:280px}.office-map-preview>span{font-size:14px;padding:10px 12px}}
+.office-map-preview{display:block;position:relative;overflow:hidden;border-radius:16px;margin-top:32px;background:#f2f4f6}.office-map-preview img{display:block;width:100%;height:340px;object-fit:cover}.office-map-preview>span{position:absolute;right:16px;top:16px;background:white;padding:12px 16px;border-radius:8px;color:#191f28;font-size:15px;box-shadow:0 2px 12px #0001}.mission-copy>.career-button{margin-top:24px} .fa-solid{vertical-align:middle}
+@media(max-width:760px){:root{--shared-section-space:64px;--shared-heading-gap:32px}.office-map-preview img{height:280px}.office-map-preview>span{font-size:13px;padding:10px 12px}}
 
 .office-map-embed{margin-top:32px;border:1px solid #e5e8eb;border-radius:16px;overflow:hidden;background:#f8f9fb}.office-map-embed iframe{display:block;border:0;width:100%;height:430px}
 

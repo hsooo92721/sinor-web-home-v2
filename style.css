@@ -24,14 +24,14 @@ body {
   min-width: 320px;
   margin: 0;
   color: var(--ink);
-  font-family:var(--site-font,
+  font-family:
     Pretendard,
     -apple-system,
     BlinkMacSystemFont,
     "Apple SD Gothic Neo",
     "Noto Sans KR",
     "Segoe UI",
-    sans-serif);
+    sans-serif;
   background: #f6fbff;
 }
 
@@ -112,14 +112,14 @@ button {
 .trip-banner small,
 .service-banner small {
   color: #5478aa;
-  font-size:14px;
+  font-size: 14px;
   line-height: 1.25;
 }
 
 .trip-banner strong,
 .service-banner strong {
   color: var(--blue);
-  font-size:20px;
+  font-size: 20px;
   font-weight: 800;
   line-height: 1.25;
   white-space: nowrap;
@@ -129,7 +129,7 @@ button {
 .service-banner b,
 .column-card b {
   color: #3978ff;
-  font-size:32px;
+  font-size: 32px;
   font-weight: 300;
   line-height: 1;
 }
@@ -148,13 +148,13 @@ button {
 
 .section-head h2 {
   margin: 0;
-  font-size:22px;
+  font-size: 22px;
   font-weight: 900;
 }
 
 .section-head a {
   color: #24324a;
-  font-size:14px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -205,7 +205,7 @@ button {
   padding: 5px 8px;
   background: #fff;
   color: #41546c;
-  font-size:14px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 800;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -215,7 +215,7 @@ button {
   display: -webkit-box;
   overflow: hidden;
   color: #253044;
-  font-size:16px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 1.45;
   -webkit-box-orient: vertical;
@@ -245,7 +245,7 @@ button {
 .brand-download p {
   margin: 28px 0 22px;
   color: #4d5664;
-  font-size:17px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -346,7 +346,7 @@ button {
 
 .app-header a {
   color: #111;
-  font-size:14px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -357,7 +357,7 @@ button {
 .hero-dummy h1,
 .event-list h2 {
   margin: 0 0 22px;
-  font-size:30px;
+  font-size: 30px;
   line-height: 1.25;
   letter-spacing: -0.04em;
 }
@@ -384,13 +384,13 @@ button {
 
 .meeting-hero-card p {
   color: #4a4a4a;
-  font-size:22px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .meeting-hero-card h2 {
   margin-top: 8px;
-  font-size:26px;
+  font-size: 26px;
   line-height: 1.25;
 }
 
@@ -443,12 +443,12 @@ button {
 
 .event-card time span {
   color: #777;
-  font-size:22px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .event-card time strong {
-  font-size:36px;
+  font-size: 36px;
   line-height: 1.1;
 }
 
@@ -458,14 +458,14 @@ button {
 }
 
 .event-card h3 {
-  font-size:24px;
+  font-size: 24px;
   line-height: 1.34;
 }
 
 .event-card p {
   margin-top: 8px;
   color: #5f626a;
-  font-size:20px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -473,7 +473,7 @@ button {
   display: block;
   margin-top: 12px;
   color: #8a8d94;
-  font-size:16px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -508,7 +508,7 @@ button {
 .footer-secondary a,
 .company-info summary {
   color: #424a57;
-  font-size:14px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -535,7 +535,7 @@ button {
 .company-info summary::after {
   content: "⌄";
   color: #6e7480;
-  font-size:22px;
+  font-size: 22px;
   transition: transform 0.2s ease;
 }
 
@@ -548,7 +548,7 @@ button {
   gap: 8px;
   margin: 18px 0 0;
   color: #767b84;
-  font-size:14px;
+  font-size: 13px;
   line-height: 1.45;
 }
 
@@ -583,13 +583,13 @@ button {
   align-items: center;
   justify-content: center;
   color: #8d8f94;
-  font-size:14px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .bottom-nav a::before {
   margin-right: 4px;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .bottom-nav a:nth-child(1)::before {
@@ -651,7 +651,7 @@ button {
 }
 
 .float-btn span {
-  font-size:24px;
+  font-size: 24px;
   line-height: 1;
 }
 
@@ -730,7 +730,7 @@ button {
   }
 
   .app-header a {
-    font-size:14px;
+    font-size: 12px;
   }
 
   .flutter-placeholder {
@@ -739,7 +739,7 @@ button {
 
   .hero-dummy h1,
   .event-list h2 {
-    font-size:26px;
+    font-size: 26px;
   }
 
   .meeting-grid {
@@ -753,11 +753,11 @@ button {
   }
 
   .meeting-hero-card p {
-    font-size:17px;
+    font-size: 17px;
   }
 
   .meeting-hero-card h2 {
-    font-size:21px;
+    font-size: 21px;
   }
 
   .event-card {
@@ -774,19 +774,19 @@ button {
   }
 
   .event-card time span {
-    font-size:17px;
+    font-size: 17px;
   }
 
   .event-card time strong {
-    font-size:30px;
+    font-size: 30px;
   }
 
   .event-card h3 {
-    font-size:20px;
+    font-size: 20px;
   }
 
   .event-card p {
-    font-size:16px;
+    font-size: 16px;
   }
 
   .app-footer {
@@ -816,5 +816,5 @@ button {
 }
 
 /* Text fields indicate focus through their existing border only. */
-:is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]),textarea,select):focus{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-color:var(--site-primary,#3182f6)!important}
-[contenteditable=true]:focus{outline:none!important;box-shadow:none!important;border-color:var(--site-primary,#3182f6)!important}
+:is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]),textarea,select):focus{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-color:#3182f6!important}
+[contenteditable=true]:focus{outline:none!important;box-shadow:none!important;border-color:#3182f6!important}

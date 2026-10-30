@@ -6,7 +6,7 @@ import {installEditorLinks} from './editor-links.js?v=1';
 import {openColumnManager} from './column-managers.js?v=11';
 import {cms,siteUrl,articleUrl,formatDate,sanitizeHtml,safeUrl} from '../cms/client.js?v=26';
 import {authorCms} from '../cms/authors.js?v=8';
-import {today,importColumnHtml} from '../cms/column-document.js?v=10';
+import {today,importColumnHtml} from '../cms/column-document.js?v=9';
 import {setColumnCss} from '../cms/column-css.js';
 import {normalizeKeywords} from '../cms/keywords.js?v=2';
 import {installCodeEditor} from './code-editor.js?v=4';

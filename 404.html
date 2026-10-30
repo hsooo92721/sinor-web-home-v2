@@ -1,4 +1,4 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>페이지를 찾을 수 없습니다 · 시놀</title><meta name="robots" content="noindex,follow"><link rel="icon" type="image/svg+xml" sizes="any" href="../assets/sinor-favicon.svg?v=1"></head><body style="font-family:sans-serif;padding:60px 24px;text-align:center"><h1>페이지를 찾을 수 없습니다.</h1><p>주소를 확인해 주세요.</p><a href="/sinor-web-home-v2/">시놀 홈으로 이동</a><script type="module">
 const match=location.pathname.match(/^(.*\/)columns\/(\d+)\/?$/);
 if(match){try{const base=match[1]+'columns/view/';const response=await fetch(base+'index.html',{cache:'no-store'});if(!response.ok)throw Error('load');const html=await response.text();document.open();document.write(html.replace('<head>','<head><base href="'+base+'">'));document.close()}catch{}}
-</script><script type="module">import {routeManagedPage} from "/sinor-web-home-v2/cms/page-router.js?v=1";if(!/\/columns\/\d+\/?$/.test(location.pathname))await routeManagedPage();</script></body></html>
+</script></body></html>
