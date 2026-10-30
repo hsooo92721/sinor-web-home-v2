@@ -94,10 +94,18 @@ def merge(existing, incoming):
     return result, added
 
 
+
+def collection_keywords():
+    settings = json.loads((ROOT / 'cms/news-collection.json').read_text())
+    values = settings.get('keywords', ['시놀'])
+    if not isinstance(values, list) or not values or len(values) > 10 or any(not isinstance(v, str) or not v.strip() or len(v) > 100 for v in values):
+        raise ValueError('Invalid news collection keywords')
+    return list(dict.fromkeys(v.strip() for v in values))
+
 def fetch_news(client_id, client_secret):
     collected = []
     for start in range(1, 1001, 100):
-        query = urlencode({'query': '시놀', 'display': 100, 'start': start, 'sort': 'date'})
+        query = urlencode({'query': ' | '.join(collection_keywords()), 'display': 100, 'start': start, 'sort': 'date'})
         request = Request('https://openapi.naver.com/v1/search/news.json?' + query, headers={
             'X-Naver-Client-Id': client_id,
             'X-Naver-Client-Secret': client_secret,
@@ -158,7 +166,9 @@ def parse_google_feed(payload):
 
 def fetch_google_news():
     # A recent window prioritizes new coverage; collected history is retained forever.
-    query = urlencode({'q': '"시놀" when:30d', 'hl': 'ko', 'gl': 'KR', 'ceid': 'KR:ko'})
+    terms = ['"' + word.replace('"', '') + '"' for word in collection_keywords()]
+    search = terms[0] if len(terms) == 1 else '(' + ' OR '.join(terms) + ')'
+    query = urlencode({'q': search + ' when:30d', 'hl': 'ko', 'gl': 'KR', 'ceid': 'KR:ko'})
     request = Request('https://news.google.com/rss/search?' + query,
                       headers={'User-Agent': 'SinorNewsCollector/1.0'})
     for attempt in range(3):

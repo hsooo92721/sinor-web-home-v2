@@ -1,7 +1,7 @@
 name: Collect Sinor news
 on:
   schedule:
-    # Daily lightweight check at 10:17 KST; collect only every third Korea calendar day.
+    # Daily lightweight check at 10:17 KST; collect according to cms/news-collection.json.
     - cron: '17 1 * * *'
   workflow_dispatch:
 permissions:
@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Check three-day collection interval
+      - name: Check configured collection interval
         id: interval
         env:
           MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' }}
@@ -25,12 +25,16 @@ jobs:
           import json, os
           from pathlib import Path
           state = json.loads(Path('.github/news-collection-state.json').read_text())
+          settings = json.loads(Path('cms/news-collection.json').read_text())
+          interval = settings['intervalDays']
+          if type(interval) is not int or not 1 <= interval <= 365:
+              raise ValueError('Invalid collection interval')
           last = datetime.fromisoformat(state['last_success_at'].replace('Z', '+00:00'))
           korea = timezone(timedelta(hours=9))
-          due = os.environ['MANUAL_RUN'] == 'true' or (datetime.now(korea).date() - last.astimezone(korea).date()).days >= 3
+          due = os.environ['MANUAL_RUN'] == 'true' or (datetime.now(korea).date() - last.astimezone(korea).date()).days >= interval
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write(f'due={str(due).lower()}\n')
-          print('Collection due' if due else 'Skipped: less than three days since last successful collection')
+          print('Collection due' if due else f'Skipped: collection interval is {interval} days')
           PYTHON
       - uses: actions/setup-python@v5
         if: steps.interval.outputs.due == 'true'
