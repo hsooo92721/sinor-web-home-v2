@@ -1,0 +1,36 @@
+name: Add news article URL
+on:
+  workflow_dispatch:
+    inputs:
+      article_url:
+        description: Public article URL
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: collect-sinor-news
+  cancel-in-progress: false
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Import article metadata and image
+        env:
+          ARTICLE_URL: ${{ inputs.article_url }}
+        run: python scripts/add-news-url.py
+      - name: Publish article
+        run: |
+          git add company/news-data.json company/assets
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add manually requested news article'
+          git push
