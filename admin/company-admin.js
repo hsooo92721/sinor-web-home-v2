@@ -1,4 +1,4 @@
-import {openNewsCollection} from './news-collection.js?v=1';
+import {openNewsCollection} from './news-collection.js?v=2';
 import {installLogoSearch,installPartnerDrag} from './partner-tools.js?v=5';
 import {companyCms} from '../cms/company-client.js?v=26';
 import {cms,siteUrl,safeUrl} from '../cms/client.js';
