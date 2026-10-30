@@ -1,5 +1,5 @@
 import {authorCms} from '../cms/authors.js?v=8';
-import {renderAuthorBio} from '../cms/column-document.js?v=9';
+import {renderAuthorBio} from '../cms/column-document.js?v=10';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function currentAuthors(posts=[]){const authors=await authorCms.list();const map=new Map(authors.map(a=>[a.id,a]));for(const p of posts){const a=p.authorProfile;if(a?.id&&!map.has(a.id))map.set(a.id,a)}return [...map.values()]}
 export function hydrateAuthors(posts,authors){return posts.map(p=>{const a=authors.find(a=>a.id===(p.authorId||p.authorProfile?.id));return a?{...p,author:a.name,authorProfile:a}:p})}

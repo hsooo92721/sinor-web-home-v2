@@ -35,3 +35,6 @@ body.company-page .company-common-footer .app-footer{display:flex}
 body .app-footer .footer-info-row{position:relative;width:100%}
 body .app-footer .footer-home-link{position:absolute;top:0;left:0;display:flex;align-items:center;min-height:48px;width:92.681496px}
 body .app-footer .company-info summary{width:max-content;max-width:calc(100% - 100px);margin-left:auto;justify-content:flex-end;gap:0}
+body .app-footer,body .app-footer .footer-primary a,body .app-footer .footer-secondary a,body .app-footer .company-info summary,body .app-footer .company-info dl,body .app-footer p.copyright{color:var(--footer-font-color,#69737f)}
+body .app-footer .footer-custom-logo{display:block;width:100%;height:auto;max-height:24.3px;object-fit:contain}
+body .app-footer [hidden]{display:none!important}
