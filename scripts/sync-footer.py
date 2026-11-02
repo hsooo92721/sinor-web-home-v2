@@ -29,6 +29,6 @@ for page in ROOT.rglob('*.html'):
     source = re.sub(r'<link\b[^>]*href="[^"]*footer\.css[^\"]*"[^>]*>', '', source)
     source = re.sub(r'<script\b[^>]*src="[^"]*footer\.js[^\"]*"[^>]*>\s*</script>', '', source)
     source = source.replace('</head>', f'<link rel="stylesheet" href="{prefix}footer.css?v=20261029-favicon-square"></head>')
-    source = source.replace('</body>', f'<script src="{prefix}footer.js?v=20261029-favicon-square" defer></script></body>')
+    source = source.replace('</body>', f'<script src="{prefix}footer.js?v=20261102-phone" defer></script></body>')
     page.write_text(source)
     print(page.relative_to(ROOT))
