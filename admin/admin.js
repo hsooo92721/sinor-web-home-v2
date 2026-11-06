@@ -1,4 +1,4 @@
-import {popupAdmin} from './popup-admin.js?v=4';
+import {popupAdmin} from './popup-admin.js?v=5';
 import {columnsList} from './columns-list.js?v=15';
 import {newBadge} from '../cms/publication.js?v=2';
 import {openColumnManager} from './column-managers.js?v=11';
