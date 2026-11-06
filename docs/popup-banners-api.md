@@ -16,3 +16,5 @@
 `orderMode`는 fixed/random. 시작·종료는 ISO 날짜 또는 빈 문자열. 시작 포함, 종료 제외. 공개이면서 기간에 해당하는 배너만 표시하고, random은 표시할 때 중복 없이 섞는다. 기본 정렬은 배열 순서이며 저장 시 order를 다시 부여한다. 서버는 관리자 권한, URL·파일 형식·기간·ID를 검증해야 한다.
 
 검은 배경은 중앙 앱의 화면상 위치/너비로 제한된다. 배경 클릭·닫기·Escape는 동일하게 닫는다. 오늘 하루 숨김은 한국 날짜를 기준으로 다음 자정까지 브라우저에 보관한다. 미리보기 `?popup-preview=1`은 오늘 숨김만 무시하고 공개/기간 조건은 유지한다. 여러 배너는 좌우 버튼·방향키·스와이프로 넘긴다.
+
+성과 보기: demo는 브라우저별 실제 노출·클릭을 집계한다. 팝업을 열 때 배너별 첫 노출만 집계하고 미리보기는 제외한다. API 모드는 POST `/site/popup-banners/{id}/events`에 `{type:"impression"|"click"}`을 보내며, GET `/admin/popup-banners/{id}/metrics` 응답은 `{impressions,clicks,lastAt}` 또는 기록이 없을 때 null이다. 통계 수치를 배너 설정과 분리해 보관한다.
