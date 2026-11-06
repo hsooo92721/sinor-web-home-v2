@@ -9,7 +9,7 @@ import {authorCms} from '../cms/authors.js?v=8';
 import {today,importColumnHtml} from '../cms/column-document.js?v=9';
 import {setColumnCss} from '../cms/column-css.js';
 import {normalizeKeywords} from '../cms/keywords.js?v=2';
-import {installCodeEditor} from './code-editor.js?v=4';
+import {installCodeEditor} from './code-editor.js?v=5';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const I=name=>`<i class="fa-solid fa-${name}" aria-hidden="true"></i>`;
 const button=(command,label,icon)=>`<button type="button" data-command="${command}" aria-label="${label}" title="${label}">${I(icon)}</button>`;

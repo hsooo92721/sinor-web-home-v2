@@ -2,7 +2,7 @@ import {popupAdmin} from './popup-admin.js?v=5';
 import {columnsList} from './columns-list.js?v=15';
 import {newBadge} from '../cms/publication.js?v=2';
 import {openColumnManager} from './column-managers.js?v=11';
-import {columnEditor} from './column-editor.js?v=26';
+import {columnEditor} from './column-editor.js?v=27';
 import {settingsAdmin,contentStatistics} from './site-settings.js?v=7';
 import {installDevelopmentChat} from './development-chat.js';
 import {companyAdmin} from './company-admin.js?v=26';
