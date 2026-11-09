@@ -1,4 +1,4 @@
-import {formsAdmin} from './forms-admin.js?v=7';
+import {formsAdmin} from './forms-admin.js?v=8';
 import {popupAdmin} from './popup-admin.js?v=7';
 import {columnsList} from './columns-list.js?v=15';
 import {newBadge} from '../cms/publication.js?v=2';

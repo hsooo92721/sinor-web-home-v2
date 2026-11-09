@@ -17,3 +17,5 @@
 .forms-builder-preview .sinor-application-form>.sinor-form-notice{display:none}
 @media(max-width:900px){.forms-builder-preview [data-form-preview]{height:620px;max-height:75dvh}}
 .forms-modal select.select{appearance:none;-webkit-appearance:none;padding:10px 44px 10px 12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%236b7684' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:16px;background-position:right 16px center}
+
+.forms-field-main-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}.forms-field-main-row>label{min-width:0}.forms-field-main-row input,.forms-field-main-row select{width:100%;min-width:0}
