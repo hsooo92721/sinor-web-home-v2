@@ -33,3 +33,12 @@ test('independent forms, protected webhook, test sending and durable submissions
  assert.equal(JSON.parse(await readFile(join(dir,'forms.json'),'utf8')).submissions.length,1);
  }finally{await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true})}
 });
+
+test('reference templates retain application fields and editable schema settings',()=>{
+ const consult=templateForm('consult'),casting=templateForm('casting');
+ assert.equal(consult.fields.length,12);assert.equal(consult.loginRequired,false);assert.equal(consult.theme.fontSize,20);
+ assert.equal(consult.fields.find(f=>f.label==='거주지').type,'region');
+ assert.equal(casting.fields.filter(f=>f.type==='photo').length,2);
+ assert.equal(casting.fields.filter(f=>f.type==='consent'&&f.required).length,3);
+ assert.equal(casting.fields.find(f=>f.label==='키').unit,'cm');
+});

@@ -2,6 +2,7 @@
 import {mkdir,readFile,writeFile,rename} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {randomBytes,createCipheriv,createDecipheriv,webcrypto} from 'node:crypto';
+import {formRegions} from '../cms/form-regions.js';
 import {validateForm,templateForm,defaultSlack,validateSlack,slackPayload} from '../cms/form-schema.js';
 globalThis.crypto??=webcrypto;
 function hook(value){const url=new URL(value);if(url.protocol!=='https:'||url.hostname!=='hooks.slack.com'||url.port||url.username||url.password||!/^\/services\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+$/.test(url.pathname)||url.search||url.hash)throw Error('Slack Incoming Webhook 주소를 확인해 주세요.');return url.href}
@@ -47,6 +48,7 @@ export function createFormsHandler({dataDir,secretKey,authenticateAdmin=async()=
  if(f.type==='photo'){const files=input.photos?.[f.id]||[];if(!Array.isArray(files)||files.length>f.maxFiles||f.required&&!files.length)throw Error(f.label+' 사진 개수를 확인해 주세요.');photos[f.id]=files.map(file=>photo(f,file));continue}
  if(f.type==='consent'){if(f.required&&v!==true)throw Error(f.label+' 동의가 필요합니다.');values[f.id]=v===true;continue}
  if(f.type==='checkboxes'){const list=Array.isArray(v)?[...new Set(v)]:[];if(f.required&&!list.length||list.some(x=>!f.options.includes(x)))throw Error(f.label+' 선택값을 확인해 주세요.');values[f.id]=list;continue}
+ if(f.type==='region'){const value=String(v??'').trim(),province=Object.keys(formRegions).find(p=>value.startsWith(p+' '));if((f.required||value)&&(!province||!formRegions[province].includes(value.slice(province.length+1))))throw Error('거주지를 선택해 주세요.');values[f.id]=value;continue}
  const value=String(v??'').trim();if(f.required&&!value)throw Error(f.label+' 항목을 입력해 주세요.');if(value.length>f.maxLength)throw Error(f.label+' 글자 수를 확인해 주세요.');if(value&&['radio','select'].includes(f.type)&&!f.options.includes(value))throw Error(f.label+' 선택값이 올바르지 않습니다.');if(value&&f.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))throw Error('이메일을 확인해 주세요.');if(value&&f.type==='number'&&!Number.isFinite(Number(value)))throw Error('숫자를 입력해 주세요.');if(value&&f.type==='date'&&(!/^\d{4}-\d{2}-\d{2}$/.test(value)||new Date(value).toISOString().slice(0,10)!==value))throw Error('날짜를 확인해 주세요.');values[f.id]=value;
  }
  const entry={id:crypto.randomUUID(),requestId:input.requestId,formId:id,createdAt:new Date().toISOString(),sourcePage:String(input.sourcePage||'').slice(0,500),fields:form.fields.map(f=>({id:f.id,label:f.label,type:f.type})),values,files:{},privateFiles:{},slackStatus:'not-configured'};

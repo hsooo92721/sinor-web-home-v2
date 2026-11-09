@@ -1,6 +1,6 @@
-import {formsCms} from '../cms/form-store.js?v=1';
-import {openFormBuilder} from './form-builder.js?v=1';
-import {openFormIntegration} from './form-integration.js?v=1';
+import {formsCms} from '../cms/form-store.js?v=2';
+import {openFormBuilder} from './form-builder.js?v=2';
+import {openFormIntegration} from './form-integration.js?v=2';
 import {formModal,el,E} from './forms-ui.js?v=1';
 export async function formsAdmin(root,toast){
  let forms=await formsCms.list(),selected=forms[0]?.id,entries=[],request=0;
