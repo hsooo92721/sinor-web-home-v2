@@ -51,3 +51,13 @@ requestId는 재시도 동안 동일하게 유지하여 중복 접수를 막는�
 `cms/form-renderer.js`의 `mountSavedForm(container, formId, options)`로 저장된 양식을 렌더링할 수 있다. 실제 사용자 페이지 임베딩과 회사 로그인/사진 전송 어댑터는 다음 단계에서 연결한다. 기본 옵션은 미리보기이며 `preview:false,onSubmit`을 명시해야 실제 접수 어댑터를 호출한다.
 
 검증: `node --test tests/forms-api.test.mjs`. 외부 Slack 전송은 mock으로 대체한다.
+
+## 양식 URL 및 이전 주소 (2026-11-09)
+
+관리자 목록 → 주소 설정 또는 편집기 → 주소 설정에서 `slug`, `legacyUrls`를 편집한다. 공개 URL은 `/forms/:slug`이며 URL 변경 시 이전 경로를 자동 보존한다. 다른 양식의 현재/이전 URL과 중복되면 저장하지 않는다.
+
+- GET `/api/forms/resolve?slug=...`: 공개된 양식과 canonical 경로 반환.
+- 회사 HTTP 서버에서 `createFormsHandler`를 정적 페이지/404 처리보다 먼저 호출하면 등록된 이전 주소에 HTTP 301 + Location을 반환한다. 기존 URL의 쿼리도 정확히 일치시킨다. absolute 이전 URL은 요청 host까지 같을 때 적용하며, 이전 도메인에서도 이 서버로 연결돼 있어야 한다.
+- `/forms/:slug`에는 사용자 폼 HTML을 제공한다. 호스트의 `/cms/config.js`를 회사 API 설정으로 배포해야 하며 관리자 인증 및 사용자 인증/프로필 연동은 회사 서버에서 제공한다.
+- GitHub Pages의 404 처리는 같은 브라우저에 저장한 양식을 여는 demo 보조 기능이다. HTTP 301이 아니며 방문자 전체 공유/검색엔진 이전을 보장하지 않는다. 다른 이전 페이지 경로는 Pages에서 자동 처리하지 않는다.
+- 신청 페이지는 이전 관리자 변경사항과 동일 저장소/렌더러를 참조한다. demo에서는 접수하지 않으며, API 모드에서는 서버 접수 API에 사진 및 입력값을 전달한다.

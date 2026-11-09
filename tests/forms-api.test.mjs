@@ -17,6 +17,12 @@ test('independent forms, protected webhook, test sending and durable submissions
  assert.equal((await call('/admin/forms')).data.length,2);
  const form=templateForm(),name={...newField('text'),label:'이름',required:true,profileKey:'name',locked:true};form.fields=[name];
  assert.equal((await call('/admin/forms/'+form.id,'PUT',form)).status,200);
+ const changed={...form,slug:'consult-special',legacyUrls:['/old-consult?from=imweb']};
+ assert.equal((await call('/admin/forms/'+form.id,'PUT',changed)).status,200);
+ const redirected=await fetch(base+'/old-consult?from=imweb',{redirect:'manual'});assert.equal(redirected.status,301);assert.equal(redirected.headers.get('location'),'/forms/consult-special');
+ const oldPath=await fetch(base+'/forms/'+form.id,{redirect:'manual'});assert.equal(oldPath.status,301);
+ assert.equal((await call('/forms/resolve?slug=consult-special')).data.form.id,form.id);
+ const duplicate={...templateForm(),slug:'consult-special'};assert.equal((await call('/admin/forms/'+duplicate.id,'PUT',duplicate)).status,400);
  const url='https://hooks.slack.com/services/T_TEST/B_TEST/FAKE_TOKEN',message={...defaultSlack(form),enabled:true};
  await call('/admin/forms/'+form.id+'/integration','PUT',{message,webhookUrl:url});
  const config=(await call('/admin/forms/'+form.id+'/integration')).data;

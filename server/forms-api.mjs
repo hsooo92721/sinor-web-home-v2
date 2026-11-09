@@ -1,3 +1,4 @@
+import {formSlug,formPath,legacyMatches,withPreviousFormUrl,assertUniqueFormUrls} from '../cms/form-urls.js';
 /** Mount this handler after company authentication middleware. No public webhook URL is returned. */
 import {mkdir,readFile,writeFile,rename} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
@@ -19,13 +20,17 @@ export function createFormsHandler({dataDir,secretKey,authenticateAdmin=async()=
  async function send(url,payload){const response=await fetchImpl(hook(url),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(10000),redirect:'error'});if(!response.ok)throw Error('Slack 전송에 실패했습니다. 웹훅 주소를 확인해 주세요.')}
  function json(res,status,value){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(value))}
  return async function handler(req,res){
- const path=new URL(req.url,'http://localhost').pathname.replace(/^\/api(?=\/)/,''),admin=path.startsWith('/admin/forms');if(!admin&&!path.startsWith('/forms/'))return false;
+ const path=new URL(req.url,'http://localhost').pathname.replace(/^\/api(?=\/)/,''),admin=path.startsWith('/admin/forms');
  try{
+ const actual=new URL(req.url,'http://'+(req.headers.host||'localhost'));
+ if(!admin&&!actual.pathname.startsWith('/api/')){if(req.method!=='GET'&&req.method!=='HEAD')return false;const data=await state(),active=data.forms.filter(f=>!f.deleted&&f.active),old=active.find(f=>(f.legacyUrls||[]).some(value=>legacyMatches(value,actual)));if(old){res.writeHead(301,{Location:formPath(old),'Cache-Control':'no-store'});res.end();return true}const found=active.find(f=>formPath(f)===actual.pathname.replace(/\/$/,''));if(found){const html=await readFile(new URL('../forms/index.html',import.meta.url),'utf8');res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.end(req.method==='HEAD'?'':html.replace('<head>','<head><base href="/forms/">'));return true}return false}
+ if(!admin&&!path.startsWith('/forms/'))return false;
  if(admin&&!await authenticateAdmin(req)){json(res,401,{message:'관리자 인증이 필요합니다.'});return true}
  const data=await state(),parts=path.split('/').filter(Boolean),id=admin?parts[2]:parts[1],suffix=admin?parts.slice(3):parts.slice(2);if(id&&!idPattern.test(id))throw Error('양식 ID가 올바르지 않습니다.');
  if(admin&&!id&&req.method==='GET'){json(res,200,data.forms.filter(f=>!f.deleted));return true}
+ if(!admin&&id==='resolve'&&req.method==='GET'){const slug=actual.searchParams.get('slug'),form=data.forms.find(f=>!f.deleted&&f.active&&(formSlug(f)===slug||(f.legacyUrls||[]).some(u=>legacyMatches(u,new URL('/forms/'+slug,actual.origin)))));if(!form){json(res,404,{message:'사용할 수 없는 입력폼입니다.'});return true}json(res,200,{form,path:formPath(form),redirect:formSlug(form)!==slug});return true}
  const form=data.forms.find(f=>f.id===id&&!f.deleted);
- if(admin&&id&&!suffix.length&&req.method==='PUT'){const input=validateForm({...await body(req),id});await exclusive(async()=>{const at=data.forms.findIndex(f=>f.id===id);if(at<0)data.forms.push(input);else data.forms[at]=input;await persist()});json(res,200,input);return true}
+ if(admin&&id&&!suffix.length&&req.method==='PUT'){let input=validateForm({...await body(req),id});await exclusive(async()=>{input=validateForm(withPreviousFormUrl(input,form));assertUniqueFormUrls(input,data.forms);const at=data.forms.findIndex(f=>f.id===id);if(at<0)data.forms.push(input);else data.forms[at]=input;await persist()});json(res,200,input);return true}
  if(!form){json(res,404,{message:'양식을 찾을 수 없습니다.'});return true}
  if(admin&&!suffix.length&&req.method==='DELETE'){await exclusive(async()=>{form.deleted=true;delete data.integrations[id];await persist()});json(res,200,{deleted:true});return true}
  if(!admin&&!suffix.length&&req.method==='GET'){if(!form.active){json(res,404,{message:'사용할 수 없는 양식입니다.'});return true}json(res,200,form);return true}
