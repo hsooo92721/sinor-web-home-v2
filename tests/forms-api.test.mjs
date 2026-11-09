@@ -48,3 +48,11 @@ test('reference templates retain application fields and editable schema settings
  assert.equal(casting.fields.filter(f=>f.type==='consent'&&f.required).length,3);
  assert.equal(casting.fields.find(f=>f.label==='키').unit,'cm');
 });
+
+test('reference consent text fills placeholders and preserves custom wording',async()=>{
+ const {fillFormConsentTexts,formConsentTexts}=await import('../cms/form-consents.js');
+ for(const kind of ['consult','casting'])for(const f of templateForm(kind).fields.filter(f=>f.type==='consent')){assert.ok(f.help.length>200);assert.ok(!f.help.includes('내용을 입력해 주세요.'))}
+ const old=templateForm('consult');old.fields=old.fields.filter(f=>f.type==='consent');old.fields[0].help='개인정보 수집 및 이용 내용을 입력해 주세요.';old.fields[1].help='직접 작성한 동의 내용';
+ const filled=fillFormConsentTexts(old);assert.equal(filled.fields[0].help,formConsentTexts.consult.privacy);assert.equal(filled.fields[1].help,'직접 작성한 동의 내용');
+ assert.ok(formConsentTexts.consult.marketing.includes('02-508-5670'));assert.ok(formConsentTexts.casting.thirdParty.includes('심스토리(주)'));
+});

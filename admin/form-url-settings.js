@@ -1,5 +1,5 @@
 import {formSlug,formPath} from '../cms/form-urls.js?v=1';
-import {formsCms} from '../cms/form-store.js?v=3';
+import {formsCms} from '../cms/form-store.js?v=7';
 import {el,input,label,formModal} from './forms-ui.js?v=1';
 const siteRoot=new URL('../',import.meta.url);
 export const publicFormUrl=form=>new URL(formPath(form).slice(1),siteRoot).href;

@@ -7,3 +7,12 @@
 @media(max-width:800px){.forms-admin-layout{grid-template-columns:1fr}.forms-submissions>header{flex-direction:column}.forms-library-row>button{padding:14px}.forms-selected-actions{width:100%}.forms-selected-actions>button{flex:1}}
 
 .forms-field-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;padding:6px;overflow:hidden}.forms-field-row.active{background:#fff;border-color:#8eb9fa}.forms-field-row>.forms-field-detail{grid-column:1/-1;border-radius:0;background:transparent;margin:6px 0 0;padding:18px 12px 12px;border-top:1px solid #e5e8eb}.forms-field-row>.forms-field-detail>header{justify-content:flex-end;margin-bottom:14px}.forms-field-row>.forms-field-detail>header .button{font-size:12px}
+
+/* The device preview owns its scrolling; bars are flush to the same frame. */
+.forms-builder-preview [data-form-preview]{height:calc(90dvh - 230px);min-height:280px;max-height:760px;overflow:hidden;background:#fff;border:1px solid #e5e8eb}
+.forms-builder-preview [data-form-preview]>.sinor-application-form{height:100%;width:100%;max-width:none;margin:0;border:0;display:flex;flex-direction:column;overflow:hidden}
+.forms-builder-preview .sinor-application-form>.sinor-form-pagebar{position:static;top:auto;flex:none}
+.forms-builder-preview .sinor-form-scroll{display:block;min-height:0;flex:1;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.forms-builder-preview .sinor-application-form>.sinor-form-bottom{position:static;bottom:auto;flex:none;padding:8px 16px 16px;margin:0}
+.forms-builder-preview .sinor-application-form>.sinor-form-notice{display:none}
+@media(max-width:900px){.forms-builder-preview [data-form-preview]{height:620px;max-height:75dvh}}
