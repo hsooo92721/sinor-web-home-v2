@@ -1,5 +1,5 @@
-import {formsCms} from '../cms/form-store.js?v=7';
-import {defaultSlack,slackPayload,validateSlack} from '../cms/form-schema.js?v=7';
+import {formsCms} from '../cms/form-store.js?v=8';
+import {defaultSlack,slackPayload,validateSlack} from '../cms/form-schema.js?v=8';
 import {mode} from '../cms/client.js?v=26';
 import {formModal,el,input,select,label,check,button} from './forms-ui.js?v=1';
 export async function openFormIntegration(form,toast){

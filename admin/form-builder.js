@@ -1,7 +1,7 @@
 import {formUrlFields} from './form-url-settings.js?v=7';
-import {fieldTypes,profileKeys,newField,templateForm} from '../cms/form-schema.js?v=7';
-import {renderForm} from '../cms/form-renderer.js?v=3';
-import {formsCms} from '../cms/form-store.js?v=7';
+import {fieldTypes,profileKeys,newField,templateForm} from '../cms/form-schema.js?v=8';
+import {renderForm} from '../cms/form-renderer.js?v=4';
+import {formsCms} from '../cms/form-store.js?v=8';
 import {formModal,el,input,select,label,check,button} from './forms-ui.js?v=1';
 const sampleProfile={name:'미리보기 사용자',phone:'010-0000-0000',gender:'여자',birthDate:'1970-01-01',email:'preview@example.com'};
 export function openFormBuilder(existing,{onSave,toast}){
@@ -23,6 +23,7 @@ export function openFormBuilder(existing,{onSave,toast}){
  detail.append(el('header',{class:'forms-detail-actions'},info?null:check('필수 입력',f.required,v=>{f.required=v;drawList();paint()}),remove),el('div',{class:'forms-field-main-row'},textSetting(f,'label','항목명',{required:true,maxLength:150}),label('입력 형태',kind)));
  const help=textSetting(f,'help',f.type==='consent'?'동의 안내 전문':'안내 문구',{area:true,rows:f.type==='consent'?8:2});
  if(info){detail.append(help);return}
+ if(f.type==='select'){const presentation=select([['dropdown','드롭다운'],['modal','선택 모달']],f.presentation||(draft.template!=='blank'&&f.label==='최종학력'?'modal':'dropdown'));presentation.onchange=()=>{f.presentation=presentation.value;paint()};detail.append(label('선택 방식',presentation))}
  if(choices){const options=el('textarea',{class:'input',rows:3,value:f.options.join('\n'),required:true,oninput:e=>{f.options=e.target.value.split('\n').map(s=>s.trim()).filter(Boolean);paint()}});detail.append(el('div',{class:'forms-field-main-row'},label('선택지 (한 줄에 하나씩)',options),help))}
  else if(['text','textarea','email','tel','number','date'].includes(f.type)){detail.append(el('div',{class:'forms-field-main-row'},textSetting(f,'placeholder','입력 전 안내'),['text','textarea','email','tel'].includes(f.type)?textSetting(f,'maxLength','최대 글자 수',{type:'number',min:1,max:10000,required:true}):help));if(['text','textarea','email','tel'].includes(f.type))detail.append(help)}
  else detail.append(help);
