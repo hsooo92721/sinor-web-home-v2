@@ -46,7 +46,9 @@ body.company-page .company-common-footer .app-footer{display:flex}
 @media(max-width:350px){body .app-footer .footer-download-row{width:100%}body .app-footer .footer-store-links{flex:1}body .app-footer .company-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
 body.company-page .company-common-footer .app-footer{padding:44px 28px}
 body .company-common-footer,body .reader-footer{background:#fafafa;border-top:0}
-@media(max-width:767px){body .app-footer .footer-primary{gap:5px}body .app-footer .footer-primary a{font-size:14px}}
-@media(max-width:767px){body .app-footer,body.company-page .company-common-footer .app-footer{padding-inline:16px}}
-@media(max-width:767px){body .app-footer .footer-primary{flex-wrap:nowrap;gap:12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}body .app-footer .footer-primary::-webkit-scrollbar{display:none}body .app-footer .footer-primary a{flex:0 0 auto} }
-@media(max-width:390px){body .app-footer .footer-primary{gap:clamp(0px,calc((100vw - 320px)*.17),12px)}}
+@media(max-width:767px){
+ body .app-footer,body.company-page .company-common-footer .app-footer{padding-inline:16px}
+ body .app-footer .footer-primary{flex-wrap:nowrap;justify-content:flex-start;gap:clamp(0px,calc((100vw - 367px)/3),12px);overflow:visible}
+ body .app-footer .footer-primary a{flex:0 0 auto;font-size:14px;letter-spacing:-.0145em}
+}
+@media(max-width:367px){body .app-footer .footer-primary a{font-size:clamp(12px,calc((100vw - 34px)*.042),14px)}}
