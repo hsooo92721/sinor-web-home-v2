@@ -48,3 +48,5 @@ body.company-page .company-common-footer .app-footer{padding:44px 28px}
 body .company-common-footer,body .reader-footer{background:#fafafa;border-top:0}
 @media(max-width:767px){body .app-footer .footer-primary{gap:5px}body .app-footer .footer-primary a{font-size:14px}}
 @media(max-width:767px){body .app-footer,body.company-page .company-common-footer .app-footer{padding-inline:16px}}
+@media(max-width:767px){body .app-footer .footer-primary{flex-wrap:nowrap;gap:12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}body .app-footer .footer-primary::-webkit-scrollbar{display:none}body .app-footer .footer-primary a{flex:0 0 auto} }
+@media(max-width:390px){body .app-footer .footer-primary{gap:clamp(0px,calc((100vw - 320px)*.17),12px)}}
