@@ -57,3 +57,26 @@ body .app-footer .footer-brand-expanded{display:none}
 body .app-footer:has(details[open]) .footer-brand-expanded{display:block}
 body .app-footer:has(details[open]) .footer-brand-art img:not(.footer-brand-expanded){display:none}
 @media(min-width:768px){body .app-footer .footer-downloads{border:0}}
+
+/* Use the available footer width, including on pages with a narrow desktop shell. */
+@media (min-width: 768px) {
+  body .app-footer {
+    container: shared-footer / inline-size;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 40px;
+    width: 100%;
+  }
+  body.company-page .company-common-footer .app-footer { display: grid; }
+  body .app-footer > * { grid-column: 1 / -1; }
+}
+@container shared-footer (min-width: 840px) {
+  body .app-footer > .footer-home-link,
+  body .app-footer > .footer-links-content { grid-column: 1; }
+  body .app-footer > .footer-downloads {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    padding: 0;
+  }
+}
