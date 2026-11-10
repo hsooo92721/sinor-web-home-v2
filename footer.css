@@ -1,10 +1,10 @@
 /* Figma 37:8200 — exact colors, metrics and exported assets; content URLs preserved. */
 body .app-footer{box-sizing:border-box;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:13px;margin-top:12px;padding:44px 28px;background:#fafafa;color:#7d7d7d;font-family:Pretendard,'Apple SD Gothic Neo',sans-serif;letter-spacing:-.0145em}
 body .app-footer *{box-sizing:border-box}
-body .app-footer .footer-home-link{position:static;display:block;flex:none;width:114.4216px;min-height:0;height:30px}
-body .app-footer .footer-brand-art{display:flex;align-items:center;gap:7.737px;width:114.4216px;height:30px;transform:none}
-body .app-footer .footer-symbol{position:relative;display:block;flex:none;width:64.737px;height:30px}
-body .app-footer .footer-symbol-a{position:absolute;left:0;top:1.326px}
+body .app-footer .footer-home-link{position:static;display:block;flex:none;width:91.538px;min-height:0;height:24px}
+body .app-footer .footer-brand-art{display:flex;align-items:center;gap:6.19px;width:91.538px;height:24px;transform:none}
+body .app-footer .footer-symbol{position:relative;display:block;flex:none;width:51.789px;height:24px}
+body .app-footer .footer-symbol-a{position:absolute;left:0;top:1.061px}
 body .app-footer .footer-symbol-b{position:absolute;right:0;top:0}
 body .app-footer img{display:block;max-width:none;flex-shrink:0}
 body .app-footer .footer-links-content,body .app-footer .footer-info-row{width:100%;margin:0;padding:0}
@@ -12,7 +12,7 @@ body .app-footer .footer-primary{display:flex;flex-wrap:wrap;align-items:center;
 body .app-footer .footer-primary a{font-size:16px;font-weight:700;line-height:1.5;color:#606060;white-space:nowrap;text-decoration:none}
 body .app-footer .footer-downloads{display:flex;flex-direction:column;align-items:flex-start;gap:13px;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}
 body .app-footer .footer-download-row{display:flex;align-items:center;gap:20px;max-width:100%}
-body .app-footer .footer-app-label{display:block;flex:none;width:36px;text-decoration:none}
+body .app-footer .footer-app-label{display:block;flex:none;width:28.8px;text-decoration:none}
 body .app-footer .footer-store-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-width:0}
 body .app-footer .footer-play-badge{display:block;flex:none;width:134.872px;height:40px}
 body .app-footer .footer-apple-badge,body .app-footer .footer-app-store-art{display:block;position:relative;flex:none;width:119.664px;height:40px;overflow:hidden}
@@ -52,3 +52,8 @@ body .company-common-footer,body .reader-footer{background:#fafafa;border-top:0}
  body .app-footer .footer-primary a{flex:0 0 auto;font-size:14px;letter-spacing:-.0145em}
 }
 @media(max-width:367px){body .app-footer .footer-primary a{font-size:clamp(12px,calc((100vw - 34px)*.042),14px)}}
+
+body .app-footer .footer-brand-expanded{display:none}
+body .app-footer:has(details[open]) .footer-brand-expanded{display:block}
+body .app-footer:has(details[open]) .footer-brand-art img:not(.footer-brand-expanded){display:none}
+@media(min-width:768px){body .app-footer .footer-downloads{border:0}}
