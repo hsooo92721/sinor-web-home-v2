@@ -47,7 +47,7 @@ body.company-page .company-common-footer .app-footer{display:flex}
 body.company-page .company-common-footer .app-footer{padding:44px 28px}
 body .company-common-footer,body .reader-footer{background:#fafafa;border-top:0}
 @media(max-width:767px){
- body .app-footer,body.company-page .company-common-footer .app-footer{padding-inline:16px}
+ body .app-footer,body.company-page .company-common-footer .app-footer{padding:26px 16px}
  body .app-footer .footer-primary{flex-wrap:nowrap;justify-content:flex-start;gap:clamp(0px,calc((100vw - 367px)/3),12px);overflow:visible}
  body .app-footer .footer-primary a{flex:0 0 auto;font-size:14px;letter-spacing:-.0145em}
 }
