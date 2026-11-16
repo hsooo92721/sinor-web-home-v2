@@ -216,3 +216,6 @@ body .app-footer .footer-secondary a.footer-privacy{font-weight:700}
 
 /* Privacy policy emphasis in every common footer, including older markup. */
 body .app-footer .footer-secondary a.footer-privacy,body .app-footer .footer-secondary a[href*="policy/privacy"],body .app-footer .footer-secondary a[href*="privacy1"]{font-weight:700!important}
+
+.column-body em.home-column-category { padding: 0; background: transparent; font-style: normal; }
+.home-column-category .column-category-chip { background: #fffffff0; padding: 7px 12px; }
