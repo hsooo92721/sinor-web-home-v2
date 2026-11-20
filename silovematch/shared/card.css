@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("../../assets/vendor/pretendard/PretendardVariable.woff2") format("woff2");
+  font-weight: 45 920;
+  font-display: swap;
+}
+
+.silovematch-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e0e6ef;
+  border-radius: 20px;
+  background: #fff;
+  color: #2f2f2f;
+  box-shadow: 0 8px 22px rgb(25 50 91 / 7%);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: transform .22s, border-color .22s, box-shadow .22s;
+}
+
+.silovematch-card .silovematch-card-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+span.silovematch-card-thumbnail { background: #f3f5f8; }
+
+.silovematch-card-title {
+  margin: 20px 20px 0;
+  overflow: hidden;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.48;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.silovematch-card-metadata {
+  margin: 9px 20px 0;
+  color: #5f6b7e;
+  font-size: 15px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.silovematch-card-footer { margin-top: auto; padding: 18px 20px 20px; }
+
+.silovematch-card-action {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: 999px;
+  background: #963b82;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  transition: transform .18s, box-shadow .18s, filter .18s;
+}
+
+.silovematch-card-action.is-ended {
+  background: #f3f5f8;
+  color: #697586;
+  font-weight: 700;
+}
+
+.silovematch-card:focus-visible { outline: 2px solid #963b82; outline-offset: 3px; }
+@media (hover: hover) {
+  .silovematch-card:hover { border-color: rgb(150 59 130 / 22%); }
+  .silovematch-card-action:not(.is-ended):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgb(150 59 130 / 18%);
+    filter: saturate(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .silovematch-card, .silovematch-card-action { transition: none; }
+}

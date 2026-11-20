@@ -39,10 +39,52 @@ export function safeUrl(value,image=false){
 }
 export function sanitizeHtml(html){
  const doc=new DOMParser().parseFromString(String(html||''),'text/html');
- const allowed=new Set('p br strong b em i u s strike small mark section article header h1 h2 h3 h4 ul ol li a img blockquote hr div span table thead tbody tfoot tr th td figure figcaption pre code'.split(' '));
- const styles=new Set('color background background-color font-size font-family font-weight font-style line-height text-decoration text-decoration-line text-decoration-color text-decoration-style text-decoration-thickness text-align border border-color border-width border-style border-radius padding margin width max-width height max-height vertical-align list-style-type'.split(' '));
- function clean(parent){for(const node of [...parent.childNodes]){if(node.nodeType===Node.COMMENT_NODE){node.remove();continue}if(node.nodeType!==Node.ELEMENT_NODE)continue;const tag=node.tagName.toLowerCase();if(['script','style','iframe','object','embed','form','input','button','link','meta','svg','math'].includes(tag)){node.remove();continue}clean(node);if(!allowed.has(tag)){node.replaceWith(...node.childNodes);continue}const attrs=[...node.attributes];for(const a of attrs){const key=a.name,value=a.value;node.removeAttribute(key);if(key==='class'){const classes=value.split(/\s+/).filter(c=>/^[a-zA-Z_][a-zA-Z0-9_-]{0,79}$/.test(c));if(classes.length)node.className=classes.join(' ')}else if(tag==='a'&&key==='href'){const url=safeUrl(value);if(url)node.setAttribute('href',url)}else if(tag==='img'&&key==='src'){const url=safeUrl(value,true);if(url)node.setAttribute('src',url)}else if(tag==='img'&&key==='alt'){node.setAttribute(key,value)}else if(['td','th'].includes(tag)&&['colspan','rowspan'].includes(key)&&/^\d{1,2}$/.test(value)){node.setAttribute(key,value)}else if(key==='style'&&!/url\s*\(|expression|@import/i.test(value)){const scratch=document.createElement('span');scratch.style.cssText=value;for(const prop of [...scratch.style])if(styles.has(prop))node.style.setProperty(prop,scratch.style.getPropertyValue(prop));}}
- if(tag==='a'){node.target='_blank';node.rel='noopener noreferrer'}if(tag==='img'){if(!node.getAttribute('src'))node.remove();else node.loading='lazy';}}
+ const allowed=new Set('p br strong b em i u s strike small mark section article header footer aside main nav address time abbr cite q dfn details summary dl dt dd h1 h2 h3 h4 h5 h6 caption ul ol li a img blockquote hr div span table thead tbody tfoot tr th td figure figcaption pre code'.split(' '));
+ const styles = new Set((
+  'color display overflow overflow-x overflow-y box-sizing width min-width max-width height min-height max-height ' +
+  'font-family font-size font-weight font-style line-height letter-spacing text-align word-break overflow-wrap ' +
+  'vertical-align list-style-type white-space flex flex-grow flex-shrink flex-basis flex-direction flex-wrap ' +
+  'justify-content align-items align-self align-content gap row-gap column-gap ' +
+  'position top right bottom left inset transform z-index aspect-ratio object-fit'
+ ).split(' '));
+ // CSSOM expands shorthands into individual declarations before filtering.
+ const sides = 'top right bottom left block inline block-start block-end inline-start inline-end'.split(' ');
+ for (const side of sides) {
+  styles.add('margin-' + side);
+  styles.add('padding-' + side);
+  styles.add('border-' + side);
+  for (const property of ['width','style','color']) styles.add('border-' + side + '-' + property);
+ }
+ for (const corner of ['top-left','top-right','bottom-right','bottom-left','start-start','start-end','end-start','end-end']) {
+  styles.add('border-' + corner + '-radius');
+ }
+ for (const property of (
+  'margin padding border border-width border-style border-color border-radius ' +
+  'background background-color background-image background-position background-position-x background-position-y ' +
+  'background-size background-repeat background-attachment background-origin background-clip ' +
+  'text-decoration text-decoration-line text-decoration-color text-decoration-style text-decoration-thickness'
+ ).split(' ')) styles.add(property);
+ const safePosition = /^(?:relative|absolute|static)$/i;
+ const translate = /^(?:translate(?:x|y|3d)?\([^()]+\)\s*)+$/i;
+ function placementAllowed(property, value) {
+  if (property === 'position') return safePosition.test(value);
+  if (property === 'transform') return value === 'none' || translate.test(value);
+  if (property === 'z-index') return value === 'auto' || /^[0-9]$|^10$/.test(value);
+  return true;
+ }
+ function copyStyles(node, value) {
+  const scratch = document.createElement('span');
+  scratch.style.cssText = value;
+  for (const property of scratch.style) {
+   if (!styles.has(property)) continue;
+   const declaration = scratch.style.getPropertyValue(property);
+   if (!placementAllowed(property, declaration)) continue;
+   if (/url\s*\(|(?:image|(?:-webkit-)?image-set)\s*\(|expression\s*\(|@import|javascript:|\\/i.test(declaration)) continue;
+   node.style.setProperty(property, declaration, scratch.style.getPropertyPriority(property));
+  }
+ }
+ function clean(parent){for(const node of [...parent.childNodes]){if(node.nodeType===Node.COMMENT_NODE){node.remove();continue}if(node.nodeType!==Node.ELEMENT_NODE)continue;const tag=node.tagName.toLowerCase();if(['script','style','iframe','object','embed','form','input','button','link','meta','svg','math'].includes(tag)){node.remove();continue}clean(node);if(!allowed.has(tag)){node.replaceWith(...node.childNodes);continue}const attrs=[...node.attributes];for(const a of attrs){const key=a.name,value=a.value;node.removeAttribute(key);if(key==='class'){const classes=value.split(/\s+/).filter(c=>/^[a-zA-Z_][a-zA-Z0-9_-]{0,79}$/.test(c));if(classes.length)node.className=classes.join(' ')}else if(key==='id'&&/^[^\s"'<>]{1,128}$/.test(value)){node.id=value}else if(/^aria-[a-z][a-z-]*$/.test(key)||key==='datetime'&&tag==='time'||key==='open'&&tag==='details'||key==='scope'&&tag==='th'&&/^(row|col|rowgroup|colgroup)$/.test(value)||key==='headers'&&['td','th'].includes(tag)){node.setAttribute(key,value)}else if(tag==='a'&&key==='href'){const url=value.startsWith('#')?value:safeUrl(value);if(url)node.setAttribute('href',url)}else if(tag==='img'&&key==='src'){const url=safeUrl(value,true);if(url)node.setAttribute('src',url)}else if(tag==='img'&&key==='alt'){node.setAttribute(key,value)}else if(['td','th'].includes(tag)&&['colspan','rowspan'].includes(key)&&/^\d{1,2}$/.test(value)){node.setAttribute(key,value)}else if(key==='style'){copyStyles(node,value)}}
+ if(tag==='a'&&!node.getAttribute('href')?.startsWith('#')){node.target='_blank';node.rel='noopener noreferrer'}if(tag==='img'){if(!node.getAttribute('src'))node.remove();else node.loading='lazy';}}
  }
  clean(doc.body);return doc.body.innerHTML;
 }

@@ -1,0 +1,67 @@
+.silovematch-header {
+  --silovematch-header-height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.silovematch-header-inner {
+  width: var(--silovematch-content-width, min(960px, calc(100% - 36px)));
+  min-height: var(--silovematch-header-height);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.silovematch-header-brand img { display: block; width: min(108px, 32vw); height: auto; }
+.silovematch-navigation { display: flex; align-items: center; gap: 28px; }
+.silovematch-navigation a { padding: 10px 0; color: #202027; text-decoration: none; font-weight: 600; }
+.silovematch-navigation a[aria-current="location"],
+.silovematch-navigation a:hover { color: #93377f; }
+.silovematch-header :is(a, button):focus-visible { outline: 2px solid #93377f; outline-offset: 4px; }
+.silovematch-nav-toggle { display: none; }
+:is(#programs, #meetings, #faq) { scroll-margin-top: 80px; }
+
+@media (max-width: 767px) {
+  .silovematch-nav-toggle {
+    position: relative;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #202027;
+    cursor: pointer;
+  }
+  .silovematch-nav-toggle span {
+    position: absolute;
+    left: 11px;
+    top: 21px;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .silovematch-nav-toggle span:first-child { transform: translateY(-6px); }
+  .silovematch-nav-toggle span:last-child { transform: translateY(6px); }
+  .silovematch-nav-toggle[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+  .silovematch-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .silovematch-nav-toggle[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }
+  .silovematch-navigation {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    padding: 8px max(18px, calc((100% - 960px) / 2)) 12px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 8px 18px #17171912;
+  }
+  .silovematch-nav-toggle[aria-expanded="true"] + .silovematch-navigation {
+    display: grid;
+    gap: 0;
+  }
+}

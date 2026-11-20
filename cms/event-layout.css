@@ -1,0 +1,15 @@
+.event-detail.has-form,
+.event-editor-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+}
+.event-detail > *, .event-editor-columns > * { min-width: 0; }
+.event-form { display: block; width: 100%; border: 0; }
+@media (max-width: 767px) {
+  .event-detail.has-form, .event-editor-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}

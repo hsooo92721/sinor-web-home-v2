@@ -1,0 +1,27 @@
+[data-editor-page] { width: min(960px, 100%); margin-inline: auto; }
+[data-editor-page] label { display: grid; gap: 6px; margin-block: 12px; }
+[data-editor-page] input, [data-editor-page] select { min-width: 0; width: 100%; }
+.event-editor-period { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr)); }
+.event-editor-actions { margin-top: 24px; display: flex; align-items: end; flex-wrap: wrap; gap: 12px; }
+.event-editor-actions label { margin: 0; }
+.event-editor-actions .actions { margin-inline-start: auto; }
+[data-event-studio] .studio-body { min-height: 180px; max-height: none; padding: 0; overflow: visible; }
+[data-event-studio] .studio-body:empty::before { inset: 0 auto auto 0; }
+[data-event-studio] .studio-editor { padding: 0; border: 1px solid #dce2ea; }
+[data-event-studio] #studioVisual { padding: 24px 0; }
+[data-event-studio] .code-editor-area,
+[data-event-studio] .cm-editor,
+[data-event-studio] .cm-scroller { height: auto; min-height: 180px; max-height: none; }
+[data-event-studio] .cm-scroller { overflow-y: visible; }
+[data-event-studio] .studio-editor .code-editor-pro .code-editor-area { min-height: 180px; }
+[data-event-studio] .code-editor-pro .cm-scroller { overflow-y: visible; }
+.event-card-open { display:grid; gap:8px; width:100%; padding:0; border:0; background:none; color:inherit; text-align:left; cursor:pointer; }
+.event-card-open > strong, .event-card-open > div:nth-child(3) { margin-inline:16px; overflow-wrap:anywhere; }
+.event-card-actions { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+.event-card-actions .button { width:100%; justify-content:center; }
+.event-status { position:absolute; top:10px; right:10px; padding:5px 10px; border-radius:999px; color:#475467; background:#f2f4f7; font-size:13px; font-weight:700; }
+.event-status[data-status="공개"] { color:#067647; background:#ecfdf3; }
+.event-status[data-status="예약"] { color:#93377f; background:#faedf8; }
+
+.event-editor-actions { position:sticky; bottom:0; z-index:5; padding:12px 0; background:#fff; border-top:1px solid #dce2ea; }
+[data-editor] > .panel { overflow:visible; }

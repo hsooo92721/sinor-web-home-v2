@@ -1,0 +1,341 @@
+[
+  {
+    "slug": "silove-consult",
+    "legacyUrls": [],
+    "templateRevision": 2,
+    "id": "silove-consult",
+    "name": "시럽인연 상담 신청",
+    "title": "시럽인연 상담을 위해\n아래 프로필을 작성해 주세요",
+    "description": "",
+    "template": "consult",
+    "theme": {
+      "primary": "#963b82",
+      "background": "#ffffff",
+      "inputBackground": "#f5f5f5",
+      "text": "#222222",
+      "radius": 16,
+      "buttonRadius": 999,
+      "fontSize": 20,
+      "gap": 24
+    },
+    "submitLabel": "무료 상담 신청",
+    "successMessage": "신청이 접수되었습니다.",
+    "loginRequired": false,
+    "active": true,
+    "fields": [
+      {
+        "id": "fe0975d9-8a76-4679-89e7-a8337b1e5418",
+        "type": "text",
+        "label": "이름",
+        "help": "",
+        "placeholder": "이름을 입력해 주세요",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "name",
+        "locked": true,
+        "maxLength": 20,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "778d8413-93ba-46e0-baf2-f944251d8e5c",
+        "type": "tel",
+        "label": "휴대폰 번호",
+        "help": "",
+        "placeholder": "휴대폰 번호를 입력해 주세요",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "phone",
+        "locked": true,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "5e26df57-085c-4153-94a2-aa5f2df18a41",
+        "type": "radio",
+        "label": "성별",
+        "help": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          "남성",
+          "여성"
+        ],
+        "profileKey": "gender",
+        "locked": true,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "f8f04ca8-91d1-4a68-9ea5-afb6453e291f",
+        "type": "date",
+        "label": "생년월일",
+        "help": "",
+        "placeholder": "생년월일 숫자만 입력해 주세요",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "birthDate",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "52a2b58c-60e8-4c73-942e-5e53a2c032ba",
+        "type": "select",
+        "label": "혼인상태",
+        "help": "",
+        "placeholder": "미선택",
+        "required": true,
+        "options": [
+          "미혼",
+          "이혼",
+          "사별"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": true,
+        "unit": ""
+      },
+      {
+        "id": "f9e36b50-06bd-4d15-85df-2c16d56db9d5",
+        "type": "region",
+        "label": "거주지",
+        "help": "",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "5681728c-ff9e-4994-904b-cf32da0d5439",
+        "type": "select",
+        "label": "직업",
+        "help": "",
+        "placeholder": "미선택",
+        "required": true,
+        "options": [
+          "회사원",
+          "사업가",
+          "전문직",
+          "공무원",
+          "프리랜서",
+          "은퇴"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "0ff5c6a2-22a9-4eb4-8629-cd29d93103bd",
+        "type": "text",
+        "label": "직장",
+        "help": "",
+        "placeholder": "직장명을 입력해 주세요",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 40,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "66d1b00d-0a09-49dc-b8aa-7f223ecac0cd",
+        "type": "select",
+        "label": "최종학력",
+        "help": "",
+        "placeholder": "최종학력 선택",
+        "required": true,
+        "options": [
+          "초등학교",
+          "중학교",
+          "고등학교",
+          "전문대학",
+          "대학교",
+          "대학원(석사)",
+          "대학원(박사)",
+          "선택안함"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "modal",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "171aefe0-c0ef-46b5-a744-b206d190f5ba",
+        "type": "textarea",
+        "label": "문의내용",
+        "help": "",
+        "placeholder": "궁금한 점이나 원하는 만남을 편하게 적어 주세요",
+        "required": false,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "79005bcc-4e6d-450e-b3e9-551b8d65666f",
+        "type": "consent",
+        "label": "개인정보 수집 및 이용에 동의해요",
+        "help": "시럽인연은 개인정보보호 관련 법률을 준수하며, 상담 신청을 위해 필요한 최소한의 개인정보를 수집 및 이용합니다.\n\n수집 및 이용 목적\n\n서비스 참여 및 상담 신청\n\n수집 항목\n\n이름, 전화번호, 성별, 생년월일, 혼인상태, 거주지, 직업, 직장, 최종학력, 문의내용(선택)\n\n보유기간\n\n서비스 및 상담 종료일로부터 3개월 후 파기\n\n귀하는 개인정보 수집 및 이용을 거부할 권리가 있으며, 동의하지 않을 경우 상담 신청이 불가합니다.",
+        "placeholder": "",
+        "required": true,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      },
+      {
+        "id": "fbb9c63c-f868-4d2c-9a2b-6349d91c5078",
+        "type": "consent",
+        "label": "마케팅 정보 수신 동의",
+        "help": "시놀(주)는 동의한 분에게 시럽인연의 서비스와 혜택을 안내하기 위해 아래 정보를 이용합니다.\n\n이용 목적\n\n시럽인연 1:1 매칭 서비스, 단체미팅, 이벤트 및 할인 혜택 등 광고성 정보 안내\n\n이용 항목\n\n이름, 전화번호\n\n수신 방법\n\n전화 및 문자메시지(SMS·LMS)\n\n보유 및 이용기간\n\n동의 철회 시 또는 서비스 및 상담 종료일로부터 3개월 중 먼저 도래하는 때까지\n\n동의 거부 및 철회\n\n동의하지 않아도 상담 신청과 서비스 이용이 가능합니다. 동의한 뒤에도 언제든지 무료 수신거부 번호 080-870-1474 또는 고객센터(02-508-5670)로 철회할 수 있습니다. 철회하면 광고성 전화와 문자 발송을 중단합니다.\n\n이 동의는 시럽인연의 홍보 안내에만 적용하며, 다른 회사에 개인정보를 제공하는 동의가 아닙니다. 야간(오후 9시~다음 날 오전 8시) 광고성 정보는 발송하지 않습니다.",
+        "placeholder": "",
+        "required": false,
+        "options": [
+          "선택지 1",
+          "선택지 2"
+        ],
+        "profileKey": "",
+        "locked": false,
+        "maxLength": 500,
+        "maxFiles": 3,
+        "maxMB": 5,
+        "accept": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "presentation": "dropdown",
+        "sectionStart": false,
+        "unit": ""
+      }
+    ],
+    "createdAt": "2026-11-16T02:26:25.609Z",
+    "updatedAt": "2026-11-16T02:26:25.611Z"
+  }
+]

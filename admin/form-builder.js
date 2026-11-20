@@ -1,7 +1,7 @@
 import {formUrlFields} from './form-url-settings.js?v=7';
 import {fieldTypes,profileKeys,newField,templateForm} from '../cms/form-schema.js?v=8';
-import {renderForm} from '../cms/form-renderer.js?v=6';
-import {formsCms} from '../cms/form-store.js?v=8';
+import {renderForm} from '../cms/form-renderer.js?v=7';
+import {formsCms} from '../cms/form-store.js?v=9';
 import {formModal,el,input,select,label,check,button} from './forms-ui.js?v=1';
 const sampleProfile={name:'미리보기 사용자',phone:'010-0000-0000',gender:'여자',birthDate:'1970-01-01',email:'preview@example.com'};
 export function openFormBuilder(existing,{onSave,toast}){

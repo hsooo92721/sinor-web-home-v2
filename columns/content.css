@@ -57,3 +57,5 @@
 .sinor-column .sinor-column-source-logo{width:158px;max-width:100%}
 
 .column-reading-time{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}.column-reading-time>i{font-size:.9em}
+
+.studio-body.sinor-column,.article-content.sinor-column,.event-article > .description.sinor-column{position:relative;isolation:isolate}
