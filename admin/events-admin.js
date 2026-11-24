@@ -1,3 +1,5 @@
+import {eventCodeFrame} from '../cms/event-code-frame.js';
+import {installCodeEditor} from './code-editor.js?v=5';
 import {el, button, formModal} from './forms-ui.js?v=1';
 import {eventFormFrame, fitEventFrame} from '../cms/event-form-frame.js';
 import {events, saveEvent, eventDemo, eventPublication, eventUrl, duplicateEvent, deleteEvent} from '../cms/events.js?v=9';
@@ -39,7 +41,13 @@ export async function eventsAdmin(root, toast) {
       <label>공개 상태 <select class="select" name="published"><option value="false">비공개</option><option value="true">공개</option><option value="scheduled">예약</option></select></label>
       <label data-reservation>게시 예약 일시 (한국 시간) <input class="input" type="datetime-local" name="publishAt"></label>
           <h3>상세 내용</h3>
+          <label>작성 방식 <select class="select" name="contentMode"><option value="visual">비주얼 · HTML/CSS</option><option value="code">HTML·CSS·JS</option></select></label>
           <div data-event-studio></div>
+          <section data-event-code hidden>
+            <textarea data-event-source aria-label="HTML CSS JavaScript 코드" hidden></textarea>
+            <button class="button" type="button" data-run-code>실행 미리보기</button>
+            <div data-code-preview></div>
+          </section>
         </section>
         <section aria-label="연동 폼">
       <label>입력폼 <select class="select" name="formId"><option value="">입력폼 선택 안 함</option></select></label>
@@ -90,6 +98,7 @@ export async function eventsAdmin(root, toast) {
     detailPreview.hidden = true;
     previewContent.replaceChildren();
     dialog.hidden = !open;
+    if (!open) stopCode();
     for (const node of listControls) node.hidden = open;
     if (!open) {
       selected = undefined;
@@ -123,6 +132,28 @@ export async function eventsAdmin(root, toast) {
       setImage(value);
     },
   });
+  const codePanel = form.querySelector('[data-event-code]');
+  const codeSource = form.querySelector('[data-event-source]');
+  const codeEditor = installCodeEditor(codeSource);
+  codeEditor.frame.querySelector('.code-editor-bar > span').textContent = '〈/〉 HTML · CSS · JS';
+  const codePreview = form.querySelector('[data-code-preview]');
+  let runningCode;
+  function stopCode() { runningCode?.dispose(); runningCode = null; codePreview.replaceChildren(); }
+  function runCode() {
+    stopCode();
+    if (form.elements.contentMode.value !== 'code') return;
+    runningCode = eventCodeFrame(codeSource.value, '이벤트 코드 미리보기');
+    codePreview.append(runningCode);
+  }
+  function syncContentMode() {
+    const isCode = form.elements.contentMode.value === 'code';
+    form.querySelector('[data-event-studio]').hidden = isCode;
+    codePanel.hidden = !isCode;
+    codeEditor.show(isCode);
+    if (isCode) runCode(); else stopCode();
+  }
+  form.elements.contentMode.onchange = syncContentMode;
+  form.querySelector('[data-run-code]').onclick = runCode;
   function syncFields() {
     const dated = form.elements.period.value === 'dates';
     for (const input of form.querySelectorAll('[data-date] input')) {
@@ -151,6 +182,8 @@ export async function eventsAdmin(root, toast) {
     form.reset();
     upload.onchange();
     editor.reset(event || {});
+    codeSource.value = event?.codeDocument || '';
+    codeEditor.sync();
     formSelect.length = 1;
     if (event?.formId && !Array.from(formSelect.options).some(option => option.value === event.formId)) {
       formSelect.add(new Option('기존 입력폼 · 확인 필요', event.formId));
@@ -160,6 +193,7 @@ export async function eventsAdmin(root, toast) {
     }
     setImage(event?.image || '');
     if (event?.published && event.publishAt) form.elements.published.value = 'scheduled';
+    syncContentMode();
     showUrl();
     syncPublication();
     syncFields();
@@ -277,7 +311,7 @@ export async function eventsAdmin(root, toast) {
         setImage(result);
       }
       const values = Object.fromEntries(new FormData(form));
-      await saveEvent({schedule: selected?.schedule, location: selected?.location, start: '', end: '', apply: '', ...values, image, publishAt: values.published === 'scheduled' ? values.publishAt : '', ...editor.read(), id: selected?.id, published: values.published !== 'false'});
+      await saveEvent({schedule: selected?.schedule, location: selected?.location, start: '', end: '', apply: '', ...values, image, publishAt: values.published === 'scheduled' ? values.publishAt : '', ...editor.read(), contentMode: values.contentMode, codeDocument: codeSource.value, id: selected?.id, published: values.published !== 'false'});
       showEditor(false);
       await render();
       toast('이벤트를 저장했습니다.');

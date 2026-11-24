@@ -1,4 +1,4 @@
-import {eventsAdmin} from './events-admin.js?v=13';
+import {eventsAdmin} from './events-admin.js?v=14';
 import {formsAdmin} from './forms-admin.js?v=17';
 import {popupAdmin} from './popup-admin.js?v=7';
 import {columnsList} from './columns-list.js?v=15';

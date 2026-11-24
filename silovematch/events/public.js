@@ -1,3 +1,4 @@
+import {eventCodeFrame} from '../../cms/event-code-frame.js';
 import {mountSilovematchHeader} from '../shared/header.js?v=2';
 import {setColumnCss} from '../../cms/column-css.js';
 import {events, eventLink, eventStatus, eventUrl, eventRedirect} from '../../cms/events.js?v=9';
@@ -125,7 +126,8 @@ async function render() {
     if (event.location) article.append(element('p', '장소 · ' + event.location));
     const description = element('div');
     description.className = 'description sinor-column';
-    if (event.bodyHtml) description.innerHTML = sanitizeHtml(event.bodyHtml);
+    if (event.contentMode === 'code') description.append(eventCodeFrame(event.codeDocument || '', event.title));
+    else if (event.bodyHtml) description.innerHTML = sanitizeHtml(event.bodyHtml);
     else {
       description.classList.add('is-plain-text');
       description.textContent = event.description || '';

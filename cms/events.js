@@ -136,7 +136,7 @@ export async function saveEvent(input) {
   const redirects = legacyUrls.filter((url, index) => keys[index] !== canonical && keys.indexOf(keys[index]) === index);
   const image = /^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+/=]+$/.test(input.image) ? input.image : eventLink(input.image);
   const event = {
-    ...input, title, slug, legacyUrls: redirects, id: input.id || crypto.randomUUID(),
+    ...input, contentMode: input.contentMode === 'code' ? 'code' : 'visual', codeDocument: String(input.codeDocument || ''), title, slug, legacyUrls: redirects, id: input.id || crypto.randomUUID(),
     ...(input.bodyHtml != null ? {bodyHtml: sanitizeHtml(input.bodyHtml)} : {}),
     image, apply: eventLink(input.apply),
     updatedAt: new Date().toISOString(),
