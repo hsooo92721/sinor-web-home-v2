@@ -1,4 +1,4 @@
-import {eventCodeFrame} from '../cms/event-code-frame.js';
+import {eventCodeFrame} from '../cms/event-code-frame.js?v=2';
 import {installCodeEditor} from './code-editor.js?v=5';
 import {el, button, formModal} from './forms-ui.js?v=1';
 import {eventFormFrame, fitEventFrame} from '../cms/event-form-frame.js';

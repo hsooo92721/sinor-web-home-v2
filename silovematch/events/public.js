@@ -1,4 +1,4 @@
-import {eventCodeFrame} from '../../cms/event-code-frame.js';
+import {eventCodeFrame} from '../../cms/event-code-frame.js?v=2';
 import {mountSilovematchHeader} from '../shared/header.js?v=2';
 import {setColumnCss} from '../../cms/column-css.js';
 import {events, eventLink, eventStatus, eventUrl, eventRedirect} from '../../cms/events.js?v=9';
