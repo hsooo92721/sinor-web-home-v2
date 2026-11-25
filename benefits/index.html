@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>시놀 회원 혜택</title>
+  <meta name="description" content="시놀 회원이라면 누구나 시놀혜택. 온유상조 가입비·월 납입금 0원, 아웃핏코드 맞춤 스타일 리포트 무료." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="sheet.css?v=zb" />
+  <link rel="stylesheet" href="page.css?v=zb" />
+  <link rel="preload" as="image" href="assets/kv-gift-black.webp" />
+  <link rel="icon" href="data:," />
+<meta name="page-id" content="47c99ca0-ac3c-46a4-a763-253265cf745b"><meta name="page-route" content="/benefits/"><link rel="stylesheet" href="../footer.css"></head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="wordmark" href="#hero" aria-label="시놀혜택 처음으로">
+        <img class="wordmark__img" src="assets/sinor-logo-white.png" alt="시놀" width="1855" height="440" /><span class="wordmark__sub">혜택</span>
+      </a>
+      <div class="topbar__actions">
+        <button type="button" class="topbar__test" id="proto-open" aria-haspopup="dialog">테스트</button>
+        <button type="button" class="topbar__gift" data-cta="header_my_benefits" data-open="status">나의 혜택</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. 히어로 — 특별함(서브) · 매력(헤드라인) · 구체 정보(두 혜택) · 행동 -->
+    <section class="hero" id="hero" data-section="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title"><span class="t-intro">시놀 회원이라면</span> <span class="t-main">누구나 <em>시놀혜택</em></span></h1>
+        </div>
+        <div class="hero__stage" aria-hidden="true">
+          <img class="hero__kv" src="assets/kv-gift-black.webp" alt="" width="1536" height="1024" fetchpriority="high" data-depth="0.04" />
+        </div>
+        <div class="hero__info">
+          <ul class="hero__gifts" aria-label="받을 수 있는 혜택">
+            <li><a class="hero__gift-link" href="#benefit-onyu"><span class="hero__gk">온유상조</span><b>무료 가입</b><span class="hero__gd">가입비·월 납입금 0원</span></a></li>
+            <li><a class="hero__gift-link" href="#benefit-outfitcode"><span class="hero__gk">아웃핏코드</span><b>무료 리포트</b><span class="hero__gd">맞춤 스타일 리포트</span></a></li>
+          </ul>
+          <div class="hero__cta">
+            <p class="bubble" hidden>신청할 수 있는 혜택이 있어요</p>
+            <button type="button" class="btn btn--lime btn--xl" data-cta="hero_primary" data-apply="bundle">두 혜택 모두 받기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 온유상조 — 0원 → 비용은 언제 → 6년 약정 가격 → 가입 -->
+    <section class="onyu" id="benefit-onyu" data-section="benefit_onyu" aria-labelledby="on-title">
+      <div class="wrap">
+        <div class="onyu__top">
+          <header class="ghead">
+            <p class="gtag reveal">온유상조</p>
+            <h2 class="sec-title reveal" id="on-title"><span class="t-intro">오늘 가입,</span> <span class="t-main">6년간 약정 가격 그대로</span></h2>
+          </header>
+          <div class="zero reveal">
+            <dl class="zero__cmp">
+              <div><dt>가입비</dt><dd>0<small>원</small></dd></div>
+              <div><dt>월 납입금</dt><dd>0<small>원</small></dd></div>
+            </dl>
+            <p class="zero__safe">카드·계좌 정보 입력 없이 가입</p>
+            <p class="zero__note">상조 서비스 이용 시 비용 별도 · <button type="button" class="zero__link" data-cta="membership_cost_link" data-scroll="onyu-cost">비용 보기</button></p>
+          </div>
+        </div>
+
+        <div class="cost" id="onyu-cost">
+          <div class="cost__when">
+            <h3 class="sub-title reveal">비용은 언제 내나요?</h3>
+            <ol class="flowline reveal" aria-label="비용 내는 시점">
+              <li><span class="flowline__k">지금 가입</span><b class="flowline__v">0원</b></li>
+              <li><span class="flowline__k">상조 이용 시</span><b class="flowline__v">약정 비용 납부</b><span class="flowline__d">서비스 종료 후 일시 납부</span></li>
+            </ol>
+          </div>
+          <div class="price reveal">
+            <h3 class="price__k">상품별 이용 비용</h3>
+            <dl class="price__list">
+              <div><dt>온유프리 290</dt><dd>290만 원</dd></div>
+              <div><dt>온유프리 390</dt><dd>390만 원</dd></div>
+              <div><dt>온유프리 490</dt><dd>490만 원</dd></div>
+            </dl>
+            <p class="fine">부가세 포함</p>
+          </div>
+        </div>
+
+        <div class="lockbox reveal">
+          <img class="lockbox__deco" src="assets/num-6.webp" alt="" width="1254" height="1254" loading="lazy" aria-hidden="true" />
+          <h3 class="lockbox__head">
+            <span class="lockbox__num">6<small>년</small></span>
+            <span class="lockbox__t">약정 가격 유지<small>가입일 기준</small></span>
+          </h3>
+          <div class="lockbox__side">
+            <div class="years" aria-hidden="true">
+              <p class="years__ends"><span>가입일</span><span>6년 후</span></p>
+              <p class="years__line"></p>
+              <p class="years__label">약정 가격 그대로</p>
+            </div>
+            <ul class="terms">
+              <li>위약금 없이 언제든 해지</li>
+              <li>가족·지인도 같은 조건</li>
+              <li>6년 후 자동 해지(별도 통보 없음)</li>
+            </ul>
+          </div>
+          <div class="cta-row lockbox__cta">
+            <button type="button" class="btn btn--lime btn--xl" data-cta="benefit_onyu" data-apply="onyu">무료 가입하기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 아웃핏코드 — 리포트 이미지 + 받는 것 3가지 + 혜택 받는 방법 -->
+    <section class="oc" id="benefit-outfitcode" data-section="benefit_outfitcode" aria-labelledby="oc-title">
+      <div class="wrap oc__grid">
+        <div class="oc__head">
+          <p class="gtag reveal">아웃핏코드</p>
+          <h2 class="sec-title reveal" id="oc-title"><span class="t-intro">나에게 꼭 맞는</span> <span class="t-main">스타일의 발견</span></h2>
+          <p class="oc__benefit reveal">맞춤 스타일 리포트 <em>무료</em></p>
+        </div>
+        <figure class="oc__visual reveal">
+          <img class="oc__img" src="assets/oc-report-lime.webp" alt="스타일 리포트 예시: 스타일 프로필, 추천 스타일링, 추천 컬러 팔레트, 스타일링 포인트 페이지" width="1536" height="1024" loading="lazy" />
+          <figcaption>연출 이미지 · 실제 리포트와 다를 수 있음</figcaption>
+        </figure>
+        <ul class="kw reveal" aria-label="리포트에 담기는 것">
+          <li>내 체형에 맞는 핏</li>
+          <li>나를 살리는 컬러</li>
+          <li>나에게 어울리는 코디</li>
+        </ul>
+        <div class="how reveal">
+          <h3 class="how__t"><span class="t-intro">사진 두 장,</span> <span class="t-main">나만의 스타일 리포트</span></h3>
+          <ol class="steps3" aria-label="혜택 받는 방법">
+            <li><b>01</b><span>정보 입력</span></li>
+            <li><b>02</b><span>사진 제출<small>얼굴·전신 사진</small></span></li>
+            <li><b>03</b><span>리포트 받기<small>이메일로 제공</small></span></li>
+          </ol>
+          <p class="fine">대면 컨설팅은 원할 때만 유료</p>
+          <div class="cta-row">
+            <button type="button" class="btn btn--ink btn--xl" data-cta="benefit_outfitcode" data-apply="outfitcode">무료 리포트 받기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 두 가지 모두 — 혜택이 주인공, 포인트는 추가 -->
+    <section class="all" id="all-benefits" data-section="all_benefits" aria-labelledby="all-title">
+      <div class="wrap all__grid">
+        <div class="all__copy">
+          <h2 class="sec-title" id="all-title"><span class="t-intro">두 가지 혜택,</span> <span class="t-main">한 번에</span></h2>
+          <p class="lead">하나만 받아도 좋아요.</p>
+          <div class="all__cta">
+            <button type="button" class="btn btn--lime btn--xl" data-cta="all_bundle" data-apply="bundle">두 혜택 모두 받기</button>
+          </div>
+        </div>
+        <div class="all__body">
+          <div class="bonus">
+            <img class="bonus__coin" src="assets/coin-p-front.webp" alt="" width="1254" height="1254" loading="lazy" aria-hidden="true" data-depth="0.06" />
+            <div class="bonus__txt">
+              <p class="bonus__k">설문 참여 시</p>
+              <p class="bonus__v"><small>최대</small> 1,000P</p>
+              <p class="bonus__d">혜택별 500P · 설문 완료 즉시 지급 · 참여는 선택</p>
+            </div>
+          </div>
+          <div class="notes" id="membership" data-section="membership">
+            <h3 class="notes__t">개인정보 제공 안내</h3>
+            <p class="notes__p">동의 후 혜택 제공에 필요한 정보를 해당 제휴사에 전달합니다.</p>
+            <button type="button" class="textlink textlink--sm" data-cta="membership_check" data-scroll="faq-privacy">개인정보 제공 내용 보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 나의 혜택 -->
+    <section class="plain status" id="my-benefits" data-section="my_status" aria-labelledby="status-title">
+      <div class="wrap wrap--narrow">
+        <h2 class="sec-title sec-title--sm" id="status-title">나의 혜택</h2>
+        <div id="status-board" class="board" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 6. 궁금한 점 — 대표 5개 + 더 보기 -->
+    <section class="plain plain--faq" id="faq" data-section="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap--narrow">
+        <h2 class="sec-title sec-title--sm" id="faq-title">자주 묻는 질문</h2>
+        <div class="faq__list" id="faq-list">
+          <details data-faq="free">
+            <summary>정말 무료인가요?</summary>
+            <div class="faq__a"><p>가입과 리포트는 무료예요. 온유상조는 가입비와 월 납입금이 0원이고, 아웃핏코드 맞춤 스타일 리포트도 무료예요.</p><p>단, 상조 서비스를 이용할 때는 가입할 때 고른 상품의 약정 가격을 내요. 아웃핏코드 대면 컨설팅도 따로 원할 때만 비용이 있어요.</p></div>
+          </details>
+          <details data-faq="both">
+            <summary>두 가지 혜택 모두 받을 수 있나요?</summary>
+            <div class="faq__a"><p>네. ‘두 혜택 모두 받기’로 한 번에 신청할 수 있어요. 하나만 먼저 받고 나머지는 나중에 받아도 돼요.</p></div>
+          </details>
+          <details data-faq="cost">
+            <summary>상조 비용은 언제 내나요?</summary>
+            <div class="faq__a"><p>상조 서비스를 이용할 때 내요. 장례 서비스가 끝난 뒤 발인 전까지 약정 가격을 한 번에 내면 돼요. 온유프리 290은 290만 원, 390은 390만 원, 490은 490만 원이에요(부가세 포함).</p><p data-cfg="benefits.onyu.paymentDetail"></p></div>
+          </details>
+          <details data-faq="report">
+            <summary>스타일 리포트는 어떻게 받나요?</summary>
+            <div class="faq__a"><p>이메일로 받아요. 신청 정보를 입력하고 얼굴·전신 정면 사진 두 장을 제출하면, 입력하신 이메일로 리포트를 보내 드려요.</p><p>리포트 도착까지: <span data-cfg="benefits.outfitcode.leadTime"></span></p></div>
+          </details>
+          <details data-faq="privacy" id="faq-privacy">
+            <summary>개인정보는 어디에 전달되나요?</summary>
+            <div class="faq__a"><p>신청한 혜택의 제휴사에만 전달돼요. 혜택 제공에 필요한 정보만, 동의하신 후에 전달해요. 이 동의는 혜택을 받기 위해 필요해요.</p><p>제공받는 곳·항목·목적·보유 기간은 신청 화면의 동의 단계에서 혜택별로 확인할 수 있어요.</p><p>아웃핏코드 사진은 스타일 분석에만 쓰이고, 광고나 외부 공개에는 쓰이지 않아요. 사진 보관: <span data-cfg="photos.retention"></span></p></div>
+          </details>
+          <details data-faq="six-years" class="faq__more">
+            <summary>6년이 지나면 가격은 어떻게 되나요?</summary>
+            <div class="faq__a"><p>6년이 지나면 별도 통보 없이 자동 해지돼요. 가입일부터 6년 동안은 가입할 때 고른 상품의 약정 가격이 바뀌지 않아요.</p></div>
+          </details>
+          <details data-faq="points" class="faq__more">
+            <summary>포인트는 어떻게 받을 수 있나요?</summary>
+            <div class="faq__a"><p>혜택을 신청하고 설문에 참여하면 받아요. 혜택별 설문 참여 시 500P씩, 최대 1,000P이고 설문을 마치면 바로 지급돼요. 신청만으로는 지급되지 않아요.</p><p>설문은 선택이라 참여하지 않아도 혜택은 그대로 받아요.</p></div>
+          </details>
+          <details data-faq="why-free" class="faq__more">
+            <summary>상조 가입은 왜 무료인가요?</summary>
+            <div class="faq__a"><p>서비스를 이용할 때 비용을 내는 후불형 상조라서, 가입할 때도 매달도 내는 돈이 없어요.</p></div>
+          </details>
+          <details data-faq="cancel" class="faq__more">
+            <summary>가입했다가 그만두고 싶으면요?</summary>
+            <div class="faq__a"><p>미리 낸 돈이 없어서 언제든 위약금 없이 해지할 수 있어요.</p></div>
+          </details>
+          <details data-faq="family" class="faq__more">
+            <summary>가족도 이용할 수 있나요?</summary>
+            <div class="faq__a"><p>네. 회원님이 요청한 가족·친지·지인도 같은 조건으로 이용할 수 있어요. 장례가 생기면 24시간 장례 접수 센터(1577-4936)로 연락하면 돼요.</p></div>
+          </details>
+          <details data-faq="ads" class="faq__more">
+            <summary>광고 연락이 오지 않을까요?</summary>
+            <div class="faq__a"><p>광고·이벤트 안내 수신은 선택이에요. 동의하지 않아도 혜택은 그대로 받고, 동의한 뒤에도 언제든 거부할 수 있어요.</p><p>가입 확인 연락: <span data-cfg="benefits.onyu.contactFlow"></span></p></div>
+          </details>
+          <details data-faq="after" class="faq__more">
+            <summary>신청하고 나면 어떻게 되나요?</summary>
+            <div class="faq__a">
+              <ol class="steps"><li><b>신청 완료</b> 시놀이 접수해요. 아웃핏코드는 사진 2장까지 올리면 신청이 끝나요.</li><li><b>처리 중</b> 각 회사가 확인하고 가입과 리포트 제작을 진행해요.</li><li><b>혜택 제공 완료</b> 온유상조 가입이 끝나고, 리포트가 이메일로 도착해요.</li></ol>
+            </div>
+          </details>
+          <details data-faq="who" class="faq__more">
+            <summary>누가 신청할 수 있나요?</summary>
+            <div class="faq__a"><p>시놀 회원이라면 신청할 수 있어요.</p><p>세부 신청 조건: <span data-cfg="eligibility"></span></p></div>
+          </details>
+          <details data-faq="where" class="faq__more">
+            <summary>신청한 혜택은 어디에서 확인하나요?</summary>
+            <div class="faq__a"><p>이 페이지의 <a href="#my-benefits" data-cta="faq_status_link">나의 혜택</a>과 화면 위 ‘나의 혜택’ 버튼에서 확인할 수 있어요.</p><p><span data-cfg="links.myBenefits"></span></p></div>
+          </details>
+        </div>
+        <button type="button" class="faq__toggle" id="faq-more" aria-expanded="false" aria-controls="faq-list" hidden>질문 더 보기</button>
+        <div class="notice-box">
+          <h3 class="notice__title">유의사항</h3>
+          <ul class="notice">
+            <li>시놀이 제휴사(온유상조·아웃핏코드)와 함께 시놀 회원께 드리는 혜택이에요.</li>
+            <li>같은 혜택은 한 번만 신청할 수 있어요.</li>
+            <li>온유상조 무료 가입은 가입비와 월 납입금이 없다는 뜻이에요. 상조 서비스를 이용할 때는 약정된 상품 가격을 내요.</li>
+            <li>온유상조 가격 유지 기간: <span data-cfg="benefits.onyu.priceLockPeriod"></span></li>
+            <li>아웃핏코드 맞춤 스타일 리포트는 무료이며, 대면 컨설팅을 따로 원하면 비용이 있어요.</li>
+            <li>혜택 내용과 일정은 제휴사 사정에 따라 바뀔 수 있으며, 바뀌면 미리 알려 드려요.</li>
+          </ul>
+          <a class="notice__contact" href="https://pf.kakao.com/_SBhxan/chat" target="_blank" rel="noopener" data-cta="notice_contact" data-contact>문의하기</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  
+  
+
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <div class="sticky-cta__inner">
+      <p class="sticky-tip" id="sticky-tip">설문 참여 시 최대 <b>1,000P</b>
+        <button type="button" class="sticky-tip__x" aria-label="안내 닫기">×</button></p>
+      <button type="button" class="btn btn--lime btn--xl" data-cta="sticky_bottom" data-apply="bundle" tabindex="-1">두 혜택 모두 받기</button>
+    </div>
+  </div>
+
+  <div class="sheet-root" id="sheet-root" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" id="sheet">
+      <div class="sheet__head">
+        <span class="sheet__grip" aria-hidden="true"></span>
+        <h2 class="sheet__title" id="sheet-title">혜택 신청</h2>
+        <button type="button" class="sheet__close" data-close aria-label="닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="sheet__body" id="sheet-body"></div>
+      <div class="sheet__foot" id="sheet-foot"></div>
+    </div>
+  </div>
+
+  <button type="button" class="totop" id="totop" data-cta="scroll_top" aria-label="맨 위로" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="proto" id="proto" hidden>
+    <div class="proto__panel" role="dialog" aria-modal="false" aria-labelledby="proto-title">
+      <div class="proto__head"><h2 id="proto-title">프로토타입 테스트 도구</h2><button type="button" id="proto-close" aria-label="테스트 도구 닫기">닫기</button></div>
+      <div id="proto-body"></div>
+    </div>
+  </div>
+
+  <script src="config.js?v=zb"></script>
+  <script src="analytics.js?v=zb"></script>
+  <script src="app.js?v=zb"></script>
+  <script src="motion.js?v=zb"></script>
+<footer class="app-footer" data-shared-footer></footer><script src="../footer.js" defer></script></body>
+</html>

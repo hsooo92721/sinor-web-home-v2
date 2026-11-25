@@ -1,0 +1,43 @@
+name: Synchronize page registry
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'server/page_registry.py'
+      - 'scripts/build-page-registry.py'
+      - '.github/workflows/page-registry.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: page-registry
+  cancel-in-progress: false
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover public page routes
+        run: python scripts/build-page-registry.py
+      - name: Save new source registry without touching administrator settings
+        id: registry
+        run: |
+          git add cms/page-registry.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Synchronize public page registry'
+          git push
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      - name: Request branch Pages rebuild after registry commit
+        if: steps.registry.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"

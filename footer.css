@@ -1,62 +1,330 @@
 /* Figma 37:8200 — exact colors, metrics and exported assets; content URLs preserved. */
-body .app-footer{box-sizing:border-box;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:13px;margin-top:12px;padding:44px 28px;background:#fafafa;color:#7d7d7d;font-family:Pretendard,'Apple SD Gothic Neo',sans-serif;letter-spacing:-.0145em}
-body .app-footer *{box-sizing:border-box}
-body .app-footer .footer-home-link{position:static;display:block;flex:none;width:91.538px;min-height:0;height:24px}
-body .app-footer .footer-brand-art{display:flex;align-items:center;gap:6.19px;width:91.538px;height:24px;transform:none}
-body .app-footer .footer-symbol{position:relative;display:block;flex:none;width:51.789px;height:24px}
-body .app-footer .footer-symbol-a{position:absolute;left:0;top:1.061px}
-body .app-footer .footer-symbol-b{position:absolute;right:0;top:0}
-body .app-footer img{display:block;max-width:none;flex-shrink:0}
-body .app-footer .footer-links-content,body .app-footer .footer-info-row{width:100%;margin:0;padding:0}
-body .app-footer .footer-primary{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0;padding:0 0 16px}
-body .app-footer .footer-primary a{font-size:16px;font-weight:700;line-height:1.5;color:#606060;white-space:nowrap;text-decoration:none}
-body .app-footer .footer-downloads{display:flex;flex-direction:column;align-items:flex-start;gap:13px;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}
-body .app-footer .footer-download-row{display:flex;align-items:center;gap:20px;max-width:100%}
-body .app-footer .footer-app-label{display:block;flex:none;width:28.8px;text-decoration:none}
-body .app-footer .footer-store-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-width:0}
-body .app-footer .footer-play-badge{display:block;flex:none;width:134.872px;height:40px}
-body .app-footer .footer-apple-badge,body .app-footer .footer-app-store-art{display:block;position:relative;flex:none;width:119.664px;height:40px;overflow:hidden}
-body .app-footer .footer-store-base{position:absolute;inset:0}
-body .app-footer .footer-store-apple{position:absolute;left:8.03%;top:19.62%}
-body .app-footer .footer-store-title{position:absolute;left:28.77%;top:44.68%}
-body .app-footer .footer-store-subtitle{position:absolute;left:29.81%;top:21.09%}
-body .app-footer .footer-secondary{display:block;width:100%;margin:0;padding:16px 0;border:0}
-body .app-footer .footer-policy-row{display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;margin:0;padding:0}
-body .app-footer .footer-secondary a{font-size:14px;font-weight:400;line-height:1.5;color:#7d7d7d;white-space:nowrap;text-decoration:none}
-body .app-footer .footer-secondary a.footer-privacy{font-weight:700}
-body .app-footer .company-info{display:block;width:100%;margin:0}
-body .app-footer .company-info summary{display:flex;align-items:center;justify-content:space-between;gap:0;width:100%;min-height:48px;margin:0;padding:0;cursor:pointer;list-style:none;font-size:14px;font-weight:600;line-height:1.5;color:#7d7d7d}
-body .app-footer summary::-webkit-details-marker{display:none}
-body .app-footer .company-info summary::after{content:none}
-body .app-footer .footer-business-toggle{display:block;flex:1;white-space:nowrap}
-body .app-footer .footer-business-chevron{display:block;position:relative;width:48px;height:48px;flex:none;transform:rotate(180deg)}
-body .app-footer .footer-business-chevron img{position:absolute;inset:0}
-body .app-footer .footer-chevron-open{visibility:hidden}
-body .app-footer .company-info[open] .footer-chevron-open{visibility:visible}
-body .app-footer .company-info[open] .footer-chevron-closed{visibility:hidden}
-body .app-footer .company-info .footer-business-content{display:block;margin:0;padding:13px 0 16px}
-body .app-footer .company-info dl{display:grid;gap:6px;margin:0;color:#7d7d7d;font-size:14px;line-height:1.5}
-body .app-footer .company-info dl>div{display:grid;grid-template-columns:114px minmax(0,1fr);align-items:center;gap:10px;margin:0;padding:0}
-body .app-footer .company-info dt{font-weight:700}
-body .app-footer .company-info dd{margin:0;font-weight:400;overflow-wrap:anywhere}
-body .app-footer p.copyright{margin:6px 0 0;color:#7d7d7d;font-size:14px;line-height:1.5;font-weight:400;letter-spacing:-.0145em}
-body .app-footer a:hover{text-decoration:underline;text-underline-offset:3px}
-body .app-footer a:focus-visible,body .app-footer summary:focus-visible{outline:2px solid #4b90e3;outline-offset:4px}
-body.company-page .company-common-footer .app-footer{display:flex}
-@media(max-width:350px){body .app-footer .footer-download-row{width:100%}body .app-footer .footer-store-links{flex:1}body .app-footer .company-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
-body.company-page .company-common-footer .app-footer{padding:44px 28px}
-body .company-common-footer,body .reader-footer{background:#fafafa;border-top:0}
-@media(max-width:767px){
- body .app-footer,body.company-page .company-common-footer .app-footer{padding:26px 16px}
- body .app-footer .footer-primary{flex-wrap:nowrap;justify-content:flex-start;gap:clamp(0px,calc((100vw - 367px)/3),12px);overflow:visible}
- body .app-footer .footer-primary a{flex:0 0 auto;font-size:14px;letter-spacing:-.0145em}
+body .app-footer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 12px;
+  padding: 44px 28px;
+  background: #fafafa;
+  color: #7d7d7d;
+  font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+  letter-spacing: -0.0145em;
 }
-@media(max-width:367px){body .app-footer .footer-primary a{font-size:clamp(12px,calc((100vw - 34px)*.042),14px)}}
+body .app-footer * {
+  box-sizing: border-box;
+}
+body .app-footer .footer-home-link {
+  position: static;
+  display: block;
+  flex: none;
+  width: 91.538px;
+  min-height: 0;
+  height: 24px;
+}
+body .app-footer .footer-brand-art {
+  display: flex;
+  align-items: center;
+  gap: 6.19px;
+  width: 91.538px;
+  height: 24px;
+  transform: none;
+}
+body .app-footer .footer-symbol {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 51.789px;
+  height: 24px;
+}
+body .app-footer .footer-symbol-a {
+  position: absolute;
+  left: 0;
+  top: 1.061px;
+}
+body .app-footer .footer-symbol-b {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body .app-footer img {
+  display: block;
+  max-width: none;
+  flex-shrink: 0;
+}
+body .app-footer .footer-links-content,
+body .app-footer .footer-info-row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body .app-footer .footer-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+body .app-footer .footer-primary a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #606060;
+  white-space: nowrap;
+  text-decoration: none;
+}
+body .app-footer .footer-downloads {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+body .app-footer .footer-download-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+}
+body .app-footer .footer-app-label {
+  display: block;
+  flex: none;
+  width: 28.8px;
+  text-decoration: none;
+}
+body .app-footer .footer-store-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+}
+body .app-footer .footer-play-badge {
+  display: block;
+  flex: none;
+  width: 134.872px;
+  height: 40px;
+}
+body .app-footer .footer-apple-badge,
+body .app-footer .footer-app-store-art {
+  display: block;
+  position: relative;
+  flex: none;
+  width: 119.664px;
+  height: 40px;
+  overflow: hidden;
+}
+body .app-footer .footer-store-base {
+  position: absolute;
+  inset: 0;
+}
+body .app-footer .footer-store-apple {
+  position: absolute;
+  left: 8.03%;
+  top: 19.62%;
+}
+body .app-footer .footer-store-title {
+  position: absolute;
+  left: 28.77%;
+  top: 44.68%;
+}
+body .app-footer .footer-store-subtitle {
+  position: absolute;
+  left: 29.81%;
+  top: 21.09%;
+}
+body .app-footer .footer-secondary {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+}
+body .app-footer .footer-policy-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 14px;
+  margin: 0;
+  padding: 0;
+}
+body .app-footer .footer-secondary a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #7d7d7d;
+  white-space: nowrap;
+  text-decoration: none;
+}
+body .app-footer .footer-secondary a.footer-privacy {
+  font-weight: 700;
+}
+body .app-footer .company-info {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+body .app-footer .company-info summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #7d7d7d;
+}
+body .app-footer summary::-webkit-details-marker {
+  display: none;
+}
+body .app-footer .company-info summary::after {
+  content: none;
+}
+body .app-footer .footer-business-toggle {
+  display: block;
+  flex: 1;
+  white-space: nowrap;
+}
+body .app-footer .footer-business-chevron {
+  display: block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  transform: rotate(180deg);
+}
+body .app-footer .footer-business-chevron img {
+  position: absolute;
+  inset: 0;
+}
+body .app-footer .footer-chevron-open {
+  visibility: hidden;
+}
+body .app-footer .company-info[open] .footer-chevron-open {
+  visibility: visible;
+}
+body .app-footer .company-info[open] .footer-chevron-closed {
+  visibility: hidden;
+}
+body .app-footer .company-info .footer-business-content {
+  display: block;
+  margin: 0;
+  padding: 13px 0 16px;
+}
+body .app-footer .company-info dl {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  color: #7d7d7d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+body .app-footer .company-info dl > div {
+  display: grid;
+  grid-template-columns: 114px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+body .app-footer .company-info dt {
+  font-weight: 700;
+}
+body .app-footer .company-info dd {
+  margin: 0;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+body .app-footer p.copyright {
+  margin: 6px 0 0;
+  color: #7d7d7d;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.0145em;
+}
+body .app-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body .app-footer a:focus-visible,
+body .app-footer summary:focus-visible {
+  outline: 2px solid #4b90e3;
+  outline-offset: 4px;
+}
+body.company-page .company-common-footer .app-footer {
+  display: flex;
+}
+@media (max-width: 350px) {
+  body .app-footer .footer-download-row {
+    width: 100%;
+  }
+  body .app-footer .footer-store-links {
+    flex: 1;
+  }
+  body .app-footer .company-info dl > div {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+}
+body.company-page .company-common-footer .app-footer {
+  padding: 44px 28px;
+}
+body .company-common-footer,
+body .reader-footer {
+  background: #fafafa;
+  border-top: 0;
+}
+@media (max-width: 767px) {
+  body .app-footer {
+    gap: 4px;
+  }
+  body .app-footer,
+  body.company-page .company-common-footer .app-footer {
+    padding: 26px 16px;
+  }
+  body .app-footer .footer-primary {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: clamp(0px, calc((100vw - 367px) / 3), 12px);
+    overflow: visible;
+  }
+  body .app-footer .footer-primary a {
+    flex: 0 0 auto;
+    font-size: 14px;
+    letter-spacing: -0.0145em;
+  }
+}
+@media (max-width: 367px) {
+  body .app-footer .footer-primary a {
+    font-size: clamp(12px, calc((100vw - 34px) * 0.042), 14px);
+  }
+}
 
-body .app-footer .footer-brand-expanded{display:none}
-body .app-footer:has(details[open]) .footer-brand-expanded{display:block}
-body .app-footer:has(details[open]) .footer-brand-art img:not(.footer-brand-expanded){display:none}
-@media(min-width:768px){body .app-footer .footer-downloads{border:0}}
+body .app-footer .footer-brand-expanded {
+  display: none;
+}
+body .app-footer:has(details[open]) .footer-brand-expanded {
+  display: block;
+}
+body .app-footer:has(details[open]) .footer-brand-art img:not(.footer-brand-expanded) {
+  display: none;
+}
+@media (min-width: 768px) {
+  body .app-footer .footer-downloads {
+    border: 0;
+  }
+}
 
 /* Use the available footer width, including on pages with a narrow desktop shell. */
 @media (min-width: 768px) {
@@ -67,12 +335,18 @@ body .app-footer:has(details[open]) .footer-brand-art img:not(.footer-brand-expa
     column-gap: 40px;
     width: 100%;
   }
-  body.company-page .company-common-footer .app-footer { display: grid; }
-  body .app-footer > * { grid-column: 1 / -1; }
+  body.company-page .company-common-footer .app-footer {
+    display: grid;
+  }
+  body .app-footer > * {
+    grid-column: 1 / -1;
+  }
 }
 @container shared-footer (min-width: 840px) {
   body .app-footer > .footer-home-link,
-  body .app-footer > .footer-links-content { grid-column: 1; }
+  body .app-footer > .footer-links-content {
+    grid-column: 1;
+  }
   body .app-footer > .footer-downloads {
     grid-column: 2;
     grid-row: 1 / span 2;

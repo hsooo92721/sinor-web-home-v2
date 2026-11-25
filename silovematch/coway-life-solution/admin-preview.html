@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>코웨이 제휴 신청 · 시럽인연 어드민 미리보기</title>
+<style>
+@font-face{font-family:Pretendard;src:url("../../assets/vendor/pretendard/PretendardVariable.woff2");font-weight:100 900;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f5f7;color:#202129;font:15px/1.55 Pretendard,sans-serif}
+h1,h2,h3,p,dl,dd{margin:0}
+button{font:inherit;cursor:pointer;background:#fff;border:1px solid #dedee7;border-radius:10px;padding:9px 15px;color:inherit}
+button:focus-visible{outline:2px solid #5144e0;outline-offset:3px}
+.sidebar{position:fixed;inset:0 auto 0 0;width:230px;padding:24px;background:#171821;color:#c1c0cc}
+.brand{color:white;font-size:21px;font-weight:800;margin-bottom:44px}
+.nav-label{font-size:12px;color:#a2a1b1;margin-bottom:12px}
+.nav-item{padding:11px 12px;border-radius:9px;margin-bottom:6px}
+.nav-item.active{background:#5144e0;color:white;font-weight:700}
+.workspace{margin-left:230px}
+.topbar{display:flex;justify-content:space-between;gap:12px;padding:17px 24px;border-bottom:1px solid #e7e7ec;background:white}
+.topbar small,.muted{color:#656777}
+main{max-width:1200px;margin:auto;padding:24px}
+.card{background:white;border:1px solid #e7e7ec;border-radius:16px;padding:24px}
+.member-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:18px 0}
+.identity{display:flex;align-items:center;gap:14px}
+.avatar{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#eeecff;color:#5144e0;font-size:22px;font-weight:800;flex:none}
+.name-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.name-line h1{font-size:24px}
+.badge{display:inline-block;border:1px solid #cfc9ff;background:#f2efff;color:#4732a5;padding:3px 9px;border-radius:999px;font-size:13px;font-weight:680;white-space:nowrap}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-top:18px;border-top:1px solid #eeeef2}
+dt{font-size:13px;color:#67697b;margin-bottom:5px}
+dd{font-weight:600;overflow-wrap:anywhere}
+.sources{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sources span:first-child{background:#f3f3f6;padding:3px 9px;border-radius:999px;font-size:13px}
+.tab{margin:21px 0 12px;color:#5144e0;font-weight:700}
+.profile h2,.section-title{font-size:16px;margin-bottom:12px}
+.profile .meta{grid-template-columns:repeat(3,minmax(0,1fr))}
+dialog{padding:0;border:0;border-radius:16px;width:min(1140px,calc(100% - 32px));max-height:calc(100dvh - 40px);color:inherit;box-shadow:0 18px 60px #17182135}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:#17182166}
+dialog header,dialog footer{flex:none;padding:18px 24px}
+dialog header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-bottom:1px solid #eeeef2}
+dialog header h2{font-size:21px}
+dialog header button{border:0;padding:0 4px;font-size:24px;line-height:1}
+dialog footer{display:flex;justify-content:flex-end;border-top:1px solid #eeeef2}
+.modal-body{overflow:auto;min-height:0;padding:22px 24px}
+.application-summary{border:1px solid #e2e3ec;border-radius:12px;padding:20px 24px;margin-bottom:28px}
+.application-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.application-tag{display:inline-block;border:1px solid;border-radius:999px;padding:0 7px;font-size:12px;font-weight:400;line-height:20px}
+.tag-consult{color:#531dab;border-color:#d3adf7;background:#f9f0ff}
+.tag-coway{color:#0074ff;border-color:#0074ff;background:#f0f7ff}
+.application-metadata{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin-top:22px;font-size:14px}
+.application-metadata .muted{margin-right:6px}
+#original .modal-body{padding:0 32px 24px}
+#original header{border:0;padding:24px 32px 8px}
+#original .modal-intro{margin:0 0 24px}
+#original .profile-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:0}
+#original .profile-grid>div{padding:14px 16px;border-bottom:1px solid #eeeef2}
+#original .consent-table{width:100%;border-collapse:collapse;font-size:14px}
+#original .consent-table th,#original .consent-table td{text-align:left;padding:10px 8px;border-bottom:1px solid #eeeef2}
+#original .consent-table th{background:#f7f7f9;color:#656777}
+@media(max-width:740px){#original header,#original .modal-body{padding-inline:16px}#original .profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.application-summary h3{font-size:18px}
+.application-summary p{margin-top:8px}
+.modal-body .meta{padding:14px;border:1px solid #e7e7ec;border-radius:12px;margin-bottom:20px}
+.note{padding:12px 14px;background:#f6f6f8;border-radius:8px;margin-bottom:20px}
+@media(max-width:740px){.sidebar{display:none}.workspace{margin:0}main{padding:14px}.card{padding:16px}.meta,.profile .meta{grid-template-columns:repeat(2,minmax(0,1fr))}dialog header,dialog footer,.modal-body{padding:14px 16px}}
+</style>
+</head>
+<body>
+<aside class="sidebar" aria-label="관리자 메뉴">
+  <div class="brand">시럽인연</div>
+  <div class="nav-label">고객 관리</div>
+  <div class="nav-item active" aria-current="page">준회원 관리</div>
+  <div class="nav-item">정회원 관리</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span>고객 관리 › <strong>준회원 관리</strong></span><small>예시 데이터</small></header>
+  <main>
+    <section class="card" aria-labelledby="member-name">
+      <p class="muted">준회원 상세</p>
+      <div class="member-heading">
+        <div class="identity">
+          <span class="avatar" aria-hidden="true">김</span>
+          <div class="name-line"><h1 id="member-name">김시놀</h1></div>
+        </div>
+        <button type="button" id="open-original">신청 원본 보기</button>
+      </div>
+      <dl class="meta">
+        <div><dt>연락처</dt><dd>010-****-0000</dd></div>
+        <div><dt>지역</dt><dd>서울특별시 영등포구</dd></div>
+        <div><dt>상담 상태</dt><dd>접수 완료</dd></div>
+        <div><dt>유입경로</dt><dd class="sources"><span>홈페이지 상담 신청</span><span class="badge">코웨이 라이프솔루션</span></dd></div>
+      </dl>
+    </section>
+    <div class="tab">프로필</div>
+    <section class="card profile" aria-labelledby="profile-title">
+      <h2 id="profile-title">개인정보</h2>
+      <dl class="meta">
+        <div><dt>거주지역</dt><dd>서울특별시 영등포구</dd></div>
+        <div><dt>직업</dt><dd>회사원</dd></div>
+        <div><dt>최종학력</dt><dd>대학교</dd></div>
+      </dl>
+    </section>
+  </main>
+</div>
+<dialog id="original" aria-labelledby="modal-title">
+  <header>
+    <h2 id="modal-title">시럽인연 상담 신청 프로필</h2>
+    <button type="button" data-close aria-label="모달 닫기">×</button>
+  </header>
+  <div class="modal-body">
+    <p class="modal-intro muted">선택한 활동 시점에 저장된 신청 정보입니다.</p>
+    <section class="application-summary">
+      <div class="application-tags">
+        <span class="application-tag tag-consult">시럽인연 상담</span>
+        <span class="application-tag tag-coway">코웨이 라이프솔루션</span>
+      </div>
+      <h3>시럽인연 상담 신청</h3>
+      <div class="application-metadata">
+        <span><span class="muted">신청일</span> 2026.11.11 10:30</span>
+        <span><span class="muted">기준 시점</span> 2026.11.11 10:30</span>
+      </div>
+    </section>
+    <section>
+      <h3 class="section-title">신청자 정보</h3>
+      <dl class="meta profile-grid">
+        <div><dt>이름</dt><dd>김시놀</dd></div>
+        <div><dt>연락처</dt><dd>010-****-0000</dd></div>
+        <div><dt>성별</dt><dd>여성</dd></div>
+        <div><dt>생년월일</dt><dd>1968-01-01</dd></div>
+        <div><dt>혼인 상태</dt><dd>이혼</dd></div>
+        <div><dt>거주지역</dt><dd>서울특별시 영등포구</dd></div>
+        <div><dt>직업</dt><dd>회사원</dd></div>
+        <div><dt>직장</dt><dd>예시 회사</dd></div>
+        <div><dt>최종학력</dt><dd>대학교</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h3 class="section-title">문의 내용</h3>
+      <p class="note">제휴 할인 적용 조건과 상담 일정을 알고 싶습니다.</p>
+    </section>
+    <section>
+      <h3 class="section-title">약관 동의이력</h3>
+      <table class="consent-table">
+        <thead><tr><th scope="col">약관</th><th scope="col">동의 여부</th></tr></thead>
+        <tbody>
+          <tr><td>개인정보 수집·이용</td><td>동의</td></tr>
+          <tr><td>시럽인연 마케팅 수신</td><td>미동의</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <footer><button type="button" data-close>닫기</button></footer>
+</dialog>
+<script>
+const dialog = document.querySelector('#original');
+document.querySelector('#open-original').onclick = () => dialog.showModal();
+for (const button of dialog.querySelectorAll('[data-close]')) button.onclick = () => dialog.close();
+dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+if (new URLSearchParams(location.search).get('view') === 'original') dialog.showModal();
+</script>
+</body>
+</html>

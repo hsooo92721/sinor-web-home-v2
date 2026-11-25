@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>시럽인연 × 코웨이 라이프솔루션</title>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./favicon.svg?v=1">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/solid.min.css">
+  <link rel="stylesheet" href="../../cms/form-renderer.css?v=8">
+  <link rel="stylesheet" href="./footer.css">
+  <style>
+    @font-face {
+      font-family: Pretendard;
+      src: url("../../assets/vendor/pretendard/PretendardVariable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { --primary: #963b82; --ink: #2f2f2f; --warm: #f7f3ed; --soft: #f8eef5; --action: #222; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); font: 17px/1.6 Pretendard, sans-serif; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3, .hero-copy p, .application-copy p { word-break: keep-all; }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin-inline: auto; }
+    .masthead { position: sticky; top: 0; z-index: 10; background: var(--warm); }
+    .masthead .wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .wordmark { display: block; width: 126px; height: 35px; object-fit: contain; object-position: left center; }
+    .hero { position: relative; isolation: isolate; background: var(--warm); }
+    .hero-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 17%; }
+    .hero::before { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(90deg, #f7f3ed 3%, #f7f3edf7 24%, #f7f3ed88 46%, transparent 69%); }
+    .hero-copy { padding-block: 92px 104px; }
+    .eyebrow { display: inline-block; padding: 6px 13px; border-radius: 999px; background: var(--action); color: #fff; font-size: 14px; font-weight: 400; }
+    h1 { margin-top: 18px; font-size: clamp(36px, 5vw, 59px); font-weight: 650; line-height: 1.16; letter-spacing: -.055em; }
+    .hero-copy p { margin-top: 19px; max-width: 390px; font-weight: 550; color: #4f5968; }
+    .cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 240px; max-width: 100%; min-height: 60px; padding: 12px 24px; margin-top: 27px; border-radius: 12px; background: var(--primary); color: white; font-size: 18px; font-weight: 500; text-decoration: none; }
+    .application { padding-block: 68px 76px; scroll-margin-top: 96px; }
+    .application-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,500px); gap: 56px; align-items: start; }
+    .application h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.27; letter-spacing: -.045em; }
+    .application-copy > p { color: #4f5968; margin-top: 16px; }
+    .steps { display: grid; gap: 18px; list-style: none; padding: 0; margin: 29px 0 0; }
+    .steps li { display: flex; gap: 12px; align-items: center; font-weight: 680; }
+    .steps span { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--soft); color: var(--primary); font-size: 14px; }
+    .help { padding: 17px 19px; margin-top: 30px; background: var(--warm); border-radius: 16px; font-size: 15px; }
+    #form-mount .sinor-application-form { border-radius: 20px; overflow: clip; }
+    #form-mount .sinor-form-pagebar { display: none; }
+    #form-mount .sinor-form-intro { padding-top: 24px; }
+    #form-mount .sinor-form-consents { padding-top: 0; }
+    #form-mount .sinor-form-bottom { position: static; padding-bottom: 16px; }
+    #form-mount .sinor-form-notice { display: none; }
+    /* Match the gender controls in the live consultation form. */
+    #form-mount .consult-gender .sinor-form-options { gap: 9px; }
+    #form-mount .consult-gender .sinor-form-options span {
+      min-height: 52px;
+      border: 0;
+      border-radius: 16px;
+      background: #f5f5f5;
+      color: #9e9e9e;
+      font: 500 20px/28px Pretendard, sans-serif;
+      letter-spacing: -.24px;
+    }
+    #form-mount .consult-gender .sinor-form-options input:checked + span {
+      box-shadow: inset 0 0 0 2px #963b82;
+      background: #f8eef5;
+      color: #963b82;
+      font-weight: 700;
+    }
+    .coway-footer { background: #fafafa; }
+    .coway-footer .app-footer { max-width: 1128px; margin: 0 auto; }
+    @media(min-width: 920px) {
+      .coway-footer .app-footer { padding-inline: 24px; }
+    }
+    @media(max-width: 760px) {
+      .wrap { width: calc(100% - 36px); }
+      .masthead .wrap { min-height: 62px; }
+      .hero { padding-top: 59vw; }
+      .hero-photo { height: 65vw; object-position: right 32%; }
+      .hero::before { background: linear-gradient(180deg, transparent 42vw, var(--warm) 65vw); }
+      .hero-copy { padding-block: 8px 37px; }
+      .hero-copy p { margin-top: 13px; }
+      .application { padding-block: 40px; scroll-margin-top: 82px; }
+      .application-grid { grid-template-columns: minmax(0,1fr); gap: 30px; }
+      #form-mount .sinor-application-form { max-width: none; }
+    }
+    @media(prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <a href="https://web.sinor.co.kr/silovematch/" aria-label="시럽인연 홈">
+        <img class="wordmark" src="./wordmark.png" alt="시럽인연">
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="./hero.jpg" alt="">
+      <div class="wrap hero-copy">
+        <span class="eyebrow">코웨이 라이프솔루션 × 시럽인연</span>
+        <h1 id="hero-title">시럽인연 1:1 프리미엄<br>매칭 서비스 할인 혜택</h1>
+        <p>코웨이 라이프솔루션 고객을 위한 가입비 30만원 할인</p>
+        <a class="cta" href="#consult">제휴 혜택 상담 신청 <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+      </div>
+    </section>
+    <section id="consult" class="application" aria-labelledby="consult-title">
+      <div class="wrap application-grid">
+        <div class="application-copy">
+          <h2 id="consult-title">상담 신청부터<br>담당 매니저가 함께해요</h2>
+          <p>어떤 만남을 원하는지 이야기해 주세요.<br>담당 매니저가 혜택 적용 조건과 1:1 매칭 진행 방법을 안내합니다.</p>
+          <ol class="steps">
+            <li><span>1</span> 상담 신청서 작성</li>
+            <li><span>2</span> 담당 매니저 연락 및 혜택 확인</li>
+            <li><span>3</span> 1:1 맞춤 상담</li>
+          </ol>
+          <p class="help">상담 문의 <a href="tel:025085670">02-508-5670</a></p>
+        </div>
+        <div>
+          <div id="form-mount"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="coway-footer">
+<footer class="app-footer" id="appFooter" data-shared-footer></footer>
+  </div>
+  <script type="module">
+    import {templateForm} from '../../cms/form-schema.js?v=8';
+    import {renderForm} from '../../cms/form-renderer.js?v=6';
+    const schema = templateForm('consult');
+    const mount = document.querySelector('#form-mount');
+    renderForm(mount, schema, { preview: true });
+    const gender = schema.fields.find(field => field.profileKey === 'gender');
+    if (gender) mount.querySelector(`[data-field-id="${gender.id}"]`)?.classList.add('consult-gender');
+  </script>
+<script src="../../footer.js?v=20261124-managed" defer></script></body>
+</html>

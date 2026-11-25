@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pageDropPlan} from '../admin/page-tree-drop.js';
+const pages=[{id:'home',name:'홈',path:'/',type:'page',protected:true},{id:'company',name:'회사소개',path:'/company/',type:'page',order:10},{id:'history',name:'연혁',path:'/company/history/',type:'page',order:20},{id:'moim',name:'시놀',path:'/moim/',type:'page',order:30},{id:'silove',name:'시럽',path:'/silove/',type:'page',order:40},{id:'dynamic',name:'칼럼 상세',path:'/columns/:id/',type:'dynamic',order:50}];
+test('middle is a child move while edges are sibling moves',()=>{assert.equal(pageDropPlan(pages,'moim','company',.5).parentId,'company');assert.equal(pageDropPlan(pages,'moim','company',.5).zone,'inside');assert.equal(pageDropPlan(pages,'moim','silove',.1).parentId,null);assert.equal(pageDropPlan(pages,'moim','silove',.9).zone,'after')});
+test('before/after order brackets the actual target siblings',()=>{assert.ok(pageDropPlan(pages,'moim','silove',.1).order<40);assert.ok(pageDropPlan(pages,'moim','silove',.9).order>40);assert.equal(pageDropPlan(pages,'moim','history',.9).parentId,'company')});
+test('cannot move protected page or into self/descendants',()=>{assert.equal(pageDropPlan(pages,'home','moim',.5),null);assert.equal(pageDropPlan(pages,'company','company',.5),null);assert.equal(pageDropPlan(pages,'company','history',.5),null)});
+test('dynamic routes cannot be nesting targets; home cannot move below siblings',()=>{assert.notEqual(pageDropPlan(pages,'moim','dynamic',.5).zone,'inside');assert.equal(pageDropPlan(pages,'moim','home',.9),null);assert.equal(pageDropPlan(pages,'moim','home',.5).parentId,null)});
