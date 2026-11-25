@@ -5038,10 +5038,6 @@
       "reason": "내부 컴포넌트"
     },
     {
-      "source": "managed-pages/47c99ca0-ac3c-46a4-a763-253265cf745b/index.html",
-      "reason": "정적 배포된 업로드 페이지와 중복되는 내부 소스"
-    },
-    {
       "source": "migration/columns/batch-02-20261029/originals/17169783.html",
       "reason": "이관 원본 보관"
     },
@@ -5910,10 +5906,6 @@
       "reason": "이관 원본 보관"
     },
     {
-      "source": "page-uploads/47c99ca0-ac3c-46a4-a763-253265cf745b/3697d763c67f4d1ea12bda5d241e5713/index.html",
-      "reason": "업로드 페이지 내부 리소스"
-    },
-    {
       "source": "pagination-demo.html",
       "reason": "개발·어드민 미리보기"
     },
@@ -5930,9 +5922,7 @@
     "어드민 전용": 15,
     "/columns/:id/ 동적 경로로 통합": 1000,
     "내부 컴포넌트": 2,
-    "정적 배포된 업로드 페이지와 중복되는 내부 소스": 1,
     "이관 원본 보관": 217,
-    "업로드 페이지 내부 리소스": 1,
     "개발·어드민 미리보기": 2,
     "/silovematch/events/:slug/ 동적 경로로 통합": 1
   },
@@ -5959,5 +5949,5 @@
       ]
     ]
   ],
-  "totalHtml": 1266
+  "totalHtml": 1264
 }
