@@ -509,3 +509,24 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .hero__gift-link { display: grid; align-content: start; gap: 2px; color: inherit; text-decoration: none; }
 .hero__gift-link:focus-visible { outline: 2px solid #d4ff4b; outline-offset: 6px; border-radius: 2px; }
 #benefit-onyu, #benefit-outfitcode { scroll-margin-top: calc(var(--top-h) + 12px); }
+
+/* White sections: primary, body, and supporting text hierarchy. */
+main { --text-primary: #20242b; --text-body: #505966; --text-support: #737d8a; }
+main > section:not(.hero) .sec-title { color: var(--text-primary); }
+main > section:not(.hero) .sec-title .t-intro { color: var(--text-support); font-weight: 500; }
+main > section:not(.hero) .sec-title .t-main { color: var(--text-primary); }
+main .gtag { color: var(--text-support); font-weight: 500; }
+main .lead, main .notes__p, main .notes li, main .notice li, main .faq__a { color: var(--text-body); }
+main .fine, main .zero__note, main .oc__visual figcaption, main .bonus__d { color: var(--text-support); }
+main .sub-title, main .notes__t, main .notice__title, main .faq__list summary { color: var(--text-primary); }
+main .zero__cmp dt, main .price__k { color: var(--text-support); font-weight: 500; }
+main .zero__cmp dd, main .price__v, main .bonus__v { color: var(--text-primary); }
+main .zero__safe, main .oc__benefit, main .kw li, main .how__list { color: var(--text-body); }
+main .how__t .t-intro { color: var(--text-support); font-weight: 500; }
+main .how__t .t-main { color: var(--text-primary); }
+main .how__list b, main .steps b { color: var(--text-primary); }
+main .bonus__k { color: var(--text-body); }
+main .faq__a a, main .notice__link { color: var(--text-body); }
+main .notice__contact { color: var(--text-support); font-weight: 500; }
+/* Dark panel keeps its original contrast. */
+main .lockbox .t-intro, main .lockbox .t-main { color: inherit; }
